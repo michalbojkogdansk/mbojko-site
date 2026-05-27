@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles & Publications — Michał Bojko</title>
+  <meta name="description" content="Articles and publications by Michał Bojko on engineering leadership, digital transformation, data engineering, observability and building high-performance teams.">
+  <meta name="keywords" content="Michał Bojko articles, engineering leadership blog, data engineering publikacje, digital transformation insights, observability Medium">
+  <meta name="author" content="Michał Bojko">
+  <link rel="canonical" href="https://mbojko.com/articles/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mbojko.com/articles/">
+  <meta property="og:title" content="Articles & Publications — Michał Bojko">
+  <meta property="og:description" content="Articles on engineering leadership, digital transformation, data engineering and observability.">
+  <meta property="og:image" content="https://mbojko.com/assets/photo.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Articles & Publications — Michał Bojko",
+    "url": "https://mbojko.com/articles/",
+    "description": "Articles and publications by Michał Bojko on engineering leadership, digital transformation, data engineering and observability.",
+    "author": {
+      "@type": "Person",
+      "name": "Michał Bojko",
+      "url": "https://mbojko.com"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0b0d12; --bg2: #13151e; --bg3: #1a1d28;
+      --border: rgba(255,255,255,0.08);
+      --yellow: #FFD600;
+      --white: #ffffff; --text: #e2e2e2; --muted: #5a6070; --muted2: #8a92a6;
+      --stripe: repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .stripe-band { height: 10px; background: var(--stripe); opacity: 0.85; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(11,13,18,0.92); backdrop-filter: blur(14px); border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 54px; }
+    .nav-logo { font-size: 16px; font-weight: 700; color: var(--white); text-decoration: none; }
+    .nav-logo span { color: var(--yellow); }
+    .nav-back { font-size: 11px; font-weight: 700; color: var(--muted2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.15s; }
+    .nav-back:hover { color: var(--yellow); }
+    .page-header { max-width: 1000px; margin: 0 auto; padding: 8rem 2.5rem 3rem; }
+    .page-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 10px; }
+    .page-eyebrow::before { content: ""; display: block; width: 32px; height: 2px; background: var(--yellow); }
+    .page-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; color: var(--white); letter-spacing: -0.025em; text-transform: uppercase; margin-bottom: 1rem; }
+    .page-sub { font-size: 15px; color: var(--muted2); max-width: 540px; line-height: 1.8; border-left: 2px solid var(--yellow); padding-left: 1.25rem; }
+    .stripe-divider { height: 6px; background: var(--stripe); opacity: 0.5; max-width: 1000px; margin: 0 auto; }
+    .section { max-width: 1000px; margin: 0 auto; padding: 4rem 2.5rem; }
+    .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); margin-bottom: 1.5rem; }
+    .topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .topic { background: var(--bg2); padding: 1.5rem; }
+    .topic-label { font-size: 10px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .topic-title { font-size: 14px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.02em; }
+    .coming-soon { background: var(--bg2); border: 1px solid var(--border); padding: 3rem 2.5rem; text-align: center; margin-top: 3rem; }
+    .coming-soon-num { font-size: 4rem; font-weight: 800; color: var(--yellow); letter-spacing: -0.03em; opacity: 0.3; }
+    .coming-soon-title { font-size: 16px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.06em; margin: 1rem 0 0.5rem; }
+    .coming-soon-sub { font-size: 14px; color: var(--muted2); max-width: 420px; margin: 0 auto 1.5rem; line-height: 1.7; }
+    .btn-primary { background: var(--yellow); color: #000; padding: 11px 26px; border-radius: 2px; font-size: 13px; text-decoration: none; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: opacity 0.15s; display: inline-block; }
+    .btn-primary:hover { opacity: 0.85; }
+    footer { max-width: 1000px; margin: 0 auto; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border); }
+    .footer-left { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--yellow); }
+    @media (max-width: 680px) {
+      nav { padding: 0 1.25rem; }
+      .page-header, .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="stripe-band"></div>
+
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <a href="/" class="nav-back">← Back</a>
+</nav>
+
+<div class="page-header">
+  <p class="page-eyebrow">Writing</p>
+  <h1 class="page-title">Articles &<br>Publications</h1>
+  <p class="page-sub">Insights on engineering leadership, digital transformation, data engineering and building organizations that scale.</p>
+</div>
+
+<div class="stripe-divider"></div>
+
+<div class="section">
+  <p class="section-eyebrow">Topics I write about</p>
+  <div class="topics">
+    <div class="topic"><div class="topic-label">Leadership</div><div class="topic-title">Scaling engineering organizations</div></div>
+    <div class="topic"><div class="topic-label">Data</div><div class="topic-title">Data engineering & observability</div></div>
+    <div class="topic"><div class="topic-label">Strategy</div><div class="topic-title">Digital transformation decisions</div></div>
+    <div class="topic"><div class="topic-label">AI</div><div class="topic-title">Practical AI in engineering</div></div>
+  </div>
+
+  <div class="coming-soon">
+    <div class="coming-soon-num">03.</div>
+    <div class="coming-soon-title">Articles being indexed</div>
+    <div class="coming-soon-sub">Publications from Medium and other platforms will appear here. Follow on Medium for new posts.</div>
+    <a href="https://medium.com/@michal.bojko.gdansk" class="btn-primary" target="_blank" rel="noopener">Read on Medium →</a>
+  </div>
+</div>
+
+<div class="stripe-band"></div>
+
+<footer>
+  <span class="footer-left">© 2026 Michał Bojko · Gdańsk, Poland</span>
+  <div class="footer-links">
+    <a href="https://github.com/michalbojkogdansk" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://medium.com/@michal.bojko.gdansk" target="_blank" rel="noopener">Medium</a>
+    <a href="https://www.linkedin.com/in/mbojkogdansk/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
