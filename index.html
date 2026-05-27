@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Michał Bojko</title>
-  <meta name="description" content="Engineering leader, educator, speaker. Site Leader at Dynatrace. Building teams, platforms and learning experiences.">
+  <meta name="description" content="Engineering leader, educator, speaker. 15 years leading software engineering organizations across Europe and beyond.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --bg: #0b0d14;
       --bg2: #11141f;
       --bg3: #181b28;
       --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(93,202,165,0.25);
       --teal: #1D9E75;
       --teal-light: #5DCAA5;
       --teal-dim: rgba(29,158,117,0.12);
@@ -21,187 +21,90 @@
       --muted2: #9aa0b0;
       --white: #ffffff;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
 
     /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(11,13,20,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 0.5px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 56px;
-    }
-    .nav-logo {
-      font-size: 15px; font-weight: 500; color: var(--white);
-      text-decoration: none; letter-spacing: 0.01em;
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(11,13,20,0.88); backdrop-filter: blur(14px); border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 56px; }
+    .nav-logo { font-size: 15px; font-weight: 500; color: var(--white); text-decoration: none; }
     .nav-logo span { color: var(--teal-light); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 13px; color: var(--muted2); text-decoration: none;
-      transition: color 0.2s;
-    }
+    .nav-links a { font-size: 13px; color: var(--muted2); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--white); }
 
     /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 100px 2rem 4rem;
-      max-width: 900px; margin: 0 auto;
-    }
-    .hero-tag {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 12px; color: var(--teal-light);
-      letter-spacing: 2px; text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 {
-      font-size: clamp(2.8rem, 7vw, 5rem);
-      font-weight: 500; color: var(--white);
-      line-height: 1.05; letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-    .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: var(--muted2); max-width: 520px;
-      line-height: 1.6; margin-bottom: 2.5rem;
-    }
-    .hero-meta {
-      display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem;
-    }
-    .meta-item {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 13px; color: var(--muted);
-    }
-    .meta-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--teal);
-    }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 2.5rem 5rem; max-width: 960px; margin: 0 auto; }
+    .hero-eyebrow { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: var(--teal-light); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 500; color: var(--white); line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 1.25rem; }
+    .hero-bio { font-size: 15px; color: var(--muted2); max-width: 560px; line-height: 1.8; margin-bottom: 2.5rem; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 3rem; }
+    .pill { background: rgba(255,255,255,0.04); border: 0.5px solid var(--border); border-radius: 20px; font-size: 12px; color: var(--muted2); padding: 5px 14px; }
     .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--teal); color: #fff;
-      padding: 10px 22px; border-radius: 6px;
-      font-size: 14px; text-decoration: none;
-      transition: background 0.2s; font-weight: 500;
-    }
-    .btn-primary:hover { background: #16876300; border: 1px solid var(--teal); color: var(--teal-light); }
-    .btn-secondary {
-      background: transparent; color: var(--muted2);
-      padding: 10px 22px; border-radius: 6px;
-      font-size: 14px; text-decoration: none;
-      border: 0.5px solid var(--border);
-      transition: all 0.2s;
-    }
-    .btn-secondary:hover { border-color: rgba(255,255,255,0.2); color: var(--white); }
+    .btn-primary { background: var(--teal); color: #fff; padding: 10px 24px; border-radius: 6px; font-size: 14px; text-decoration: none; font-weight: 500; transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-ghost { background: transparent; color: var(--muted2); padding: 10px 24px; border-radius: 6px; font-size: 14px; text-decoration: none; border: 0.5px solid var(--border); transition: all 0.2s; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.18); color: var(--white); }
 
-    /* SECTION */
-    section {
-      max-width: 900px; margin: 0 auto;
-      padding: 5rem 2rem;
-    }
-    .section-tag {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 11px; color: var(--teal);
-      letter-spacing: 2px; text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-    .section-title {
-      font-size: 1.8rem; font-weight: 500;
-      color: var(--white); margin-bottom: 2.5rem;
-    }
+    /* SECTION WRAPPER */
+    .section { max-width: 960px; margin: 0 auto; padding: 5rem 2.5rem; }
+    .section-eyebrow { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
+    .section-title { font-size: 1.75rem; font-weight: 500; color: var(--white); }
+    .see-all { font-size: 13px; color: var(--teal-light); text-decoration: none; white-space: nowrap; }
+    .see-all:hover { text-decoration: underline; }
 
-    /* CARDS */
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-    .card {
-      background: var(--bg2);
-      border: 0.5px solid var(--border);
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-decoration: none;
-      display: block;
-      transition: border-color 0.2s, background 0.2s;
-      position: relative; overflow: hidden;
-    }
-    .card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--teal-light), transparent);
-      opacity: 0; transition: opacity 0.2s;
-    }
-    .card:hover { border-color: rgba(93,202,165,0.25); background: var(--bg3); }
-    .card:hover::before { opacity: 1; }
-    .card-icon {
-      font-size: 22px; margin-bottom: 1rem;
-    }
-    .card-title {
-      font-size: 15px; font-weight: 500; color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-    .card-desc { font-size: 13px; color: var(--muted2); line-height: 1.5; }
-    .card-badge {
-      display: inline-block; margin-top: 1rem;
-      background: var(--teal-dim); color: var(--teal-light);
-      font-size: 11px; padding: 3px 10px; border-radius: 20px;
-      font-family: 'SF Mono', monospace;
-    }
-    .card-arrow {
-      position: absolute; top: 1.5rem; right: 1.5rem;
-      color: var(--muted); font-size: 16px;
-      transition: color 0.2s, transform 0.2s;
-    }
-    .card:hover .card-arrow { color: var(--teal-light); transform: translate(2px, -2px); }
+    /* CAROUSEL */
+    .carousel-wrap { position: relative; }
+    .carousel { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; scrollbar-width: none; }
+    .carousel::-webkit-scrollbar { display: none; }
+    .c-card { flex: 0 0 280px; background: var(--bg2); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem; scroll-snap-align: start; transition: border-color 0.2s, background 0.2s; position: relative; text-decoration: none; color: inherit; display: block; }
+    .c-card:hover { border-color: var(--border-hover); background: var(--bg3); }
+    .c-card-tag { font-family: 'SF Mono', monospace; font-size: 10px; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .c-card-title { font-size: 14px; font-weight: 500; color: var(--white); line-height: 1.4; margin-bottom: 0.5rem; }
+    .c-card-sub { font-size: 12px; color: var(--muted2); line-height: 1.5; }
+    .c-card-meta { margin-top: 1.25rem; font-size: 11px; color: var(--muted); }
+    .c-card-placeholder { opacity: 0.35; cursor: default; }
+    .c-card-placeholder .c-card-title { color: var(--muted2); }
+
+    /* TEACHING CARD — full width */
+    .teaching-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .t-card { background: var(--bg2); border: 0.5px solid var(--border); border-radius: 10px; padding: 2rem; text-decoration: none; display: block; transition: border-color 0.2s, background 0.2s; position: relative; overflow: hidden; }
+    .t-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--teal-light), transparent); opacity: 0; transition: opacity 0.2s; }
+    .t-card:hover { border-color: var(--border-hover); background: var(--bg3); }
+    .t-card:hover::before { opacity: 1; }
+    .t-card-num { font-family: 'SF Mono', monospace; font-size: 11px; color: var(--teal); letter-spacing: 1px; margin-bottom: 1.25rem; }
+    .t-card-title { font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 0.5rem; }
+    .t-card-desc { font-size: 13px; color: var(--muted2); line-height: 1.6; }
+    .t-card-badge { display: inline-block; margin-top: 1.25rem; background: var(--teal-dim); color: var(--teal-light); font-size: 11px; padding: 3px 10px; border-radius: 20px; font-family: 'SF Mono', monospace; }
+    .t-arrow { position: absolute; top: 2rem; right: 2rem; color: var(--muted); font-size: 14px; transition: color 0.2s, transform 0.2s; }
+    .t-card:hover .t-arrow { color: var(--teal-light); transform: translate(2px, -2px); }
 
     /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-    .about-text { font-size: 15px; color: var(--muted2); line-height: 1.8; }
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: start; }
+    .about-text { font-size: 15px; color: var(--muted2); line-height: 1.85; }
     .about-text p + p { margin-top: 1rem; }
     .about-text strong { color: var(--white); font-weight: 500; }
-    .stats { display: flex; flex-direction: column; gap: 16px; }
-    .stat {
-      border-left: 2px solid var(--teal);
-      padding-left: 1rem;
-    }
-    .stat-num { font-size: 2rem; font-weight: 500; color: var(--white); }
-    .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .stats { display: flex; flex-direction: column; gap: 20px; }
+    .stat { border-left: 2px solid var(--teal); padding-left: 1.25rem; }
+    .stat-num { font-size: 2.2rem; font-weight: 500; color: var(--white); letter-spacing: -0.02em; }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
 
     /* DIVIDER */
-    .divider {
-      border: none; border-top: 0.5px solid var(--border);
-      max-width: 900px; margin: 0 auto;
-    }
+    hr { border: none; border-top: 0.5px solid var(--border); max-width: 960px; margin: 0 auto; }
 
     /* FOOTER */
-    footer {
-      max-width: 900px; margin: 0 auto;
-      padding: 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-left { font-size: 13px; color: var(--muted); }
+    footer { max-width: 960px; margin: 0 auto; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-left { font-size: 12px; color: var(--muted); }
     .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a {
-      font-size: 13px; color: var(--muted); text-decoration: none;
-      transition: color 0.2s;
-    }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--teal-light); }
 
     @media (max-width: 640px) {
-      nav { padding: 0 1rem; }
+      nav { padding: 0 1.25rem; }
       .nav-links { display: none; }
-      .hero { padding: 90px 1.25rem 3rem; }
-      section { padding: 3.5rem 1.25rem; }
-      .about-grid { grid-template-columns: 1fr; }
+      .hero, .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .teaching-grid, .about-grid { grid-template-columns: 1fr; gap: 14px; }
+      .c-card { flex: 0 0 240px; }
       footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -218,94 +121,132 @@
   </ul>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <p class="hero-tag">Engineering · Education · Observability</p>
+  <p class="hero-eyebrow">Engineering · Education · Observability</p>
   <h1>Michał<br>Bojko</h1>
-  <p class="hero-sub">Engineering leader building high-performance teams and learning platforms across Europe. Site Leader at Dynatrace. Educator. Speaker.</p>
-  <div class="hero-meta">
-    <div class="meta-item"><div class="meta-dot"></div>Dynatrace — Site Leader, Poland & Estonia</div>
-    <div class="meta-item"><div class="meta-dot"></div>Gdańsk, Poland</div>
-    <div class="meta-item"><div class="meta-dot"></div>Observability Tech Community</div>
+  <p class="hero-bio">15 years in software engineering leadership roles. 10 years in technical IT roles. Experience across USA, UK, France, Germany, Spain, Estonia and Poland. Tech community leader, speaker, and university lecturer in Engineering and MBA programmes.</p>
+  <div class="hero-pills">
+    <span class="pill">Engineering Leadership</span>
+    <span class="pill">Digital Transformation</span>
+    <span class="pill">Data Engineering</span>
+    <span class="pill">Observability</span>
+    <span class="pill">MBA Educator</span>
   </div>
   <div class="hero-cta">
     <a href="#teaching" class="btn-primary">Explore teaching →</a>
-    <a href="#about" class="btn-secondary">About me</a>
+    <a href="#about" class="btn-ghost">About</a>
   </div>
 </div>
 
-<hr class="divider">
+<hr>
 
-<section id="teaching">
-  <p class="section-tag">01 / Teaching</p>
-  <h2 class="section-title">Interactive learning platforms</h2>
-  <div class="cards">
-    <a href="https://michalbojkogdansk.github.io/interaktywne-zadania-mba/" class="card" target="_blank" rel="noopener">
-      <span class="card-arrow">↗</span>
-      <div class="card-icon">🎓</div>
-      <div class="card-title">MBA — Digital Transformation</div>
-      <div class="card-desc">Interactive exercises on data correlation, critical thinking, digital transformation strategy, dark data, and data engineering.</div>
-      <span class="card-badge">5 exercises · AI analysis</span>
+<!-- TEACHING -->
+<section class="section" id="teaching">
+  <p class="section-eyebrow">01 / Teaching</p>
+  <div class="section-header">
+    <h2 class="section-title">Interactive learning platforms</h2>
+    <a href="/teaching/" class="see-all">All programmes →</a>
+  </div>
+  <div class="teaching-grid">
+    <a href="/teaching/#mba" class="t-card">
+      <span class="t-arrow">↗</span>
+      <div class="t-card-num">01</div>
+      <div class="t-card-title">MBA — Digital Transformation</div>
+      <div class="t-card-desc">Decision architecture, AI tools, dark data, digital-first strategy. Hands-on exercises with AI analysis. Designed for managers navigating data-driven transformation.</div>
+      <span class="t-card-badge">5 exercises · ~45 h programme</span>
     </a>
-    <a href="https://michalbojkogdansk.github.io/observability-foundations/" class="card" target="_blank" rel="noopener">
-      <span class="card-arrow">↗</span>
-      <div class="card-icon">📡</div>
-      <div class="card-title">Data Engineering Foundations</div>
-      <div class="card-desc">Visual interactive lectures covering core data engineering concepts. Algorithms run entirely in the browser — no data leaves your machine.</div>
-      <span class="card-badge">In-browser · Visual lectures</span>
+    <a href="/teaching/#dataeng" class="t-card">
+      <span class="t-arrow">↗</span>
+      <div class="t-card-num">02</div>
+      <div class="t-card-title">Data Engineering Foundations</div>
+      <div class="t-card-desc">Visual interactive lectures on core data engineering and observability concepts. Algorithms run entirely in the browser. Built for conference demos and university courses.</div>
+      <span class="t-card-badge">Visual lectures · In-browser</span>
     </a>
   </div>
 </section>
 
-<hr class="divider">
+<hr>
 
-<section id="talks">
-  <p class="section-tag">02 / Talks</p>
-  <h2 class="section-title">Conference presentations</h2>
-  <div class="cards">
-    <div class="card" style="cursor:default; opacity:0.6;">
-      <div class="card-icon">🎙️</div>
-      <div class="card-title">Coming soon</div>
-      <div class="card-desc">Conference talks, recordings and slide decks will be listed here.</div>
-      <span class="card-badge">In progress</span>
+<!-- TALKS -->
+<section class="section" id="talks">
+  <p class="section-eyebrow">02 / Talks</p>
+  <div class="section-header">
+    <h2 class="section-title">Conference presentations</h2>
+    <a href="/talks/" class="see-all">All talks →</a>
+  </div>
+  <div class="carousel-wrap">
+    <div class="carousel">
+      <div class="c-card c-card-placeholder">
+        <div class="c-card-tag">Coming soon</div>
+        <div class="c-card-title">Talks and recordings will appear here</div>
+        <div class="c-card-sub">Conference presentations, keynotes, and panel discussions.</div>
+      </div>
+      <div class="c-card c-card-placeholder">
+        <div class="c-card-tag">Coming soon</div>
+        <div class="c-card-title">Slide decks and video links</div>
+        <div class="c-card-sub">Materials from engineering and transformation events.</div>
+      </div>
+      <div class="c-card c-card-placeholder">
+        <div class="c-card-tag">Coming soon</div>
+        <div class="c-card-title">More sessions being added</div>
+        <div class="c-card-sub">Check back or follow on LinkedIn for updates.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<hr class="divider">
+<hr>
 
-<section id="writing">
-  <p class="section-tag">03 / Writing</p>
-  <h2 class="section-title">Articles & publications</h2>
-  <div class="cards">
-    <a href="https://medium.com/@michalbojko" class="card" target="_blank" rel="noopener">
-      <span class="card-arrow">↗</span>
-      <div class="card-icon">✍️</div>
-      <div class="card-title">Medium</div>
-      <div class="card-desc">Articles on engineering leadership, observability, digital transformation, and building engineering organizations at scale.</div>
-      <span class="card-badge">medium.com</span>
-    </a>
+<!-- WRITING -->
+<section class="section" id="writing">
+  <p class="section-eyebrow">03 / Writing</p>
+  <div class="section-header">
+    <h2 class="section-title">Articles & publications</h2>
+    <a href="/articles/" class="see-all">All articles →</a>
+  </div>
+  <div class="carousel-wrap">
+    <div class="carousel">
+      <div class="c-card c-card-placeholder">
+        <div class="c-card-tag">Coming soon</div>
+        <div class="c-card-title">Articles will appear here</div>
+        <div class="c-card-sub">Engineering leadership, observability, digital transformation, and scaling teams.</div>
+      </div>
+      <div class="c-card c-card-placeholder">
+        <div class="c-card-tag">Coming soon</div>
+        <div class="c-card-title">Publications being indexed</div>
+        <div class="c-card-sub">From Medium and other platforms.</div>
+      </div>
+      <div class="c-card c-card-placeholder">
+        <div class="c-card-tag">Coming soon</div>
+        <div class="c-card-title">More content arriving</div>
+        <div class="c-card-sub">Follow on Medium for the latest posts.</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<hr class="divider">
+<hr>
 
-<section id="about">
-  <p class="section-tag">04 / About</p>
-  <h2 class="section-title">Background</h2>
+<!-- ABOUT -->
+<section class="section" id="about">
+  <p class="section-eyebrow">04 / About</p>
+  <h2 class="section-title" style="margin-bottom:2.5rem">Background</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>15+ years leading R&D and multinational engineering organizations. Currently <strong>Site Leader at Dynatrace</strong> for Poland and Estonia, overseeing 500+ engineers across both locations.</p>
-      <p>I teach <strong>Data Engineering</strong> and <strong>Digital Transformation</strong> at university level, and run the <strong>Observability Tech Community</strong> — a space for practitioners building modern platform engineering disciplines.</p>
-      <p>My focus is the intersection of technical excellence, organizational design, and learning. I build teams, platforms, and curricula that scale.</p>
+      <p><strong>15 years in software engineering leadership</strong>, 10 years in technical IT roles. I've built and scaled engineering organizations across Europe — working with teams in the USA, UK, France, Germany, Spain, Estonia and Poland.</p>
+      <p>I teach <strong>Data Engineering</strong> and <strong>Digital Transformation</strong> at university level, in both Engineering and MBA programmes. My courses combine theory with hands-on simulations, interactive tasks, and AI-assisted exercises.</p>
+      <p>I run a <strong>tech community focused on observability</strong> — bringing practitioners together around platform engineering, monitoring, and modern software reliability.</p>
+      <p>My focus is the intersection of technical excellence, organizational design, and learning at scale.</p>
     </div>
     <div class="stats">
       <div class="stat">
-        <div class="stat-num">500+</div>
-        <div class="stat-label">Engineers across Poland & Estonia</div>
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Years in engineering leadership roles</div>
       </div>
       <div class="stat">
-        <div class="stat-num">15+</div>
-        <div class="stat-label">Years leading engineering organizations</div>
+        <div class="stat-num">7</div>
+        <div class="stat-label">Countries with hands-on team experience</div>
       </div>
       <div class="stat">
         <div class="stat-num">2</div>
@@ -315,14 +256,14 @@
   </div>
 </section>
 
-<hr class="divider">
+<hr>
 
 <footer>
   <span class="footer-left">© 2026 Michał Bojko · Gdańsk, Poland</span>
   <div class="footer-links">
     <a href="https://github.com/michalbojkogdansk" target="_blank" rel="noopener">GitHub</a>
     <a href="https://medium.com/@michalbojko" target="_blank" rel="noopener">Medium</a>
-    <a href="https://www.linkedin.com/in/michalbojko" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://linkedin.com/in/michalbojko" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </footer>
 
