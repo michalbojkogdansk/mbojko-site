@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching — Michał Bojko</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0b0d14; --bg2: #11141f; --bg3: #181b28;
+      --border: rgba(255,255,255,0.07); --border-hover: rgba(93,202,165,0.25);
+      --teal: #1D9E75; --teal-light: #5DCAA5; --teal-dim: rgba(29,158,117,0.12);
+      --text: #e8e8e8; --muted: #6b7080; --muted2: #9aa0b0; --white: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(11,13,20,0.88); backdrop-filter: blur(14px); border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 56px; }
+    .nav-logo { font-size: 15px; font-weight: 500; color: var(--white); text-decoration: none; }
+    .nav-logo span { color: var(--teal-light); }
+    .nav-back { font-size: 13px; color: var(--muted2); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--white); }
+
+    .page-header { max-width: 960px; margin: 0 auto; padding: 8rem 2.5rem 3rem; }
+    .page-eyebrow { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .page-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 500; color: var(--white); letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .page-sub { font-size: 15px; color: var(--muted2); max-width: 520px; line-height: 1.8; }
+
+    hr { border: none; border-top: 0.5px solid var(--border); max-width: 960px; margin: 0 auto; }
+
+    .programme { max-width: 960px; margin: 0 auto; padding: 4rem 2.5rem; }
+    .prog-num { font-family: 'SF Mono', monospace; font-size: 11px; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .prog-title { font-size: 1.75rem; font-weight: 500; color: var(--white); margin-bottom: 1rem; }
+    .prog-desc { font-size: 15px; color: var(--muted2); line-height: 1.8; max-width: 600px; margin-bottom: 2.5rem; }
+
+    .modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 2rem; }
+    .module { background: var(--bg2); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+    .module-num { font-family: 'SF Mono', monospace; font-size: 11px; color: var(--teal); margin-bottom: 0.5rem; }
+    .module-title { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 0.4rem; }
+    .module-desc { font-size: 12px; color: var(--muted2); line-height: 1.5; }
+
+    .prog-meta { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .meta-item { font-size: 13px; color: var(--muted2); }
+    .meta-item strong { color: var(--white); font-weight: 500; }
+
+    .prog-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { background: var(--teal); color: #fff; padding: 10px 24px; border-radius: 6px; font-size: 14px; text-decoration: none; font-weight: 500; transition: opacity 0.2s; display: inline-block; }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-ghost { background: transparent; color: var(--muted2); padding: 10px 24px; border-radius: 6px; font-size: 14px; text-decoration: none; border: 0.5px solid var(--border); transition: all 0.2s; display: inline-block; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.18); color: var(--white); }
+
+    footer { max-width: 960px; margin: 0 auto; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-left { font-size: 12px; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal-light); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 1.25rem; }
+      .page-header, .programme { padding-left: 1.25rem; padding-right: 1.25rem; }
+      footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <a href="/" class="nav-back">← Back</a>
+</nav>
+
+<div class="page-header">
+  <p class="page-eyebrow">Teaching</p>
+  <h1 class="page-title">Interactive learning<br>programmes</h1>
+  <p class="page-sub">Hands-on courses combining theory with simulations, AI-assisted exercises, and real-world case studies. Designed for Engineering and MBA students.</p>
+</div>
+
+<hr>
+
+<!-- MBA -->
+<div class="programme" id="mba">
+  <p class="prog-num">01 / MBA</p>
+  <h2 class="prog-title">Digital Transformation</h2>
+  <p class="prog-desc">Cyfrowa transformacja to gra o przychód. The course teaches how to read data, build strategy, and implement solutions at scale. Designed for managers directing digital transformation in their organizations.</p>
+
+  <div class="prog-meta">
+    <div class="meta-item"><strong>~20 h</strong> lectures & workshops</div>
+    <div class="meta-item"><strong>~5 h</strong> self-study</div>
+    <div class="meta-item"><strong>~20 h</strong> team simulation</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-num">01</div>
+      <div class="module-title">Decision Architecture</div>
+      <div class="module-desc">Data Mesh vs SSoT, correlations, dark data, case study, interactive online tasks</div>
+    </div>
+    <div class="module">
+      <div class="module-num">02</div>
+      <div class="module-title">Digital Transformation</div>
+      <div class="module-desc">Digital First, upskilling/reskilling, transformation KPIs, case study, interactive tasks</div>
+    </div>
+    <div class="module">
+      <div class="module-num">03</div>
+      <div class="module-title">AI Tools</div>
+      <div class="module-desc">Applications, models, agents — hands-on business data engineering workshops with AI and databases</div>
+    </div>
+    <div class="module">
+      <div class="module-num">04</div>
+      <div class="module-title">Online Simulation</div>
+      <div class="module-desc">Team-based online game (20 h) progressing through multiple stages of digital transformation</div>
+    </div>
+  </div>
+
+  <div class="prog-cta">
+    <a href="https://michalbojkogdansk.github.io/interaktywne-zadania-mba/" class="btn-primary" target="_blank" rel="noopener">Open platform →</a>
+  </div>
+</div>
+
+<hr>
+
+<!-- DATA ENG -->
+<div class="programme" id="dataeng">
+  <p class="prog-num">02 / Data Engineering</p>
+  <h2 class="prog-title">Observability Foundations</h2>
+  <p class="prog-desc">Interactive visual lectures covering core data engineering and observability concepts. Built for conference demos and university courses. Algorithms run 100% in your browser — no data leaves your machine.</p>
+
+  <div class="prog-meta">
+    <div class="meta-item"><strong>In-browser</strong> execution</div>
+    <div class="meta-item"><strong>Visual</strong> interactive lectures</div>
+    <div class="meta-item"><strong>Zero</strong> data leaves your machine</div>
+  </div>
+
+  <div class="prog-cta">
+    <a href="https://michalbojkogdansk.github.io/observability-foundations/" class="btn-primary" target="_blank" rel="noopener">Open platform →</a>
+  </div>
+</div>
+
+<hr>
+
+<footer>
+  <span class="footer-left">© 2026 Michał Bojko · Gdańsk, Poland</span>
+  <div class="footer-links">
+    <a href="https://github.com/michalbojkogdansk" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://medium.com/@michalbojko" target="_blank" rel="noopener">Medium</a>
+    <a href="https://linkedin.com/in/michalbojko" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
