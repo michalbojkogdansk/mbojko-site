@@ -49,16 +49,14 @@
 
     /* HERO */
     .hero {
-      min-height: 100vh; display: grid; grid-template-columns: 1fr 400px;
-      align-items: center; gap: 0; padding-top: 54px;
-      max-width: 100%; margin: 0;
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 100px 2.5rem 5rem; max-width: 1000px; margin: 0 auto;
+      gap: 4rem;
     }
-    .hero-content {
-      padding: 5rem 2.5rem 5rem;
-      max-width: 600px; margin: 0 auto 0 auto;
-    }
+    .hero-content { flex: 1; min-width: 0; }
     .hero-photo {
-      height: 100vh; position: sticky; top: 0; overflow: hidden;
+      flex: 0 0 280px; align-self: stretch;
+      overflow: hidden; border: 1px solid var(--border);
     }
     .hero-photo img {
       width: 100%; height: 100%; object-fit: cover; object-position: center top;
@@ -183,9 +181,8 @@
     @media (max-width: 680px) {
       nav { padding: 0 1.25rem; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; grid-template-rows: auto 280px; padding-top: 54px; }
-      .hero-content { padding: 3rem 1.25rem 2rem; max-width: 100%; }
-      .hero-photo { height: 280px; position: relative; }
+      .hero { flex-direction: column; gap: 2rem; padding: 5rem 1.25rem 3rem; }
+      .hero-photo { flex: 0 0 auto; width: 100%; height: 260px; align-self: auto; }
       .section { padding-left: 1.25rem; padding-right: 1.25rem; }
       .grid-2 { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; }
