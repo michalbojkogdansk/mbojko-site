@@ -155,17 +155,13 @@
     .c-placeholder { opacity: 0.4; cursor: default; }
 
     /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; background: var(--border); border: 1px solid var(--border); }
-    .about-col { background: var(--bg2); padding: 2.5rem; }
-    .about-divider { background: var(--border); }
-    .about-text { font-size: 14px; color: var(--muted2); line-height: 1.9; }
-    .about-text p + p { margin-top: 1rem; }
+    .about-grid { background: var(--bg2); border: 1px solid var(--border); padding: 2.5rem; }
+    .about-text { font-size: 15px; color: var(--muted2); line-height: 1.9; max-width: 680px; }
+    .about-text p + p { margin-top: 1.25rem; }
     .about-text strong { color: var(--white); font-weight: 700; }
-    .stats { display: flex; flex-direction: column; gap: 0; }
-    .stat { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
-    .stat:last-child { border-bottom: none; }
-    .stat-num { font-size: 3rem; font-weight: 800; color: var(--yellow); line-height: 1; letter-spacing: -0.03em; }
-    .stat-label { font-size: 11px; color: var(--muted2); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+    .community-logos { display: flex; align-items: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+    .community-logo { height: 36px; width: auto; opacity: 0.85; filter: brightness(0) invert(1); transition: opacity 0.2s; }
+    .community-logo:hover { opacity: 1; }
 
     /* STRIPE DIVIDER */
     .stripe-divider { height: 6px; background: var(--stripe); opacity: 0.5; max-width: 1000px; margin: 0 auto; }
@@ -184,8 +180,7 @@
       .hero-photo { flex: 0 0 auto; width: 100%; height: 260px; }
       .section { padding-left: 1.25rem; padding-right: 1.25rem; }
       .grid-2 { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-divider { height: 1px; width: auto; }
+      .about-grid { padding: 1.5rem; }
       .c-card { flex: 0 0 240px; }
       footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
     }
@@ -331,29 +326,14 @@
     </div>
   </div>
   <div class="about-grid">
-    <div class="about-col">
-      <div class="about-text">
-        <p><strong>15 years in software engineering leadership roles</strong>, 10 years in technical IT roles. I've built and scaled engineering organizations across Europe — working with teams in the USA, UK, France, Germany, Spain, Estonia and Poland.</p>
-        <p>I teach <strong>Data Engineering</strong> and <strong>Digital Transformation</strong> at university level, across Engineering and MBA programmes. My courses combine theory with hands-on simulations, interactive tasks, and AI-assisted exercises.</p>
-        <p>I run a <strong>tech community focused on observability</strong> — bringing practitioners together around platform engineering, monitoring, and modern software reliability.</p>
-      </div>
+    <div class="about-text">
+      <p><strong>15 years in software engineering leadership roles</strong>, 10 years in technical IT roles. I've built and scaled engineering organizations across Europe — working with teams in the USA, UK, France, Germany, Spain, Estonia and Poland.</p>
+      <p>I teach <strong>Data Engineering</strong> and <strong>Digital Transformation</strong> at university level, across Engineering and MBA programmes. My courses combine theory with hands-on simulations, interactive tasks, and AI-assisted exercises.</p>
+      <p>I run two tech communities — <strong>Observability Tech Community</strong>, focused on platform engineering, monitoring, and modern software reliability, and <strong>Critical Thinkers Academy</strong>, bringing together practitioners who apply critical thinking to technology and organizational challenges.</p>
     </div>
-    <div class="about-divider"></div>
-    <div class="about-col">
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-num">15+</div>
-          <div class="stat-label">Years in engineering leadership</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">7</div>
-          <div class="stat-label">Countries · team experience</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">2</div>
-          <div class="stat-label">Interactive learning platforms</div>
-        </div>
-      </div>
+    <div class="community-logos">
+      <img src="/assets/observability-logo.png" alt="Observability Tech Community" class="community-logo">
+      <img src="/assets/critical-thinkers-logo.png" alt="Critical Thinkers Academy" class="community-logo">
     </div>
   </div>
 </section>
