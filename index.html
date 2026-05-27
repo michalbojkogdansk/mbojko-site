@@ -159,9 +159,12 @@
     .about-text { font-size: 15px; color: var(--muted2); line-height: 1.9; max-width: 680px; }
     .about-text p + p { margin-top: 1.25rem; }
     .about-text strong { color: var(--white); font-weight: 700; }
-    .community-logos { display: flex; align-items: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
-    .community-logo { height: 64px; width: auto; opacity: 0.85; filter: brightness(0) invert(1); transition: opacity 0.2s; }
-    .community-logo:hover { opacity: 1; }
+    .community-list { list-style: none; margin-top: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+    .community-item { display: flex; align-items: center; gap: 1.25rem; }
+    .community-item-logo { height: 64px; width: 64px; object-fit: contain; flex-shrink: 0; opacity: 0.85; filter: brightness(0) invert(1); transition: opacity 0.2s; }
+    .community-item-logo:hover { opacity: 1; }
+    .community-item-text { font-size: 14px; color: var(--muted2); line-height: 1.6; }
+    .community-item-text strong { color: var(--white); font-weight: 700; }
 
     /* STRIPE DIVIDER */
     .stripe-divider { height: 6px; background: var(--stripe); opacity: 0.5; max-width: 1000px; margin: 0 auto; }
@@ -329,11 +332,17 @@
     <div class="about-text">
       <p><strong>15 years in software engineering leadership roles</strong>, 10 years in technical IT roles. I've built and scaled engineering organizations across Europe — working with teams in the USA, UK, France, Germany, Spain, Estonia and Poland.</p>
       <p>I teach <strong>Data Engineering</strong> and <strong>Digital Transformation</strong> at university level, across Engineering and MBA programmes. My courses combine theory with hands-on simulations, interactive tasks, and AI-assisted exercises.</p>
-      <p>I run two tech communities — <strong>Observability Tech Community</strong>, focused on platform engineering, monitoring, and modern software reliability, and <strong>Critical Thinkers Academy</strong>, bringing together practitioners who apply critical thinking to technology and organizational challenges.</p>
-    </div>
-    <div class="community-logos">
-      <img src="/assets/fulllogo_transparent_nobuffer.png" alt="Observability Tech Community" class="community-logo">
-      <img src="/assets/FullColor_TransparentBg_1280x1024_72dpi.png" alt="Critical Thinkers Academy" class="community-logo">
+      <p>I run two tech communities:</p>
+      <ul class="community-list">
+        <li class="community-item">
+          <img src="/assets/fulllogo_transparent_nobuffer.png" alt="Observability Tech Community" class="community-item-logo">
+          <span class="community-item-text"><strong>Observability Tech Community</strong> — focused on platform engineering, monitoring, and modern software reliability.</span>
+        </li>
+        <li class="community-item">
+          <img src="/assets/FullColor_TransparentBg_1280x1024_72dpi.png" alt="Critical Thinkers Academy" class="community-item-logo">
+          <span class="community-item-text"><strong>Critical Thinkers Academy</strong> — bringing together practitioners who apply critical thinking to technology and organizational challenges.</span>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
