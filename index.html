@@ -165,6 +165,9 @@
     .community-item-logo:hover { opacity: 1; }
     .community-item-text { font-size: 14px; color: var(--muted2); line-height: 1.6; }
     .community-item-text strong { color: var(--white); font-weight: 700; }
+    .community-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
+    .community-link { font-size: 11px; font-weight: 700; color: var(--yellow); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
+    .community-link:hover { border-color: var(--yellow); }
 
     /* STRIPE DIVIDER */
     .stripe-divider { height: 6px; background: var(--stripe); opacity: 0.5; max-width: 1000px; margin: 0 auto; }
@@ -336,11 +339,23 @@
       <ul class="community-list">
         <li class="community-item">
           <img src="/assets/fulllogo_transparent_nobuffer.png" alt="Observability Tech Community" class="community-item-logo">
-          <span class="community-item-text"><strong>Observability Tech Community</strong> — focused on platform engineering, monitoring, and modern software reliability.</span>
+          <span class="community-item-text">
+            <strong>Observability Tech Community</strong> — focused on platform engineering, monitoring, and modern software reliability.
+            <div class="community-links">
+              <a href="https://www.meetup.com/pl-pl/gdansk-observability-tech-community-meetup-group/" class="community-link" target="_blank" rel="noopener">Meetup ↗</a>
+              <a href="https://www.linkedin.com/company/observability-tech-community/?viewAsMember=true" class="community-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+            </div>
+          </span>
         </li>
         <li class="community-item">
           <img src="/assets/FullColor_TransparentBg_1280x1024_72dpi.png" alt="Critical Thinkers Academy" class="community-item-logo">
-          <span class="community-item-text"><strong>Critical Thinkers Academy</strong> — bringing together practitioners who apply critical thinking to technology and organizational challenges.</span>
+          <span class="community-item-text">
+            <strong>Critical Thinkers Academy</strong> — bringing together practitioners who apply critical thinking to technology and organizational challenges.
+            <div class="community-links">
+              <a href="https://www.meetup.com/gdansk-critical-thinkers-academy-meetup-group/?eventOrigin=your_groups" class="community-link" target="_blank" rel="noopener">Meetup ↗</a>
+              <a href="https://www.linkedin.com/company/critical-thinkers-academy/?viewAsMember=true" class="community-link" target="_blank" rel="noopener">LinkedIn ↗</a>
+            </div>
+          </span>
         </li>
       </ul>
     </div>
