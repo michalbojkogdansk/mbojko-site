@@ -49,8 +49,20 @@
 
     /* HERO */
     .hero {
-      min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-      padding: 100px 2.5rem 5rem; max-width: 1000px; margin: 0 auto;
+      min-height: 100vh; display: grid; grid-template-columns: 1fr 400px;
+      align-items: center; gap: 0; padding-top: 54px;
+      max-width: 100%; margin: 0;
+    }
+    .hero-content {
+      padding: 5rem 2.5rem 5rem;
+      max-width: 600px; margin: 0 auto 0 auto;
+    }
+    .hero-photo {
+      height: 100vh; position: sticky; top: 0; overflow: hidden;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      display: block; filter: grayscale(20%) contrast(1.05);
     }
     .hero-eyebrow {
       font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
@@ -171,7 +183,10 @@
     @media (max-width: 680px) {
       nav { padding: 0 1.25rem; }
       .nav-links { display: none; }
-      .hero, .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .hero { grid-template-columns: 1fr; grid-template-rows: auto 280px; padding-top: 54px; }
+      .hero-content { padding: 3rem 1.25rem 2rem; max-width: 100%; }
+      .hero-photo { height: 280px; position: relative; }
+      .section { padding-left: 1.25rem; padding-right: 1.25rem; }
       .grid-2 { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; }
       .about-divider { height: 1px; width: auto; }
@@ -196,10 +211,14 @@
 
 <!-- HERO -->
 <div class="hero">
-  <p class="hero-eyebrow">Engineering · Education · Observability</p>
-  <h1>Michał<br>Bojko</h1>
-  <p class="hero-bio">15 years in software engineering leadership. 10 years in technical IT roles. Experience across USA, UK, France, Germany, Spain, Estonia and Poland. Tech community leader, speaker, and university lecturer in Engineering and MBA programmes.</p>
-
+  <div class="hero-content">
+    <p class="hero-eyebrow">Engineering · Education · Observability</p>
+    <h1>Michał<br>Bojko</h1>
+    <p class="hero-bio">15 years in software engineering leadership. 10 years in technical IT roles. Experience across USA, UK, France, Germany, Spain, Estonia and Poland. Tech community leader, speaker, and university lecturer in Engineering and MBA programmes.</p>
+  </div>
+  <div class="hero-photo">
+    <img src="/assets/photo.jpg" alt="Michał Bojko" loading="eager">
+  </div>
 </div>
 
 <div class="stripe-divider"></div>
