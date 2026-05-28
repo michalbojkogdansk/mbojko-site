@@ -186,6 +186,12 @@
     .g-card:hover .g-card-arrow { color: var(--yellow); transform: translate(2px,-2px); }
 
     /* CAROUSEL */
+    .carousel-wrap { position: relative; }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: var(--yellow); color: #000; border: none; width: 36px; height: 36px; font-size: 20px; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity 0.15s; line-height: 1; padding: 0; }
+    .carousel-btn:hover { opacity: 0.8; }
+    .carousel-btn.prev { left: -18px; }
+    .carousel-btn.next { right: -18px; }
+    .carousel-btn:disabled { opacity: 0.2; cursor: default; }
     .carousel { display: flex; gap: 1px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; scrollbar-width: none; background: var(--border); border: 1px solid var(--border); }
     .carousel::-webkit-scrollbar { display: none; }
     .c-card {
@@ -325,7 +331,10 @@
     <span class="conf-tag community">Observability Tech Community</span>
     <span class="conf-tag community">Critical Thinkers Academy</span>
   </div>
-  <div class="carousel">
+  <div class="carousel-wrap">
+    <button class="carousel-btn prev" onclick="scrollCarousel('c1',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="scrollCarousel('c1',1)">&#8250;</button>
+    <div class="carousel" id="c1">
     <a href="https://www.youtube.com/watch?v=TjLurJX_RyM" class="c-card" target="_blank" rel="noopener">
       <div class="c-tag">Warszawskie Dni Informatyki · 2023</div>
       <div class="c-title">Cyfrowa Transformacja — fundamenty, przygotowanie i realizacja</div>
@@ -375,7 +384,10 @@
     </div>
     <a href="/articles/" class="see-all">All articles →</a>
   </div>
-  <div class="carousel">
+  <div class="carousel-wrap">
+    <button class="carousel-btn prev" onclick="scrollCarousel('c2',-1)">&#8249;</button>
+    <button class="carousel-btn next" onclick="scrollCarousel('c2',1)">&#8250;</button>
+    <div class="carousel" id="c2">
     <div class="c-card c-placeholder">
       <div class="c-tag">Coming soon</div>
       <div class="c-title">Articles & publications</div>
@@ -459,6 +471,13 @@ function scrollCarousel(id, dir) {
   var card = c.querySelector('.c-card');
   var w = card ? card.offsetWidth + 14 : 294;
   c.scrollBy({ left: dir * w, behavior: 'smooth' });
+}
+</script>
+<script>
+function scrollCarousel(id, dir) {
+  var c = document.getElementById(id);
+  var card = c.querySelector('.c-card');
+  c.scrollBy({ left: dir * (card.offsetWidth + 14), behavior: 'smooth' });
 }
 </script>
 </body>
