@@ -452,6 +452,15 @@
   </div>
 </footer>
 
+
+<script>
+function scrollCarousel(id, dir) {
+  var c = document.getElementById(id);
+  var card = c.querySelector('.c-card');
+  var w = card ? card.offsetWidth + 14 : 294;
+  c.scrollBy({ left: dir * w, behavior: 'smooth' });
+}
+</script>
 </body>
 </html>
 
