@@ -4,33 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Articles & Publications — Michał Bojko</title>
-  <meta name="description" content="Articles and publications by Michał Bojko on engineering leadership, digital transformation, data engineering, observability and building high-performance teams.">
-  <meta name="keywords" content="Michał Bojko articles, engineering leadership blog, data engineering publikacje, digital transformation insights, observability Medium">
+  <meta name="description" content="Articles and publications by Michał Bojko on data engineering, observability, log-driven development, digital transformation and engineering leadership.">
+  <meta name="keywords" content="Michał Bojko articles, observability engineering, log driven development, data engineering blog, LDD, K-means clustering logs, digital transformation">
   <meta name="author" content="Michał Bojko">
   <link rel="canonical" href="https://mbojko.com/articles/">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mbojko.com/articles/">
   <meta property="og:title" content="Articles & Publications — Michał Bojko">
-  <meta property="og:description" content="Articles on engineering leadership, digital transformation, data engineering and observability.">
+  <meta property="og:description" content="Articles on data engineering, observability, log-driven development and engineering leadership.">
   <meta property="og:image" content="https://mbojko.com/assets/photo.jpg">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Articles & Publications — Michał Bojko",
     "url": "https://mbojko.com/articles/",
-    "description": "Articles and publications by Michał Bojko on engineering leadership, digital transformation, data engineering and observability.",
-    "author": {
-      "@type": "Person",
-      "name": "Michał Bojko",
-      "url": "https://mbojko.com"
-    }
+    "author": {"@type": "Person", "name": "Michał Bojko", "url": "https://mbojko.com"}
   }
   </script>
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -56,15 +48,16 @@
     .stripe-divider { height: 6px; background: var(--stripe); opacity: 0.5; max-width: 1000px; margin: 0 auto; }
     .section { max-width: 1000px; margin: 0 auto; padding: 4rem 2.5rem; }
     .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); margin-bottom: 1.5rem; }
-    .topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-    .topic { background: var(--bg2); padding: 1.5rem; }
-    .topic-label { font-size: 10px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .topic-title { font-size: 14px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.02em; }
-    .coming-soon { background: var(--bg2); border: 1px solid var(--border); padding: 3rem 2.5rem; text-align: center; margin-top: 3rem; }
-    .coming-soon-num { font-size: 4rem; font-weight: 800; color: var(--yellow); letter-spacing: -0.03em; opacity: 0.3; }
-    .coming-soon-title { font-size: 16px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.06em; margin: 1rem 0 0.5rem; }
-    .coming-soon-sub { font-size: 14px; color: var(--muted2); max-width: 420px; margin: 0 auto 1.5rem; line-height: 1.7; }
-    .btn-primary { background: var(--yellow); color: #000; padding: 11px 26px; border-radius: 2px; font-size: 13px; text-decoration: none; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: opacity 0.15s; display: inline-block; }
+    .articles-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .a-card { background: var(--bg2); padding: 1.75rem 2rem; text-decoration: none; display: block; transition: background 0.15s; }
+    .a-card:hover { background: var(--bg3); }
+    .a-card-tag { font-size: 10px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .a-card-title { font-size: 16px; font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: 0.5rem; }
+    .a-card-meta { font-size: 12px; color: var(--muted2); }
+    .medium-cta { margin-top: 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border: 1px solid var(--border); border-left: 3px solid var(--yellow); background: var(--bg2); padding: 1.5rem 2rem; }
+    .medium-cta-text { font-size: 14px; color: var(--muted2); }
+    .medium-cta-text strong { color: var(--white); font-weight: 700; display: block; margin-bottom: 4px; }
+    .btn-primary { background: var(--yellow); color: #000; padding: 10px 22px; border-radius: 2px; font-size: 13px; text-decoration: none; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: opacity 0.15s; white-space: nowrap; }
     .btn-primary:hover { opacity: 0.85; }
     footer { max-width: 1000px; margin: 0 auto; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border); }
     .footer-left { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
@@ -74,46 +67,71 @@
     @media (max-width: 680px) {
       nav { padding: 0 1.25rem; }
       .page-header, .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .medium-cta { flex-direction: column; }
       footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-
 <div class="stripe-band"></div>
-
 <nav>
   <a href="/" class="nav-logo">MB<span>.</span></a>
   <a href="/" class="nav-back">← Back</a>
 </nav>
-
 <div class="page-header">
   <p class="page-eyebrow">Writing</p>
   <h1 class="page-title">Articles &<br>Publications</h1>
-  <p class="page-sub">Insights on engineering leadership, digital transformation, data engineering and building organizations that scale.</p>
+  <p class="page-sub">Insights on data engineering, observability, log-driven development and engineering leadership. Published on Medium.</p>
 </div>
-
 <div class="stripe-divider"></div>
-
 <div class="section">
-  <p class="section-eyebrow">Topics I write about</p>
-  <div class="topics">
-    <div class="topic"><div class="topic-label">Leadership</div><div class="topic-title">Scaling engineering organizations</div></div>
-    <div class="topic"><div class="topic-label">Data</div><div class="topic-title">Data engineering & observability</div></div>
-    <div class="topic"><div class="topic-label">Strategy</div><div class="topic-title">Digital transformation decisions</div></div>
-    <div class="topic"><div class="topic-label">AI</div><div class="topic-title">Practical AI in engineering</div></div>
+  <p class="section-eyebrow">All articles</p>
+  <div class="articles-list">
+    <a href="https://medium.com/@michal.bojko.gdansk/failure-fatigue-is-killing-your-on-call-team-fight-back-with-runbook-as-code-04d8e72d5287" class="a-card" target="_blank" rel="noopener">
+      <div class="a-card-tag">Observability · Engineering</div>
+      <div class="a-card-title">Failure Fatigue is Killing Your On-Call Team — Fight Back with Runbook as Code</div>
+      <div class="a-card-meta">Feb 2026 · Medium ↗</div>
+    </a>
+    <a href="https://medium.com/observability-is-engineering/variance-in-bins-a-beginners-guide-for-software-engineers-8f891cc31b3b" class="a-card" target="_blank" rel="noopener">
+      <div class="a-card-tag">Data Engineering · Observability</div>
+      <div class="a-card-title">Variance in Bins: A Beginner's Guide for Software Engineers</div>
+      <div class="a-card-meta">Jun 2025 · Medium ↗</div>
+    </a>
+    <a href="https://medium.com/@michal.bojko.gdansk/pace-o-meter-with-google-maps-api-fd3f1cbc0c94" class="a-card" target="_blank" rel="noopener">
+      <div class="a-card-tag">Data Engineering · API</div>
+      <div class="a-card-title">Pace-o-Meter with Google Maps API</div>
+      <div class="a-card-meta">Jul 2025 · Medium ↗</div>
+    </a>
+    <a href="https://medium.com/@michal.bojko.gdansk/data-pipelines-with-protocol-buffers-in-c-a-data-driven-guide-612a2b5b43a2" class="a-card" target="_blank" rel="noopener">
+      <div class="a-card-tag">Data Engineering</div>
+      <div class="a-card-title">Data Pipelines with Protocol Buffers in C#</div>
+      <div class="a-card-meta">Aug 2025 · Medium ↗</div>
+    </a>
+    <a href="https://medium.com/observability-is-engineering/correlating-system-log-lines-with-grouping-and-k-means-in-c-12ead84c80a4" class="a-card" target="_blank" rel="noopener">
+      <div class="a-card-tag">Observability · Data Engineering</div>
+      <div class="a-card-title">Correlating System Log Lines with Grouping and K-Means in C#</div>
+      <div class="a-card-meta">May 2025 · Medium ↗</div>
+    </a>
+    <a href="https://medium.com/observability-is-engineering/peaks-and-spikes-in-system-logs-using-math-and-c-code-f85a7d3f534a" class="a-card" target="_blank" rel="noopener">
+      <div class="a-card-tag">Observability · Data Engineering</div>
+      <div class="a-card-title">Peaks and Spikes in System Logs Using Math and C# Code</div>
+      <div class="a-card-meta">May 2025 · Medium ↗</div>
+    </a>
+    <a href="https://medium.com/observability-is-engineering/log-driven-development-e4846484bc14" class="a-card" target="_blank" rel="noopener">
+      <div class="a-card-tag">Observability · LDD</div>
+      <div class="a-card-title">Log Driven Development: A Comprehensive Guide</div>
+      <div class="a-card-meta">May 2025 · Medium ↗</div>
+    </a>
   </div>
-
-  <div class="coming-soon">
-    <div class="coming-soon-num">03.</div>
-    <div class="coming-soon-title">Articles being indexed</div>
-    <div class="coming-soon-sub">Publications from Medium and other platforms will appear here. Follow on Medium for new posts.</div>
-    <a href="https://medium.com/@michal.bojko.gdansk" class="btn-primary" target="_blank" rel="noopener">Read on Medium →</a>
+  <div class="medium-cta">
+    <div class="medium-cta-text">
+      <strong>More on Medium</strong>
+      New articles published regularly on observability, data engineering and engineering leadership.
+    </div>
+    <a href="https://medium.com/@michal.bojko.gdansk" class="btn-primary" target="_blank" rel="noopener">Follow on Medium →</a>
   </div>
 </div>
-
 <div class="stripe-band"></div>
-
 <footer>
   <span class="footer-left">© 2026 Michał Bojko · Gdańsk, Poland</span>
   <div class="footer-links">
@@ -122,6 +140,5 @@
     <a href="https://www.linkedin.com/in/mbojkogdansk/" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </footer>
-
 </body>
 </html>
