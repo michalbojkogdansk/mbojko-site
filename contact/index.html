@@ -96,7 +96,7 @@
       <textarea id="message" name="message" placeholder="Tell me more about what you have in mind..." required></textarea>
     </div>
 
-    <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="dark"></div>
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAADhc4xzH7NKSG-M1" data-theme="dark"></div>
 
     <button type="submit" class="btn-submit" id="submitBtn">Send message</button>
     <div class="form-status" id="formStatus"></div>
@@ -137,7 +137,7 @@
     };
 
     try {
-      const res = await fetch('WORKER_URL', {
+      const res = await fetch('https://contact-form.michal-bojko-gdansk.workers.dev', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
