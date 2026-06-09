@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Michał Bojko</title>
+  <meta name="description" content="Get in touch with Michał Bojko — enquiries about MBA Digital Transformation or Data Engineering courses, speaking engagements and collaboration.">
+  <meta name="author" content="Michał Bojko">
+  <link rel="canonical" href="https://mbojko.com/contact/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0b0d12;--bg2:#13151e;--bg3:#1a1d28;--border:rgba(255,255,255,0.08);--yellow:#FFD600;--white:#ffffff;--muted:#5a6070;--muted2:#8a92a6;--stripe:repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px)}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:#e2e2e2;line-height:1.6;min-height:100vh}
+    .stripe-band{height:10px;background:var(--stripe);opacity:.85}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,13,18,0.92);backdrop-filter:blur(14px);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:54px}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--white);text-decoration:none}
+    .nav-logo span{color:var(--yellow)}
+    .nav-back{font-size:11px;font-weight:700;color:var(--muted2);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .15s}
+    .nav-back:hover{color:var(--yellow)}
+    .page-header{max-width:680px;margin:0 auto;padding:8rem 2.5rem 3rem}
+    .page-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem;display:flex;align-items:center;gap:10px}
+    .page-eyebrow::before{content:"";display:block;width:32px;height:2px;background:var(--yellow)}
+    .page-title{font-size:clamp(2.5rem,6vw,4rem);font-weight:800;color:var(--white);letter-spacing:-.025em;text-transform:uppercase;margin-bottom:1rem}
+    .page-sub{font-size:15px;color:var(--muted2);max-width:480px;line-height:1.8;border-left:2px solid var(--yellow);padding-left:1.25rem}
+    .stripe-divider{height:6px;background:var(--stripe);opacity:.5;max-width:680px;margin:0 auto}
+    .form-section{max-width:680px;margin:0 auto;padding:4rem 2.5rem}
+    .form-group{margin-bottom:1.75rem}
+    label{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem}
+    input,textarea,select{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--white);font-size:14px;font-family:inherit;padding:.875rem 1rem;border-radius:2px;transition:border-color .15s;outline:none}
+    input:focus,textarea:focus,select:focus{border-color:var(--yellow)}
+    input::placeholder,textarea::placeholder{color:var(--muted)}
+    textarea{resize:vertical;min-height:140px;line-height:1.6}
+    select option{background:var(--bg2)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .cf-turnstile{margin-bottom:1.75rem}
+    .btn-submit{background:var(--yellow);color:#000;padding:13px 32px;border:none;border-radius:2px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:opacity .15s;width:100%}
+    .btn-submit:hover{opacity:.85}
+    .btn-submit:disabled{opacity:.4;cursor:default}
+    .form-status{margin-top:1.25rem;padding:1rem 1.25rem;border-radius:2px;font-size:14px;display:none}
+    .form-status.success{background:rgba(29,158,117,0.1);border:1px solid rgba(29,158,117,0.3);color:#5DCAA5}
+    .form-status.error{background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.2);color:#ff8080}
+    footer{max-width:680px;margin:0 auto;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border)}
+    .footer-left{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+    .footer-links{display:flex;gap:2rem}
+    .footer-links a{font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;font-weight:500;transition:color .15s}
+    .footer-links a:hover{color:var(--yellow)}
+    @media(max-width:640px){nav{padding:0 1.25rem}.page-header,.form-section{padding-left:1.25rem;padding-right:1.25rem}.form-row{grid-template-columns:1fr}footer{padding:1.5rem 1.25rem;flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+<div class="stripe-band"></div>
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <a href="/" class="nav-back">← Back</a>
+</nav>
+
+<div class="page-header">
+  <p class="page-eyebrow">Contact</p>
+  <h1 class="page-title">Get in touch</h1>
+  <p class="page-sub">Enquiries about teaching programmes, speaking engagements and collaboration. I reply within 2 business days.</p>
+</div>
+
+<div class="stripe-divider"></div>
+
+<div class="form-section">
+  <form id="contactForm">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="jan@uczelnia.pl" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="organisation">Organisation</label>
+      <input type="text" id="organisation" name="organisation" placeholder="University / Company name">
+    </div>
+    <div class="form-group">
+      <label for="topic">Topic</label>
+      <select id="topic" name="topic" required>
+        <option value="" disabled selected>Select a topic</option>
+        <option value="MBA Digital Transformation">MBA: Digital Transformation course</option>
+        <option value="Data Engineering Observability">Data Engineering: Observability Foundations course</option>
+        <option value="Speaking engagement">Speaking engagement / conference</option>
+        <option value="Other collaboration">Other collaboration</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Tell me more about what you have in mind..." required></textarea>
+    </div>
+
+    <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="dark"></div>
+
+    <button type="submit" class="btn-submit" id="submitBtn">Send message</button>
+    <div class="form-status" id="formStatus"></div>
+  </form>
+</div>
+
+<div class="stripe-band"></div>
+
+<footer>
+  <span class="footer-left">© 2026 Michał Bojko · Gdańsk, Poland</span>
+  <div class="footer-links">
+    <a href="https://github.com/michalbojkogdansk" target="_blank">GitHub</a>
+    <a href="https://medium.com/@michal.bojko.gdansk" target="_blank">Medium</a>
+    <a href="https://www.linkedin.com/in/mbojkogdansk/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (!token) { showStatus('error', 'Please complete the human verification.'); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      organisation: form.organisation.value,
+      topic: form.topic.value,
+      message: form.message.value,
+      turnstileToken: token
+    };
+
+    try {
+      const res = await fetch('WORKER_URL', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const json = await res.json();
+      if (res.ok) {
+        showStatus('success', 'Message sent. I will reply within 2 business days.');
+        form.reset();
+        if (window.turnstile) window.turnstile.reset();
+      } else {
+        showStatus('error', json.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      showStatus('error', 'Network error. Please try again or email me directly.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }
+  });
+
+  function showStatus(type, msg) {
+    status.className = 'form-status ' + type;
+    status.textContent = msg;
+    status.style.display = 'block';
+  }
+</script>
+</body>
+</html>
