@@ -114,6 +114,11 @@
     .delivery-value { font-size: 13px; color: var(--muted2); font-weight: 500; }
     .prog-rule { font-size: 14px; color: var(--muted2); margin-top: 1rem; padding: 0.875rem 1.25rem; border-left: 2px solid var(--yellow); background: rgba(255,214,0,0.05); }
     .prog-rule span { color: var(--yellow); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 11px; }
+    /* LIGHTBOX */
+    .lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; align-items: center; justify-content: center; cursor: zoom-out; }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-overlay img { max-width: 92vw; max-height: 92vh; object-fit: contain; border: 1px solid var(--border); box-shadow: 0 0 60px rgba(0,0,0,0.8); }
+    .lightbox-close { position: fixed; top: 1.5rem; right: 1.5rem; background: var(--yellow); color: #000; border: none; width: 36px; height: 36px; font-size: 20px; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1001; border-radius: 2px; }
     .map-link { font-size: 11px; font-weight: 700; color: var(--yellow); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--yellow); padding: 3px 10px; border-radius: 2px; vertical-align: middle; margin-left: 0.5rem; transition: background 0.15s, color 0.15s; }
     .map-link:hover { background: var(--yellow); color: #000; }
     .prog-cta { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -238,7 +243,7 @@
 <div class="programme" id="dataeng">
   <p class="prog-eyebrow">02 / Data Engineering</p>
   <div class="prog-num">02.</div>
-  <h2 class="prog-title">Observability Foundations <a href="/assets/observability-map.png" class="map-link" target="_blank" rel="noopener">MAP ↗</a></h2>
+  <h2 class="prog-title">Observability Foundations <a href="#" class="map-link" onclick="openMap(event)">MAP</a></h2>
   <p class="prog-desc">Interactive visual lectures on data engineering and observability, designed for university-level students and conference audiences. Covers observability as a mindset, Log-Driven Development, data correlation, anomaly detection and alert fatigue.</p>
   <p class="prog-rule"><span>Main rule of the course</span>: You don't need a monitoring tool. You need to understand what you're looking at.</p>
 
@@ -296,5 +301,25 @@
   </div>
 </footer>
 
+
+<div class="lightbox-overlay" id="mapLightbox" onclick="closeMap()">
+  <button class="lightbox-close" onclick="closeMap()">✕</button>
+  <img src="/assets/observability-map.png" alt="Observability Foundations Map" onclick="event.stopPropagation()">
+</div>
+
+<script>
+function openMap(e) {
+  e.preventDefault();
+  document.getElementById('mapLightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeMap() {
+  document.getElementById('mapLightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMap();
+});
+</script>
 </body>
 </html>
