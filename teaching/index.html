@@ -119,6 +119,8 @@
     .lightbox-overlay.active { display: flex; }
     .lightbox-overlay img { max-width: 92vw; max-height: 92vh; object-fit: contain; border: 1px solid var(--border); box-shadow: 0 0 60px rgba(0,0,0,0.8); }
     .lightbox-close { position: fixed; top: 1.5rem; right: 1.5rem; background: var(--yellow); color: #000; border: none; width: 36px; height: 36px; font-size: 20px; font-weight: 900; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1001; border-radius: 2px; }
+    .pdf-link { display: inline-block; margin-top: 1rem; font-size: 11px; font-weight: 700; color: var(--yellow); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--yellow); padding: 4px 12px; border-radius: 2px; transition: background 0.15s, color 0.15s; }
+    .pdf-link:hover { background: var(--yellow); color: #000; }
     .map-link { font-size: 11px; font-weight: 700; color: var(--yellow); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--yellow); padding: 3px 10px; border-radius: 2px; vertical-align: middle; margin-left: 0.5rem; transition: background 0.15s, color 0.15s; }
     .map-link:hover { background: var(--yellow); color: #000; }
     .prog-cta { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -230,6 +232,12 @@
       <div class="module-num">07</div>
       <div class="module-title">Critical Thinking</div>
       <div class="module-desc">Questioning assumptions, evaluating evidence, avoiding cognitive traps in data-driven decisions</div>
+    </div>
+    <div class="module">
+      <div class="module-num">08</div>
+      <div class="module-title">Transformation Game</div>
+      <div class="module-desc">4-week online simulation: 625 unique scenario paths. Each student navigates a different story through Diagnoza, Decyzja, Wdrożenie and Rozliczenie.</div>
+      <a href="/assets/Gra_Transformacja_Cyfrowa.pdf" class="pdf-link" target="_blank" rel="noopener">Game brief PDF ↗</a>
     </div>
   </div>
 
