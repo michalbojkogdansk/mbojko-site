@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Observability Market Reports -- Michal Bojko</title>
+    <link>https://mbojko.com/reports/</link>
+    <description>Bi-weekly observability market updates and quarterly reports. Data-driven insights on platform engineering and SRE practices.</description>
+    <language>en-gb</language>
+    <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
+    <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
+    <lastBuildDate>Sun, 22 Jun 2026 12:00:00 +0000</lastBuildDate>
+    <ttl>336</ttl>
+    <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Autonomous Ops Race, Splunk Crisis, AI Code Paradox (June 9-22, 2026)</title>
+      <link>https://mbojko.com/reports/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-06-22</guid>
+      <pubDate>Mon, 22 Jun 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>The first two weeks of June drew a sharp line between vendors building toward an autonomous, AI-native future and those scrambling to hold their ground.</p>
+        <p><strong>Key stories:</strong> Datadog DASH 2026 with 100+ new capabilities repositioning Bits AI as a fully autonomous operations layer. New Relic SRE Agent and no-code Agentic Platform. Splunk CVE-2026-20253 (CVSS 9.8) actively exploited, CISA KEV listed. Dynatrace: AI workloads drove 93% increase in log volume, 45% of observability budgets consumed by log management (~$2.5M/year/enterprise).</p>
+        <p><a href="https://mbojko.com/reports/">Read the full update</a></p>
+      ]]></description>
+    </item>
+
+  </channel>
+</rss>
