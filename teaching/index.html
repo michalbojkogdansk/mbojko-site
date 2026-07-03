@@ -112,6 +112,21 @@
     .delivery-item { background: var(--bg2); padding: 1rem 1.25rem; flex: 1; }
     .delivery-label { font-size: 10px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
     .delivery-value { font-size: 13px; color: var(--muted2); font-weight: 500; }
+    .prog-header { display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start; margin-bottom: 1.5rem; }
+    .prog-header-text {}
+    .video-thumb { position: relative; background: #0b0d12; border: 1px solid var(--border); cursor: pointer; overflow: hidden; aspect-ratio: 16/9; }
+    .video-thumb:hover .play-btn { transform: translate(-50%,-50%) scale(1.1); }
+    .video-thumb-bg { width: 100%; height: 100%; background: linear-gradient(135deg, #13151e 0%, #1a1d28 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.75rem; }
+    .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 52px; height: 52px; background: var(--yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
+    .play-btn svg { margin-left: 4px; }
+    .video-label { font-size: 11px; font-weight: 700; color: var(--muted2); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3rem; }
+    .video-title { font-size: 12px; color: var(--muted); text-align: center; padding: 0.5rem; }
+    .video-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1000; align-items: center; justify-content: center; }
+    .video-modal.active { display: flex; }
+    .video-modal-inner { width: 90vw; max-width: 900px; position: relative; }
+    .video-modal video { width: 100%; display: block; border: 1px solid var(--border); }
+    .video-modal-close { position: absolute; top: -44px; right: 0; background: var(--yellow); color: #000; border: none; padding: 8px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; }
+    @media(max-width:680px){ .prog-header { grid-template-columns: 1fr; } }
     .prog-rule { font-size: 14px; color: var(--muted2); margin-top: 1rem; padding: 0.875rem 1.25rem; border-left: 2px solid var(--yellow); background: rgba(255,214,0,0.05); }
     .prog-rule span { color: var(--yellow); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 11px; }
     /* LIGHTBOX */
@@ -333,6 +348,29 @@ function closeMap() {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeMap();
 });
+</script>
+<div class="video-modal" id="videoModal" onclick="closeVideo(event)">
+  <div class="video-modal-inner">
+    <button class="video-modal-close" onclick="closeVideo()">Close</button>
+    <video id="mbaVideo" controls playsinline>
+      <source src="/assets/images/MBA.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+<script>
+function openVideo() {
+  document.getElementById('videoModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('mbaVideo').play();
+}
+function closeVideo(e) {
+  if (e && e.target !== document.getElementById('videoModal') && !e.target.classList.contains('video-modal-close')) return;
+  document.getElementById('videoModal').classList.remove('active');
+  document.body.style.overflow = '';
+  document.getElementById('mbaVideo').pause();
+  document.getElementById('mbaVideo').currentTime = 0;
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVideo({target:document.getElementById('videoModal')}); });
 </script>
 </body>
 </html>
