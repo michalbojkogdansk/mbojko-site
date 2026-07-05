@@ -15,6 +15,7 @@
   <meta property="og:description" content="Bi-weekly observability market updates and quarterly reports. Data-driven insights on platform engineering and SRE practices.">
   <meta property="og:image" content="https://mbojko.com/assets/photo.jpg">
   <link rel="alternate" type="application/rss+xml" title="Observability Market Reports -- Michal Bojko" href="https://mbojko.com/reports/feed.xml">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -68,6 +69,22 @@
     .report-empty-title{font-size:13px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;margin:.75rem 0 .4rem}
     .report-empty-sub{font-size:12px;color:var(--muted);line-height:1.6}
     .quarterly-badge{display:inline-block;background:var(--yellow-dim);border:1px solid var(--yellow-mid);color:var(--yellow);font-size:10px;font-weight:700;padding:2px 8px;letter-spacing:.06em;text-transform:uppercase;margin-top:.75rem}
+
+    /* EMAIL FORM */
+    .send-email-btn { margin-top: 0.75rem; background: transparent; border: 1px solid var(--border); color: var(--muted2); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; cursor: pointer; transition: border-color 0.15s, color 0.15s; width: 100%; text-align: left; }
+    .send-email-btn:hover { border-color: var(--yellow); color: var(--yellow); }
+    .email-form-wrap { display: none; margin-top: 0.75rem; background: var(--bg3); border: 1px solid var(--border); padding: 1rem; }
+    .email-form-wrap.open { display: block; }
+    .email-form-wrap input[type="email"] { width: 100%; background: var(--bg2); border: 1px solid var(--border); color: var(--white); font-size: 13px; padding: 8px 10px; margin-bottom: 0.6rem; font-family: inherit; outline: none; }
+    .email-form-wrap input[type="email"]:focus { border-color: var(--yellow); }
+    .email-form-wrap label { display: flex; gap: 8px; align-items: flex-start; font-size: 11px; color: var(--muted2); line-height: 1.5; margin-bottom: 0.75rem; cursor: pointer; }
+    .email-form-wrap input[type="checkbox"] { flex-shrink: 0; margin-top: 2px; accent-color: var(--yellow); }
+    .email-form-submit { background: var(--yellow); color: #000; border: none; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 8px 18px; cursor: pointer; width: 100%; transition: opacity 0.15s; }
+    .email-form-submit:hover { opacity: 0.85; }
+    .email-form-submit:disabled { opacity: 0.4; cursor: default; }
+    .email-form-status { font-size: 12px; margin-top: 0.5rem; display: none; }
+    .email-form-status.success { color: #5DCAA5; }
+    .email-form-status.error { color: #ff8080; }
 
     /* ARTICLE MODAL */
     .article-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;overflow-y:auto;padding:2rem}
@@ -141,13 +158,28 @@
     <div>
       <div class="col-header">Bi-weekly Updates</div>
       <div class="report-list">
-        <div class="report-item" onclick="openArticle('w1')">
-          <div class="report-item-top">
-            <span class="report-item-date">June 9 - June 22, 2026</span>
-            <span class="report-item-tag">Update #1</span>
+        <div style="background:var(--bg2)">
+          <div class="report-item" onclick="openArticle('w1')">
+            <div class="report-item-top">
+              <span class="report-item-date">June 9 - June 22, 2026</span>
+              <span class="report-item-tag">Update #1</span>
+            </div>
+            <div class="report-item-title">Autonomous Ops Race, Splunk Crisis, AI Code Paradox</div>
+            <div class="report-item-sub">Datadog DASH 2026, New Relic SRE Agent, CVE-2026-20253, Dynatrace log economics</div>
           </div>
-          <div class="report-item-title">Autonomous Ops Race, Splunk Crisis, AI Code Paradox</div>
-          <div class="report-item-sub">Datadog DASH 2026, New Relic SRE Agent, CVE-2026-20253, Dynatrace log economics</div>
+          <div style="padding: 0 1.5rem 1rem">
+            <button class="send-email-btn" onclick="toggleEmailForm('ef-w1', event)">&#9993; Send to my email</button>
+            <div class="email-form-wrap" id="ef-w1">
+              <input type="email" id="email-w1" placeholder="your@email.com">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAADhc4xzH7NKSG-M1" data-theme="dark" data-size="compact"></div>
+              <label style="margin-top:0.6rem">
+                <input type="checkbox" id="gdpr-w1">
+                I consent to receive this one-time email with a link to the report. My address will not be stored or used for marketing.
+              </label>
+              <button class="email-form-submit" onclick="sendReport('w1', 'Autonomous Ops Race, Splunk Crisis, AI Code Paradox', 'https://mbojko.com/reports/')">Send</button>
+              <div class="email-form-status" id="status-w1"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -215,6 +247,51 @@
 </footer>
 
 <script>
+function toggleEmailForm(id, e) {
+  e.stopPropagation();
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+  if (el.classList.contains('open') && window.turnstile) {
+    window.turnstile.render(el.querySelector('.cf-turnstile'), { sitekey: '0x4AAAAAADhc4xzH7NKSG-M1', theme: 'dark', size: 'compact' });
+  }
+}
+
+async function sendReport(id, title, url) {
+  const email = document.getElementById('email-' + id).value;
+  const gdpr = document.getElementById('gdpr-' + id).checked;
+  const token = document.querySelector('#ef-' + id + ' [name="cf-turnstile-response"]')?.value;
+  const status = document.getElementById('status-' + id);
+  const btn = document.querySelector('#ef-' + id + ' .email-form-submit');
+
+  if (!email) { showStatus(status, 'error', 'Please enter your email address.'); return; }
+  if (!gdpr) { showStatus(status, 'error', 'Please accept the consent checkbox.'); return; }
+  if (!token) { showStatus(status, 'error', 'Please complete the verification.'); return; }
+
+  btn.disabled = true; btn.textContent = 'Sending...';
+  try {
+    const res = await fetch('https://report-email.michal-bojko-gdansk.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, reportTitle: title, reportUrl: url, turnstileToken: token })
+    });
+    const json = await res.json();
+    if (res.ok) {
+      showStatus(status, 'success', 'Sent! Check your inbox.');
+      document.getElementById('email-' + id).value = '';
+      if (window.turnstile) window.turnstile.reset();
+    } else {
+      showStatus(status, 'error', json.error || 'Something went wrong.');
+    }
+  } catch { showStatus(status, 'error', 'Network error. Please try again.'); }
+  finally { btn.disabled = false; btn.textContent = 'Send'; }
+}
+
+function showStatus(el, type, msg) {
+  el.className = 'email-form-status ' + type;
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
 function openArticle(id) {
   document.querySelectorAll('.article-inner').forEach(el => el.style.display = 'none');
   const el = document.getElementById('article-' + id);
