@@ -70,8 +70,8 @@
     .report-empty-sub{font-size:12px;color:var(--muted);line-height:1.6}
     .quarterly-badge{display:inline-block;background:var(--yellow-dim);border:1px solid var(--yellow-mid);color:var(--yellow);font-size:10px;font-weight:700;padding:2px 8px;letter-spacing:.06em;text-transform:uppercase;margin-top:.75rem}
 
-    /* EMAIL FORM */
-    .send-email-btn { margin-top: 0.75rem; background: transparent; border: 1px solid var(--border); color: var(--muted2); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; cursor: pointer; transition: border-color 0.15s, color 0.15s; width: 100%; text-align: left; }
+    /* EMAIL FORM - removed */
+    .send-email-btn-unused { margin-top: 0.75rem; background: transparent; border: 1px solid var(--border); color: var(--muted2); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; cursor: pointer; transition: border-color 0.15s, color 0.15s; width: 100%; text-align: left; }
     .send-email-btn:hover { border-color: var(--yellow); color: var(--yellow); }
     .email-form-wrap { display: none; margin-top: 0.75rem; background: var(--bg3); border: 1px solid var(--border); padding: 1rem; }
     .email-form-wrap.open { display: block; }
@@ -158,28 +158,13 @@
     <div>
       <div class="col-header">Bi-weekly Updates</div>
       <div class="report-list">
-        <div style="background:var(--bg2)">
-          <div class="report-item" onclick="openArticle('w1')">
-            <div class="report-item-top">
-              <span class="report-item-date">June 9 - June 22, 2026</span>
-              <span class="report-item-tag">Update #1</span>
-            </div>
-            <div class="report-item-title">Autonomous Ops Race, Splunk Crisis, AI Code Paradox</div>
-            <div class="report-item-sub">Datadog DASH 2026, New Relic SRE Agent, CVE-2026-20253, Dynatrace log economics</div>
+        <div class="report-item" onclick="openArticle('w1')">
+          <div class="report-item-top">
+            <span class="report-item-date">June 9 - June 22, 2026</span>
+            <span class="report-item-tag">Update #1</span>
           </div>
-          <div style="padding: 0 1.5rem 1rem">
-            <button class="send-email-btn" onclick="toggleEmailForm('ef-w1', event)">&#9993; Send to my email</button>
-            <div class="email-form-wrap" id="ef-w1">
-              <input type="email" id="email-w1" placeholder="your@email.com">
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAADhc4xzH7NKSG-M1" data-theme="dark" data-size="compact"></div>
-              <label style="margin-top:0.6rem">
-                <input type="checkbox" id="gdpr-w1">
-                I consent to receive this one-time email with a link to the report. My address will not be stored or used for marketing.
-              </label>
-              <button class="email-form-submit" onclick="sendReport('w1', 'Autonomous Ops Race, Splunk Crisis, AI Code Paradox', 'https://mbojko.com/reports/')">Send</button>
-              <div class="email-form-status" id="status-w1"></div>
-            </div>
-          </div>
+          <div class="report-item-title">Autonomous Ops Race, Splunk Crisis, AI Code Paradox</div>
+          <div class="report-item-sub">Datadog DASH 2026, New Relic SRE Agent, CVE-2026-20253, Dynatrace log economics</div>
         </div>
       </div>
     </div>
