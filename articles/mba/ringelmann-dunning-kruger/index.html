@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opowieść o Porażkach w Zarządzaniu — Michał Bojko</title>
+  <meta name="description" content="Efekt Ringelmanna i efekt Dunninga-Krugera w praktyce zarządzania. Materiał do zajęć MBA z Digital Transformation.">
+  <meta name="author" content="Michał Bojko">
+  <link rel="canonical" href="https://mbojko.com/articles/mba/ringelmann-dunning-kruger/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbojko.com/articles/mba/ringelmann-dunning-kruger/">
+  <meta property="og:title" content="Opowieść o Porażkach w Zarządzaniu — Michał Bojko">
+  <meta property="og:description" content="Efekt Ringelmanna i efekt Dunninga-Krugera w praktyce zarządzania. Materiał MBA.">
+  <meta property="og:image" content="https://mbojko.com/assets/photo.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Opowieść o Porażkach w Zarządzaniu","author":{"@type":"Person","name":"Michał Bojko","url":"https://mbojko.com"},"url":"https://mbojko.com/articles/mba/ringelmann-dunning-kruger/","description":"Efekt Ringelmanna i efekt Dunninga-Krugera w praktyce zarządzania.","inLanguage":"pl","educationalUse":"course material","audience":{"@type":"EducationalAudience","educationalRole":"student"}}
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0b0d12;--bg2:#13151e;--border:rgba(255,255,255,0.08);--yellow:#FFD600;--white:#ffffff;--muted:#5a6070;--muted2:#8a92a6;--stripe:repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px)}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:#e2e2e2;line-height:1.6}
+    .stripe-band{height:10px;background:var(--stripe);opacity:.85}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,13,18,0.92);backdrop-filter:blur(14px);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:54px}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--white);text-decoration:none}
+    .nav-logo span{color:var(--yellow)}
+    .nav-right{display:flex;gap:1.5rem;align-items:center}
+    .nav-back{font-size:11px;font-weight:700;color:var(--muted2);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .15s}
+    .nav-back:hover{color:var(--yellow)}
+
+    .article-wrap{max-width:680px;margin:0 auto;padding:8rem 2.5rem 5rem}
+    .article-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+    .article-eyebrow::before{content:"";display:block;width:32px;height:2px;background:var(--yellow)}
+    .article-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--white);letter-spacing:-.025em;line-height:1.1;margin-bottom:1.5rem}
+    .article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .article-meta-item{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+    .article-meta-item span{color:var(--muted2);font-weight:400}
+
+    .article-body{font-size:16px;color:#d0d0d0;line-height:1.85}
+    .article-body p{margin-bottom:1.5rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body strong{color:var(--white);font-weight:700}
+
+    .article-highlight{background:var(--bg2);border-left:3px solid var(--yellow);padding:1.25rem 1.5rem;margin:2rem 0;font-size:15px;color:var(--muted2);line-height:1.75;font-style:italic}
+
+    .copy-link{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .copy-btn{background:var(--yellow);color:#000;border:none;padding:10px 20px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:opacity .15s}
+    .copy-btn:hover{opacity:.85}
+    .copy-status{font-size:12px;color:var(--yellow);font-weight:700;display:none}
+    .back-link{font-size:12px;color:var(--muted2);text-decoration:none;font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:color .15s}
+    .back-link:hover{color:var(--yellow)}
+
+    footer{max-width:680px;margin:0 auto;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border)}
+    .footer-left{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+    .footer-links{display:flex;gap:2rem}
+    .footer-links a{font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;font-weight:500;transition:color .15s}
+    .footer-links a:hover{color:var(--yellow)}
+    @media(max-width:640px){nav{padding:0 1.25rem}.article-wrap{padding:7rem 1.25rem 4rem}footer{padding:1.5rem 1.25rem;flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+<div class="stripe-band"></div>
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <div class="nav-right">
+    <a href="/articles/" class="nav-back">← Articles</a>
+    <a href="/contact/" class="nav-back" style="color:var(--yellow)">Contact</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <p class="article-eyebrow">MBA Reading List</p>
+  <h1 class="article-title">Opowieść o Porażkach w Zarządzaniu</h1>
+  <div class="article-meta">
+    <div class="article-meta-item">Autor <span>Michał Bojko</span></div>
+    <div class="article-meta-item">Język <span>Polski</span></div>
+    <div class="article-meta-item">Kategoria <span>MBA · Digital Transformation</span></div>
+  </div>
+
+  <div class="article-body">
+    <p>W roku 1913 francuski inżynier Maximilien Ringelmann przeprowadził proste doświadczenie. Prosił ludzi ciągnąć linę i mierzył ich siłę. Gdy osoba działała sama, wykazywała sto procent swojej zdolności. Gdy przybyła druga osoba, każda z nich ciągnęła tylko dziewięćdziesiąt pięć procent. Trzecia osoba zmniejszyła wysiłek do osiemdziesięciu pięciu procent. Osiem osób razem osiągało ledwie czterdzieści dziewięć procent siły każda.</p>
+
+    <p>Ringelmann obserwował zjawisko, które dziś wiemy, że wpływa na każde przedsiębiorstwo: im większa grupa, tym mniejsza indywidualna wydajność. To nie była lenistwo w sensie moralnym — tylko psychologia. Im mniej odpowiedzialny czuł się każdy za wynik grupy, tym mniej energii wkładał w pracę. W dużej grupie rozpuszcza się odpowiedzialność. Osiem osób może winić dziewięć innych. W takim tłumie łatwo schować swoje niezaangażowanie.</p>
+
+    <div class="article-highlight">Im większa grupa, tym mniejsza indywidualna wydajność. Osiem osób razem osiągało ledwie 49% siły każda.</div>
+
+    <p>Pod koniec XX wieku psycholodzy David Dunning i Justin Kruger zidentyfikowali inny, równie niszczycielski fenomen. Przeprowadzali testy z logiki, gramatyki i humoru. Ludzie, którzy osiągali dziesięć procent punktów, przekonani byli, że zdobyli pięćdziesiąt procent. Ci, którzy uzyskali dziewięćdziesiąt procent, myśleli, że to siedemdziesiąt. Im mniejsza była rzeczywista wiedza, tym bardziej ludzie przeszacowywali to, co wiedzą. Zjawisko to nazwali efektem Dunninga-Krugera. Ludziom z niską kompetencją w danej dziedzinie brakuje zdolności do oceny własnej wiedzy. Nie widzą swoich luk, bo nie wiedzą, czego nie wiedzą.</p>
+
+    <p>Te dwa odkrycia psychologiczne w rzeczywistym świecie biznesu łączą się w jeden destrukcyjny system.</p>
+
+    <p>Wyobraź sobie scenariusz: Niedoświadczony kierownik projektu przychodzi z planem. Jest pełen pewności. „Potrzebuję dwudziestu pięciu osób przez cztery miesiące. Mam to wszystko przeanalizowane." Rzeczywistość jest taka, że nigdy nie zbierał danych z poprzednich projektów. Nigdy nie skonsultował się z inżynierami, którzy każdego dnia widzą koszty koordynacji. Po prostu czuje, że ma rację. To jest efekt Dunninga-Krugera w akcji.</p>
+
+    <p>Decyzja zostaje zatwierdzona. Pierwszego tygodnia pojawia się coś niezaplanowanego: spotkania. Każde spotkanie z trzydziestoma osobami zabiera każdej z nich trzydzieści minut. Razem to czterysta pięćdziesiąt minut — siedem i pół godziny zmarnowanego czasu na pół dnia pracy. Wszyscy czekają na siebie, na decyzje, na feedback. Nikt nie prosi o wyniki. Każdy ma wymówkę: „Czekałem na decyzję zespołu. Czekałem na kod innego modułu. Czekałem na spotkanie."</p>
+
+    <p>Po trzech miesiącach projekt jest w ruinie. Wydajność zespołu spadła do pięćdziesięciu procent teoretycznego potencjału. Kierownik patrzył na to wszystko i mówił: „Zespół jest zmęczony, ale plan pozostaje solidny. Dodajmy jeszcze osoby do wsparcia." Efekt Dunninga-Krugera znowu wciąga go w błędną decyzję. Nie dostrzega, że problem nie leży w liczbie ludzi, a w strukturze decyzyjnej. Dodając więcej osób, pogarsza sytuację zgodnie z dokładnym matematycznym wzorem odkrytym przez Ringelmanna.</p>
+
+    <div class="article-highlight">Dodając więcej osób, pogarsza sytuację zgodnie z dokładnym matematycznym wzorem odkrytym przez Ringelmanna.</div>
+
+    <p>Co się w tym momencie dzieje wewnątrz zespołu? Doświadczeni inżynierowie widzą dokładnie, gdzie jest problem. Jeden z nich mówi: „To się nie skaluje do dwudziestu pięciu osób. Powinniśmy podzielić się na mniejsze zespoły o jasnym podziale odpowiedzialności." Kierownik odpowiada: „Ty nie rozumiesz. Ja mam szerszą perspektywę." To jest kolejna manifestacja efektu Dunninga-Krugera: osoby z niską kompetencją w danym obszarze odrzucają opinie ekspertów, bo brakuje im umiejętności, aby rozpoznać tę kompetencję.</p>
+
+    <p>Po sześciu miesiącach projekt upadł. Koszty wyniosły milion złotych powyżej budżetu. Zespół jest wyczerpany. Dobrzy ludzie szukają pracy gdzie indziej. Kierownik projektu przeprowadził analizę przyczyn niepowodzenia, ale zawsze dochodził do wniosku: „Problem to byli ludzie, a nie proces." Gdyż nadal nie widzi swoich własnych błędów. Jego pewność przetrwała całą katastrofę.</p>
+
+    <p>Czy to historyjka o złych ludziach? Absolutnie nie. To historia o psychologii. O tym, jak funkcjonuje ludzki mózg, gdy przychodzi do oceny własnej wiedzy, i jak ta niedooocena działa w dużych grupach.</p>
+
+    <p><strong>Jak zatrzymać ten proces zanim się rozpocznie?</strong> Odpowiedź leży w trzech prostych zasadach.</p>
+
+    <p><strong>Po pierwsze, każda decyzja o wielkości zespołu powinna opierać się na danych.</strong> Nie na wyczuciu. Ile funkcji dostarczył poprzedni projekt? Ile osób to zawierało? Ile czasu to zajęło? Ile czasu pochłonęła koordynacja? Te liczby opowiadają historię.</p>
+
+    <p><strong>Drugą zasadą jest struktura zespołu.</strong> Zespół o wielkości pięciu do ośmiu osób pracuje efektywnie. Każda dodatkowa osoba zwiększa koszty komunikacji geometrycznie. Zamiast jednego zespołu z dwudziestu pięcioma osobami, lepiej pracuje trzech zespołów po siedem osób każdy. Każdy zespół ma własnego lidera, jasne odpowiedzialności, szybkie decyzje.</p>
+
+    <p><strong>Trzecia zasada to uczenie się.</strong> Po każdym projekcie należy przeprowadzić szczerą analizę tego, co poszło nie tak. Nie aby szukać winnych, ale aby zrozumieć, gdzie kierownik się mylił. Ta refleksja zmniejsza efekt Dunninga-Krugera w przyszłości. Osoby, które się uczą, potrafią przyznać sobie rację. Osoby, które nigdy nie analizują swoich porażek, zawsze będą pewne, że mają rację.</p>
+
+    <div class="article-highlight">Studenci MBA, którzy rozumieją te dwa efekty, nie dodadzą dziesięciu osób, gdy problem wymaga zmiany struktury. Będą pytać o dane zanim powiedzą „Mam pewność."</div>
+
+    <p>To jest wartość tego podejścia. Nie to, że eliminujesz ryzyko — ryzyko zawsze istnieje. Ale widzisz, gdzie się pojawia, i działasz zanim problem staje się katastrofą.</p>
+  </div>
+
+  <div class="copy-link">
+    <button class="copy-btn" onclick="copyLink()">Copy article link</button>
+    <span class="copy-status" id="copyStatus">Copied!</span>
+    <a href="/articles/" class="back-link">← Back to all articles</a>
+  </div>
+</div>
+
+<div class="stripe-band"></div>
+
+<footer>
+  <span class="footer-left">&copy; 2026 Michał Bojko &middot; Gdańsk, Poland</span>
+  <div class="footer-links">
+    <a href="https://github.com/michalbojkogdansk" target="_blank">GitHub</a>
+    <a href="https://medium.com/@michal.bojko.gdansk" target="_blank">Medium</a>
+    <a href="https://www.linkedin.com/in/mbojkogdansk/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+function copyLink() {
+  navigator.clipboard.writeText('https://mbojko.com/articles/mba/ringelmann-dunning-kruger/').then(function() {
+    var s = document.getElementById('copyStatus');
+    s.style.display = 'inline';
+    setTimeout(function(){ s.style.display = 'none'; }, 2500);
+  });
+}
+</script>
+</body>
+</html>
