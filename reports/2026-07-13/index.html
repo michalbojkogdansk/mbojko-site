@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Ops, Government Push, Elastic's Counter-Move | Michał Bojko</title>
+  <meta name="description" content="Observability market report: Datadog RLOps acquisition, New Relic Autopilot, FedRAMP race, Elastic restructuring. Bi-weekly update by Michał Bojko.">
+  <meta name="author" content="Michał Bojko">
+  <link rel="canonical" href="https://mbojko.com/reports/2026-07-13/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbojko.com/reports/2026-07-13/">
+  <meta property="og:title" content="Agentic Ops, Government Push, Elastic's Counter-Move | Michał Bojko">
+  <meta property="og:description" content="Datadog RLOps acquisition, New Relic Autopilot, FedRAMP race, Elastic restructuring">
+  <meta property="og:image" content="https://mbojko.com/assets/photo.jpg">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0b0d12;--bg2:#13151e;--border:rgba(255,255,255,0.08);--yellow:#FFD600;--white:#ffffff;--muted:#5a6070;--muted2:#8a92a6;--stripe:repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px)}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:#e2e2e2;line-height:1.6}
+    .stripe-band{height:10px;background:var(--stripe);opacity:.85}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,13,18,0.92);backdrop-filter:blur(14px);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:54px}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--white);text-decoration:none}
+    .nav-logo span{color:var(--yellow)}
+    .nav-right{display:flex;gap:1.5rem;align-items:center}
+    .nav-back{font-size:11px;font-weight:700;color:var(--muted2);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .15s}
+    .nav-back:hover{color:var(--yellow)}
+    .article-wrap{max-width:740px;margin:0 auto;padding:8rem 2.5rem 5rem}
+    .article-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+    .article-eyebrow::before{content:"";display:block;width:32px;height:2px;background:var(--yellow)}
+    .article-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--white);letter-spacing:-.025em;line-height:1.15;margin-bottom:1.5rem}
+    .article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .article-meta-item{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+    .article-meta-item span{color:var(--muted2);font-weight:400}
+    .article-body{font-size:16px;color:#d0d0d0;line-height:1.85}
+    .article-body p{margin-bottom:1.5rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body h2{font-size:13px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;margin:2.5rem 0 1rem;padding-top:2rem;border-top:1px solid var(--border)}
+    .article-body h2:first-child{margin-top:0;padding-top:0;border-top:none}
+    .article-body a{color:var(--yellow);text-decoration:none}
+    .article-body a:hover{text-decoration:underline}
+    .article-body ul{margin:.75rem 0 1.25rem 1.5rem}
+    .article-body li{font-size:15px;color:#d0d0d0;line-height:1.75;margin-bottom:.35rem}
+    .article-actions{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .btn-pdf{background:var(--yellow);color:#000;border:none;padding:10px 22px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:opacity .15s;display:inline-flex;align-items:center;gap:8px}
+    .btn-pdf:hover{opacity:.85}
+    .btn-copy{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:10px 22px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .15s}
+    .btn-copy:hover{border-color:var(--yellow);color:var(--yellow)}
+    .copy-status{font-size:12px;color:var(--yellow);font-weight:700;display:none}
+    .back-link{font-size:12px;color:var(--muted2);text-decoration:none;font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:color .15s;margin-left:auto}
+    .back-link:hover{color:var(--yellow)}
+    footer{max-width:740px;margin:0 auto;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border)}
+    .footer-left{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+    .footer-links{display:flex;gap:2rem}
+    .footer-links a{font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;font-weight:500;transition:color .15s}
+    .footer-links a:hover{color:var(--yellow)}
+    @media(max-width:640px){nav{padding:0 1.25rem}.article-wrap{padding:7rem 1.25rem 4rem}footer{padding:1.5rem 1.25rem;flex-direction:column;align-items:flex-start}.back-link{margin-left:0}}
+    @media print {
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      body{background:#fff;color:#111}
+      nav,.stripe-band,.article-actions,footer{display:none!important}
+      .article-wrap{padding:2rem 1.5rem;max-width:100%}
+      .article-eyebrow{color:#000;font-size:10px}
+      .article-eyebrow::before{background:#000}
+      .article-title{color:#000;font-size:24px}
+      .article-meta{border-bottom:1px solid #ccc}
+      .article-meta-item{color:#555}
+      .article-meta-item span{color:#333}
+      .article-body{color:#222;font-size:13px;line-height:1.7}
+      .article-body h2{color:#000;border-top:1px solid #ccc;font-size:11px}
+      .article-body a{color:#333}
+      .article-body a::after{content:" (" attr(href) ")";font-size:9px;color:#666}
+      .article-body li{color:#222}
+      .print-footer{display:block!important;border-top:1px solid #ccc;padding-top:1rem;margin-top:2rem;font-size:10px;color:#555;text-align:center}
+    }
+    .print-footer{display:none}
+  </style>
+</head>
+<body>
+<div class="stripe-band"></div>
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <div class="nav-right">
+    <a href="/reports/" class="nav-back">← Reports</a>
+    <a href="/contact/" class="nav-back" style="color:var(--yellow)">Contact</a>
+  </div>
+</nav>
+<div class="article-wrap">
+  <p class="article-eyebrow">Observability Market Report · Update #2</p>
+  <h1 class="article-title">Agentic Ops, Government Push, Elastic's Counter-Move</h1>
+  <div class="article-meta">
+    <div class="article-meta-item">Period <span>June 23 - July 13, 2026</span></div>
+    <div class="article-meta-item">Author <span>Michał Bojko</span></div>
+    <div class="article-meta-item">Type <span>Bi-weekly Update</span></div>
+  </div>
+  <div class="article-body">
+    <p>The defining theme of this fortnight in observability was not a single product launch but a strategic convergence. Multiple vendors moved simultaneously to own the same two vectors: agentic AI operations and regulated government markets. The timing is not coincidental. With AI infrastructure spending accelerating across both public and private sectors, observability platforms are racing to position as the foundational layer underneath it all.</p>
+
+    <h2>The Agentic Operations Race</h2>
+
+    <p>The most consequential announcement came from <a href="https://www.datadoghq.com/about/latest-news/press-releases/datadog-acquires-adaptive-ml-to-accelerate-its-investment-in-ai-research-and-development/" target="_blank" rel="noopener">Datadog's acquisition of Adaptive ML</a> on June 30. Adaptive ML built a Reinforcement Learning Operations platform, infrastructure for fine-tuning and continuously improving LLMs using production signals, synthetic data, and custom AI judges. By folding Adaptive ML into a dedicated AI Research division, Datadog signaled that it intends to own not just the observability of AI systems but the training loop that improves them.</p>
+
+    <p><a href="https://www.businesswire.com/news/home/20260623369005/en/New-Relic-Autopilot-and-New-Relic-Ground-Truth-Capabilities-Supercharge-Agentic-AI-First-Businesses" target="_blank" rel="noopener">New Relic announced Autopilot and Ground Truth</a> in the same cycle: Autopilot, an autonomous SRE agent that responds to alerts, investigates root causes, and scopes remediations without waiting for a human, alongside Ground Truth, an API layer giving external AI agents (GitHub Copilot, Claude Code, AWS DevOps) direct access to New Relic's observability data. Both target general availability in late July 2026. Splunk reached a similar milestone with AI SRE in Observability Cloud achieving GA as part of Cisco's broader AgenticOps strategy.</p>
+
+    <p>Three vendors, three different technical angles: reinforcement learning, autonomous SRE workflow, unified security-and-observability data fabric. The divergence in underlying architecture will likely matter enormously when these platforms compete for enterprise standardization decisions in 2027.</p>
+
+    <h2>Government Observability Heats Up</h2>
+
+    <p>In a notable coincidence, both <a href="https://www.businesswire.com/news/home/20260702014082/en/Dynatrace-Announces-Intent-to-Pursue-FedRAMP-High-and-Expanded-Government-Security-Standards" target="_blank" rel="noopener">Dynatrace</a> and <a href="https://www.businesswire.com/news/home/20260623162127/en/New-Relic-Announces-Commitment-to-Achieve-FedRAMP-High-and-DoD-Impact-Level-4-Authorizations" target="_blank" rel="noopener">New Relic</a> announced FedRAMP High commitments within the same two-week window. Dynatrace announced intent to pursue FedRAMP High alongside DoD and intelligence community alignment. New Relic committed to both FedRAMP High and DoD Impact Level 4 on AWS GovCloud, targeting 400+ security controls. FedRAMP High typically takes 12-18 months to achieve. <a href="https://www.businesswire.com/news/home/20260617537664/en/Elastic-Named-a-Leader-in-the-IDC-MarketScape-Worldwide-SIEM-2026" target="_blank" rel="noopener">Elastic's IDC MarketScape SIEM 2026 Leader designation</a> rounds out the picture, reinforcing its cross-sell narrative into government security operations teams.</p>
+
+    <h2>Elastic's Counter-Move</h2>
+
+    <p><a href="https://www.stocktitan.net/sec-filings/ESTC/8-k-elastic-n-v-reports-material-event-7184dc9cebd6.html" target="_blank" rel="noopener">Elastic cut approximately 7% of its workforce</a> in late June while simultaneously launching native Prometheus support and automated migration tools targeting customers running Datadog or Grafana. The combination is a calculated bet: reduce the cost base while launching the most direct competitive attack on rival installations in the company's history. CPO Ken Exner's departure (effective July 17) adds executive uncertainty, but engineering leadership now reports directly to CEO Ashutosh Kulkarni, compressing decision cycles.</p>
+
+    <p><a href="https://www.businesswire.com/news/home/20260701517910/en/Dynatrace-Announces-Board-Appointments" target="_blank" rel="noopener">Dynatrace's board shakeup</a>, two new directors following engagement with activist investor Starboard Value paired with an Investor Day targeting a "Rule of 50" by FY2029, tells a similar story of shareholder pressure meeting AI-era recalibration. Bernstein's July 6 downgrade of <a href="https://www.gurufocus.com/news/8945064/ddog-downgraded-by-bernstein-price-target-raised-to-226" target="_blank" rel="noopener">Datadog</a>, from Outperform to Market Perform (price target raised to $226, stock fell 4.6%), reflects the market's increasingly impatient search for evidence that AI revenue growth can hold. The analyst's concern centers on the non-AI 85% of the business, which may peak in Q3.</p>
+
+    <p><a href="https://www.businesswire.com/news/home/20260618656749/en/AI-and-Next-Gen-Technology-Companies-Choose-Grafana-Cloud-to-Bring-Intelligence-to-Their-Own-Infrastructure" target="_blank" rel="noopener">Grafana Labs</a> offers a quieter contrast: steady expansion into AI-native companies (7AI, Zama, Anthropic), with survey data showing managed observability adoption has climbed to 50% of organizations.</p>
+
+    <h2>Storylines Building Toward Q3 Report</h2>
+
+    <p>Three threads are now running across multiple weeks: the full agentic SRE arc at New Relic (preview to GA), Elastic's simultaneous restructuring and competitive offensive, and the parallel FedRAMP High commitments from Dynatrace and New Relic pointing to a new government observability segment. If any of these close in the next four to six weeks with a notable customer win or GA announcement, they will be the backbone of the Q3 story.</p>
+  </div>
+  <div class="article-actions">
+    <button class="btn-pdf" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+      Download PDF
+    </button>
+    <button class="btn-copy" onclick="copyLink()">Copy link</button>
+    <span class="copy-status" id="cs">Copied!</span>
+    <a href="/reports/" class="back-link">← All reports</a>
+  </div>
+  <div class="print-footer">mbojko.com/reports &nbsp;&middot;&nbsp; Michał Bojko &nbsp;&middot;&nbsp; Gdańsk, Poland</div>
+</div>
+<div class="stripe-band"></div>
+<footer>
+  <span class="footer-left">&copy; 2026 Michał Bojko &middot; Gdańsk, Poland</span>
+  <div class="footer-links">
+    <a href="https://github.com/michalbojkogdansk" target="_blank">GitHub</a>
+    <a href="https://medium.com/@michal.bojko.gdansk" target="_blank">Medium</a>
+    <a href="https://www.linkedin.com/in/mbojkogdansk/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+<script>
+function copyLink(){
+  navigator.clipboard.writeText('https://mbojko.com/reports/2026-07-13/').then(function(){
+    var s=document.getElementById('cs');
+    s.style.display='inline';
+    setTimeout(function(){s.style.display='none';},2500);
+  });
+}
+</script>
+</body>
+</html>
