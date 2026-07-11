@@ -165,6 +165,14 @@
     <div>
       <div class="col-header">Bi-weekly Updates</div>
       <div class="report-list">
+        <div class="report-item" onclick="openArticle('w2')">
+          <div class="report-item-top">
+            <span class="report-item-date">June 23 - July 13, 2026</span>
+            <span class="report-item-tag">Update #2</span>
+          </div>
+          <div class="report-item-title">Agentic Ops, Government Push, Elastic's Counter-Move</div>
+          <div class="report-item-sub">Datadog RLOps acquisition, New Relic Autopilot, FedRAMP race, Elastic restructuring, Bernstein downgrade</div>
+        </div>
         <div class="report-item" onclick="openArticle('w1')">
           <div class="report-item-top">
             <span class="report-item-date">June 9 - June 22, 2026</span>
@@ -203,6 +211,38 @@
 
 <!-- ARTICLE MODAL -->
 <div class="article-overlay" id="overlay" onclick="closeArticle(event)">
+  <div class="article-inner" id="article-w2" onclick="event.stopPropagation()" style="display:none">
+    <div class="article-close"><button class="article-close-btn" onclick="closeArticle()">Close</button></div>
+    <div class="article-date">June 23 &ndash; July 13, 2026 &middot; Update #2</div>
+    <h1 class="article-title">Agentic Ops, Government Push, Elastic's Counter-Move</h1>
+    <div class="article-body">
+
+      <p>The defining theme of this fortnight in observability was not a single product launch but a strategic convergence. Multiple vendors moved simultaneously to own the same two vectors: agentic AI operations and regulated government markets. The timing is not coincidental. With AI infrastructure spending accelerating across both public and private sectors, observability platforms are racing to position as the foundational layer underneath it all.</p>
+
+      <h2>The Agentic Operations Race</h2>
+
+      <p>The most consequential announcement came from <a href="https://www.datadoghq.com/about/latest-news/press-releases/datadog-acquires-adaptive-ml-to-accelerate-its-investment-in-ai-research-and-development/" target="_blank" rel="noopener">Datadog's acquisition of Adaptive ML</a> on June 30. Adaptive ML built a Reinforcement Learning Operations platform &mdash; infrastructure for fine-tuning and continuously improving LLMs using production signals, synthetic data, and custom AI judges. By folding Adaptive ML into a dedicated AI Research division, Datadog signaled that it intends to own not just the observability of AI systems but the training loop that improves them. It is a meaningful escalation beyond the monitoring layer. Where most vendors have bolted generative AI onto existing query interfaces, Datadog is buying the capability to train its own specialized models on observability data.</p>
+
+      <p><a href="https://www.businesswire.com/news/home/20260623369005/en/New-Relic-Autopilot-and-New-Relic-Ground-Truth-Capabilities-Supercharge-Agentic-AI-First-Businesses" target="_blank" rel="noopener">New Relic announced Autopilot and Ground Truth</a> in the same cycle: Autopilot, an autonomous SRE agent that responds to alerts, investigates root causes, and scopes remediations without waiting for a human, alongside Ground Truth, an API layer designed to give external AI agents (GitHub Copilot, Claude Code, AWS DevOps) direct access to New Relic's observability data. Both target general availability in late July 2026. Where Datadog is building AI research capability internally, New Relic is building the data integration layer to make external agents smarter. Splunk reached a similar milestone earlier, with AI SRE in Observability Cloud achieving GA as part of Cisco's broader AgenticOps strategy. Three vendors, three different technical angles: reinforcement learning, autonomous SRE workflow, unified security-and-observability data fabric. The divergence in underlying architecture will likely matter enormously when these platforms compete for enterprise standardization decisions in 2027.</p>
+
+      <h2>Government Observability Heats Up</h2>
+
+      <p>In a notable coincidence, both <a href="https://www.businesswire.com/news/home/20260702014082/en/Dynatrace-Announces-Intent-to-Pursue-FedRAMP-High-and-Expanded-Government-Security-Standards" target="_blank" rel="noopener">Dynatrace</a> and <a href="https://www.businesswire.com/news/home/20260623162127/en/New-Relic-Announces-Commitment-to-Achieve-FedRAMP-High-and-DoD-Impact-Level-4-Authorizations" target="_blank" rel="noopener">New Relic</a> announced FedRAMP High commitments within the same two-week window. Dynatrace, building on FedRAMP Moderate authorization from 2020, announced intent to pursue FedRAMP High alongside DoD and intelligence community alignment. New Relic went further, committing to both FedRAMP High and DoD Impact Level 4 on AWS GovCloud, targeting 400+ security controls. FedRAMP High typically takes 12&ndash;18 months to achieve. The government observability market has historically been underserved by commercial platforms; these simultaneous announcements suggest it is now large enough to warrant dedicated compliance roadmaps. <a href="https://www.businesswire.com/news/home/20260617537664/en/Elastic-Named-a-Leader-in-the-IDC-MarketScape-Worldwide-SIEM-2026" target="_blank" rel="noopener">Elastic's IDC MarketScape SIEM 2026 Leader designation</a> rounds out the picture, reinforcing its cross-sell narrative into government security operations teams.</p>
+
+      <h2>Elastic's Counter-Move</h2>
+
+      <p><a href="https://www.stocktitan.net/sec-filings/ESTC/8-k-elastic-n-v-reports-material-event-7184dc9cebd6.html" target="_blank" rel="noopener">Elastic cut approximately 7% of its workforce</a> in late June while simultaneously launching native Prometheus support and &mdash; crucially &mdash; automated migration tools targeting customers running Datadog or Grafana. The combination is a calculated bet: reduce the cost base for the current business while launching the most direct competitive attack on rival installations in the company's history. CPO Ken Exner's departure (effective July 17) adds executive uncertainty, but engineering leadership now reports directly to CEO Ashutosh Kulkarni, compressing decision cycles. It is a higher-variance strategy than most incumbents choose.</p>
+
+      <p><a href="https://www.businesswire.com/news/home/20260701517910/en/Dynatrace-Announces-Board-Appointments" target="_blank" rel="noopener">Dynatrace's board shakeup</a> &mdash; two new directors following engagement with activist investor Starboard Value, paired with an Investor Day targeting a "Rule of 50" by FY2029 &mdash; tells a similar story of shareholder pressure meeting AI-era recalibration. Meanwhile, Bernstein's July 6 downgrade of <a href="https://www.gurufocus.com/news/8945064/ddog-downgraded-by-bernstein-price-target-raised-to-226" target="_blank" rel="noopener">Datadog</a> &mdash; from Outperform to Market Perform, price target raised to $226 but stock fell 4.6% &mdash; reflects the market's increasingly impatient search for evidence that AI revenue growth can hold once comparable periods get harder. The analyst's concern centers on the non-AI 85% of the business, which may peak in Q3.</p>
+
+      <p><a href="https://www.businesswire.com/news/home/20260618656749/en/AI-and-Next-Gen-Technology-Companies-Choose-Grafana-Cloud-to-Bring-Intelligence-to-Their-Own-Infrastructure" target="_blank" rel="noopener">Grafana Labs</a> offers a quieter contrast: no restructuring drama, steady expansion into AI-native companies (7AI, Zama, Anthropic), with survey data showing managed observability adoption has climbed to 50% of organizations. Their finding that operational complexity has overtaken cost as the top pain point is itself an argument for every vendor in this market.</p>
+
+      <h2>Storylines Building Toward Q3 Report</h2>
+
+      <p>Three threads are now running across multiple weeks: the full agentic SRE arc at New Relic (preview to GA), Elastic's simultaneous restructuring and competitive offensive, and the parallel FedRAMP High commitments from Dynatrace and New Relic pointing to a new government observability segment. The agentic operations theme is appearing across Datadog, New Relic, and Splunk simultaneously &mdash; suggesting this thread will dominate the Q3 report. If any of these close in the next four to six weeks with a notable customer win or GA announcement, they will be the backbone of the Q3 story.</p>
+
+    </div>
+  </div>
   <div class="article-inner" id="article-w1" onclick="event.stopPropagation()">
     <div class="article-close"><button class="article-close-btn" onclick="closeArticle()">Close</button></div>
     <div class="article-date">June 9 - June 22, 2026 &middot; Update #1</div>
