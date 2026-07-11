@@ -7,10 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Sun, 22 Jun 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Jul 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Agentic Ops, Government Push, Elastic's Counter-Move (June 23 - July 13, 2026)</title>
+      <link>https://mbojko.com/reports/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-07-13</guid>
+      <pubDate>Sun, 13 Jul 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>Strategic convergence: multiple vendors moved simultaneously to own agentic AI operations and regulated government markets.</p>
+        <p><strong>Key stories:</strong> Datadog acquires Adaptive ML (RLOps, AI Research division). New Relic Autopilot autonomous SRE agent and Ground Truth API layer targeting GA late July. Dynatrace and New Relic both announce FedRAMP High commitments in the same week. Elastic cuts 7%, CPO exits, launches Prometheus migration tools targeting Datadog and Grafana customers. Bernstein downgrades Datadog to Market Perform. Dynatrace board refreshed under Starboard Value pressure.</p>
+        <p><a href="https://mbojko.com/reports/">Read the full update</a></p>
+      ]]></description>
+    </item>
     <item>
       <title>Autonomous Ops Race, Splunk Crisis, AI Code Paradox (June 9-22, 2026)</title>
       <link>https://mbojko.com/reports/</link>
