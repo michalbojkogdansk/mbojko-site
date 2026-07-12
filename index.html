@@ -266,11 +266,11 @@
   <a href="/" class="nav-logo">MB<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#teaching">Teaching</a></li>
-    <li><a href="/reports/">Reports</a></li>
+    <li><a href="#reports">Reports</a></li>
     <li><a href="#talks">Talks</a></li>
     <li><a href="#writing">Writing</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="/reports/">Reports</a></li>
+    <li><a href="#reports">Reports</a></li>
     <li><a href="/contact/">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -282,7 +282,7 @@
   <a href="#talks" onclick="closeMenu()">Talks</a>
   <a href="#writing" onclick="closeMenu()">Writing</a>
   <a href="#about" onclick="closeMenu()">About</a>
-  <a href="/reports/" onclick="closeMenu()">Reports</a>
+  <a href="#reports" onclick="closeMenu()">Reports</a>
   <a href="/contact/" onclick="closeMenu()">Contact</a>
 </div>
 
@@ -341,17 +341,23 @@
     </div>
     <a href="/reports/" class="see-all">All reports →</a>
   </div>
-  <div class="grid-2">
-    <a href="/reports/2026-06-22/" class="g-card">
-      <div class="g-card-eyebrow">Observability Market · Update #1</div>
-      <div class="g-card-title">Autonomous Ops Race, Splunk Crisis, AI Code Paradox</div>
-      <div class="g-card-badge">June 9 - June 22, 2026</div>
+  <div class="carousel-wrap">
+    <button class="carousel-btn prev" onclick="slide('c3',-1)">&#8249;</button>
+    <div class="carousel" id="c3">
+    <a href="/reports/2026-07-13/" class="c-card" >
+      <div class="c-tag">Observability Market · Update #2</div>
+      <div class="c-title">Agentic Ops, Government Push, Elastic's Counter-Move</div>
+      <div class="c-divider"></div>
+      <div class="c-meta">June 23 - July 13, 2026</div>
     </a>
-    <a href="/reports/2026-07-13/" class="g-card">
-      <div class="g-card-eyebrow">Observability Market · Update #2</div>
-      <div class="g-card-title">Agentic Ops, Government Push, Elastic's Counter-Move</div>
-      <div class="g-card-badge">June 23 - July 13, 2026</div>
+    <a href="/reports/2026-06-22/" class="c-card" >
+      <div class="c-tag">Observability Market · Update #1</div>
+      <div class="c-title">Autonomous Ops Race, Splunk Crisis, AI Code Paradox</div>
+      <div class="c-divider"></div>
+      <div class="c-meta">June 9 - June 22, 2026</div>
     </a>
+    </div>
+    <button class="carousel-btn next" onclick="slide('c3',1)">&#8250;</button>
   </div>
 </section>
 
