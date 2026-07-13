@@ -271,8 +271,18 @@ function switchTab(id, btn) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
+  history.replaceState(null, '', '#' + id);
 }
+
+// Activate tab from URL hash on load
+(function() {
+  var hash = window.location.hash.replace('#', '');
+  if (hash === 'employee' || hash === 'observability') {
+    var btn = document.querySelector('.tab-btn[onclick*="' + hash + '"]');
+    switchTab(hash, btn);
+  }
+})();
 </script>
 
 <div class="purchase-overlay" id="purchaseModal" onclick="if(event.target===this){this.classList.remove('active');document.body.style.overflow=''}">
