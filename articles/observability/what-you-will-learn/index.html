@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What You Will Learn: Observability Foundations , Michał Bojko</title>
+  <meta name="description" content="An entry article for the seven interactive exercises in the Observability Foundations course: clustering, histograms, regression, z-score anomalies and alert correlation.">
+  <meta name="author" content="Michał Bojko">
+  <link rel="canonical" href="https://mbojko.com/articles/observability/what-you-will-learn/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbojko.com/articles/observability/what-you-will-learn/">
+  <meta property="og:title" content="What You Will Learn: Observability Foundations | Michał Bojko">
+  <meta property="og:description" content="An entry article for the seven interactive exercises in the Observability Foundations course.">
+  <meta property="og:image" content="https://mbojko.com/assets/photo.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"What You Will Learn: Observability Foundations","author":{"@type":"Person","name":"Michał Bojko","url":"https://mbojko.com"},"url":"https://mbojko.com/articles/observability/what-you-will-learn/","description":"An entry article for the seven interactive exercises in the Observability Foundations course.","inLanguage":"en","educationalUse":"course material","audience":{"@type":"EducationalAudience","educationalRole":"student"}}
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0b0d12;--bg2:#13151e;--border:rgba(255,255,255,0.08);--yellow:#FFD600;--white:#ffffff;--muted:#5a6070;--muted2:#8a92a6;--stripe:repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px)}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:#e2e2e2;line-height:1.6}
+    .stripe-band{height:10px;background:var(--stripe);opacity:.85}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,13,18,0.92);backdrop-filter:blur(14px);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:54px}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--white);text-decoration:none}
+    .nav-logo span{color:var(--yellow)}
+    .nav-right{display:flex;gap:1.5rem;align-items:center}
+    .nav-back{font-size:11px;font-weight:700;color:var(--muted2);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .15s}
+    .nav-back:hover{color:var(--yellow)}
+
+    .article-wrap{max-width:680px;margin:0 auto;padding:8rem 2.5rem 5rem}
+    .article-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+    .article-eyebrow::before{content:"";display:block;width:32px;height:2px;background:var(--yellow)}
+    .article-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--white);letter-spacing:-.025em;line-height:1.1;margin-bottom:1.5rem}
+    .article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .article-meta-item{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+    .article-meta-item span{color:var(--muted2);font-weight:400}
+
+    .article-body{font-size:16px;color:#d0d0d0;line-height:1.85}
+    .article-body p{margin-bottom:1.5rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body strong{color:var(--white);font-weight:700}
+
+    .article-highlight{background:var(--bg2);border-left:3px solid var(--yellow);padding:1.25rem 1.5rem;margin:2rem 0;font-size:15px;color:var(--muted2);line-height:1.75;font-style:italic}
+
+    .copy-link{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .copy-btn{background:var(--yellow);color:#000;border:none;padding:10px 20px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:opacity .15s}
+    .copy-btn:hover{opacity:.85}
+    .copy-status{font-size:12px;color:var(--yellow);font-weight:700;display:none}
+    .back-link{font-size:12px;color:var(--muted2);text-decoration:none;font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:color .15s}
+    .back-link:hover{color:var(--yellow)}
+
+    footer{max-width:680px;margin:0 auto;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border)}
+    .footer-left{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+    .footer-links{display:flex;gap:2rem}
+    .footer-links a{font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;font-weight:500;transition:color .15s}
+    .footer-links a:hover{color:var(--yellow)}
+    @media(max-width:640px){nav{padding:0 1.25rem}.article-wrap{padding:7rem 1.25rem 4rem}footer{padding:1.5rem 1.25rem;flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+<div class="stripe-band"></div>
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <div class="nav-right">
+    <a href="/articles/" class="nav-back">← Articles</a>
+    <a href="/contact/" class="nav-back" style="color:var(--yellow)">Contact</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+  <p class="article-eyebrow">Engineering · Observability Course</p>
+  <h1 class="article-title">What You Will Learn: Observability Foundations</h1>
+  <div class="article-meta">
+    <div class="article-meta-item">Author <span>Michał Bojko</span></div>
+    <div class="article-meta-item">Language <span>English</span></div>
+    <div class="article-meta-item">Category <span>Engineering · Observability Course</span></div>
+  </div>
+
+  <div class="article-body">
+    <p>An entry article for the seven interactive exercises in the Observability Foundations course.</p>
+
+    <p><strong>The promise.</strong> Modern systems do not fail politely. They drift slowly toward a threshold, they spike without warning, they hide two different behaviors behind a single reassuring average, and they bury three real root causes underneath forty-seven simultaneous alerts. The observability engineer is the person who reads that mess and turns it into a decision, and this course exists to teach you how. By the time you finish, you will be able to see a problem while it is still forming rather than after it has become an incident, because you will have the tools to find a latency peak early, forecast the moment a metric crosses its limit, and collapse an alert storm into a short and actionable list. That is the whole value in one sentence: an average tells you a system is fine, and this course teaches you to see the moment it stops being fine, and to see it first.</p>
+
+    <p><strong>The toolkit you build.</strong> Everything you learn falls into three layers that work together, and it helps to hold all three in mind from the start. The first layer is the mathematics, the set of algorithms that pull signal out of raw telemetry. You will work with clustering, where KMeans groups data quickly into a number of segments you choose in advance while DBSCAN discovers the number of groups on its own and treats outliers as a first-class result, and you will learn to pick between them using the Elbow Method and the Silhouette Score. You will work with binning and histograms, choosing bin width with Sturges' rule and the Freedman-Diaconis rule so that the true shape of a distribution becomes visible instead of being lost to too few bins or drowned in too many. You will fit trends with regression, using Ordinary Least Squares for linear models, polynomial models for accelerating curves, and exponential models for runaway growth, and you will read the residuals to confirm you chose the right shape. You will flag anomalies with the z-score, which measures how many standard deviations a reading sits from its own mean and gives you a defensible statistical threshold rather than a hand-picked guess. You will correlate alerts using time-based correlation windows and grouping rules, and you will parse logs by comparing regex scanning against structured formats.</p>
+
+    <p>The second layer is the architecture that lets those algorithms run at production scale and reasonable cost, and the course deliberately runs them on real infrastructure rather than toy data so that the engineering trade-offs are visible. You will see edge caching built from a Cloudflare Worker backed by Redis, which serves a cached copy for up to an hour so the database behind it is touched only once. You will see serverless Python compute on Render.com running the actual regression math with scipy behind a FastAPI service. You will see Neon Postgres holding the raw metric rows, complete with copy-on-write branching that lets you fork production and simulate a fix without ever touching real data. You will see TimescaleDB, which is a PostgreSQL extension rather than a separate database, using hypertables and chunk pruning to keep time-series queries fast as the data grows. You will see Redpanda providing Kafka-compatible streaming, Hyperdrive connecting an edge worker to Azure PostgreSQL, and structured logs feeding a metric pipeline with no StatsD agent and no Prometheus scrape configuration in sight.</p>
+
+    <div class="article-highlight">An average tells you a system is fine. This course teaches you to see the moment it stops being fine, and to see it first.</div>
+
+    <p><strong>Where these tools earn their place.</strong> The point of assembling this toolkit is that each piece answers a specific and recurring question, and the exercises put you in the exact situations where the answer matters. When you need to group system log lines into incident families or segment customers, clustering is the tool, and the choice between KMeans and DBSCAN turns on whether you already know how many groups exist and whether the outliers are the thing you are actually hunting. When you distrust a summary metric, histograms let you read the shape directly and recognize on sight whether a distribution is normal, right-skewed in the classic cache-miss pattern, or bimodal in a way that signals two hidden populations such as authenticated and unauthenticated traffic. When a metric is climbing toward an SLO, regression forecasts the crossing date, and the model you choose changes the answer dramatically, because an error rate that a linear fit says will breach in thirty days can, under a polynomial fit, actually breach in twelve, and a disk filling exponentially will exhaust a runway that a linear model tells you is comfortably distant. When a reading looks unusual, the z-score decides whether it is unusual enough to page someone, and a value above roughly 2.5 sits in the extreme tail where chance alone would explain it less than one percent of the time. When an incident triggers a flood of alerts, correlation windows and grouping rules fold the flood back into root causes. When you are trying to query the logs you already emit, the format you chose earlier determines whether the query is a fragile piece of regex archaeology or a fast typed lookup.</p>
+
+    <p><strong>The value, with the numbers behind it.</strong> The payoff shows up as measured improvement in the exercises themselves, not as a claim you have to take on faith. In the failure detection exercise, raw triage that means reading roughly forty-seven alerts and spotting the pattern by hand takes on the order of eight minutes, while reading three to six correlated incidents that already carry a root cause takes about twenty-three seconds, which is the difference between an on-call engineer who drowns and one who diagnoses. In the bimodal latency exercise, cache hits land near 150 milliseconds and database hits near 450 milliseconds, so at an eighty-twenty split the mean comes out to 210 milliseconds, a figure that describes no real user because it sits in the empty valley between the two populations, which is exactly why you learn to watch P50, P95, P99, cache hit rate, and histogram shape instead. In the regression exercise, the gap between a linear forecast and the true curve is the gap between planning for thirty days of runway and discovering you had twelve. In the anomaly exercise, a spike from a 150 millisecond baseline to 450 milliseconds against a standard deviation of 80 produces a z-score of 3.75, unusual enough to treat as an incident with confidence rather than suspicion, and the TimescaleDB benchmark shows why chunk pruning keeps that detection fast, offering a modest advantage at 200,000 rows that grows into a decisive one at tens of millions where the data no longer fits in memory.</p>
+
+    <div class="article-highlight">Taken together, the throughline is consistent across all seven exercises: find the peak early, forecast the breach before it lands, collapse the storm, split the bimodal curve, and flag the outlier on statistical grounds. In every case, you are seeing the system stop being fine before anyone else does.</div>
+  </div>
+
+  <div class="copy-link">
+    <button class="copy-btn" onclick="copyLink()">Copy article link</button>
+    <span class="copy-status" id="copyStatus">Copied!</span>
+    <a href="/articles/" class="back-link">← Back to all articles</a>
+  </div>
+</div>
+
+<div class="stripe-band"></div>
+
+<footer>
+  <span class="footer-left">&copy; 2026 Michał Bojko &middot; Gdańsk, Poland</span>
+  <div class="footer-links">
+    <a href="https://github.com/michalbojkogdansk" target="_blank">GitHub</a>
+    <a href="https://medium.com/@michal.bojko.gdansk" target="_blank">Medium</a>
+    <a href="https://www.linkedin.com/in/mbojkogdansk/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+function copyLink() {
+  navigator.clipboard.writeText('https://mbojko.com/articles/observability/what-you-will-learn/').then(function() {
+    var s = document.getElementById('copyStatus');
+    s.style.display = 'inline';
+    setTimeout(function(){ s.style.display = 'none'; }, 2500);
+  });
+}
+</script>
+</body>
+</html>
