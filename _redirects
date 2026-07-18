@@ -1,0 +1,12 @@
+# Force trailing slash on all directory pages (fixes duplicate canonical tag
+# issues in Google Search Console: /page and /page/ were both resolving 200
+# instead of the non-slash version redirecting to the canonical slash version)
+/articles /articles/ 301
+/articles/mba/ringelmann-dunning-kruger /articles/mba/ringelmann-dunning-kruger/ 301
+/articles/observability/what-you-will-learn /articles/observability/what-you-will-learn/ 301
+/contact /contact/ 301
+/reports /reports/ 301
+/reports/2026-06-22 /reports/2026-06-22/ 301
+/reports/2026-07-13 /reports/2026-07-13/ 301
+/talks /talks/ 301
+/teaching /teaching/ 301
