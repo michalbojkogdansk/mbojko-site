@@ -7,10 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Sun, 13 Jul 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Palo Alto Doubles Down, Gartner Names Six Leaders (July 14 - July 27, 2026)</title>
+      <link>https://mbojko.com/reports/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-07-27</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>Two forces ran in parallel: the 2026 Gartner Magic Quadrant for Observability Platforms and a more consequential piece of market structure news, Palo Alto Networks announcing its intent to acquire Embrace.</p>
+        <p><strong>Key stories:</strong> Palo Alto Networks to acquire Embrace (RUM and Synthetics), combined Chronosphere business crosses $300M ARR. 2026 Gartner MQ names six Leaders: Datadog, Grafana Labs, Dynatrace, Elastic, Chronosphere, IBM. Elastic earns AWS AI Security Distinction. Splunk Enterprise Security 8.6.0 enters Controlled Availability with AI-powered detection workflows.</p>
+        <p><a href="https://mbojko.com/reports/">Read the full update</a></p>
+      ]]></description>
+    </item>
     <item>
       <title>Agentic Ops, Government Push, Elastic's Counter-Move (June 23 - July 13, 2026)</title>
       <link>https://mbojko.com/reports/</link>
