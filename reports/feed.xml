@@ -7,10 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Mon, 27 Jul 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Earnings Prove It, Agents Ship It: The Autonomy Race Hits Escape Velocity (July 28 - August 9, 2026)</title>
+      <link>https://mbojko.com/reports/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-08-09</guid>
+      <pubDate>Sun, 09 Aug 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>Earnings season proved the market is healthy, a wave of agentic product releases proved every vendor is racing to the same destination, and the security-meets-observability thesis got a second wind at Black Hat.</p>
+        <p><strong>Key stories:</strong> Datadog Q2 2026 revenue $1.12B, up 36%, guidance raised. Dynatrace Q1 FY2027 revenue $554.55M, ARR $2.14B, CFO to retire. Grafana Labs ships six tools during inaugural AI Week. Dynatrace launches Autonomous SRE Agent and Cloud SRE Agent. Cribl debuts AI Observability App at Black Hat. Elastic expands OpenAI partnership, stock rises 12%.</p>
+        <p><a href="https://mbojko.com/reports/">Read the full update</a></p>
+      ]]></description>
+    </item>
     <item>
       <title>Palo Alto Doubles Down, Gartner Names Six Leaders (July 14 - July 27, 2026)</title>
       <link>https://mbojko.com/reports/</link>
