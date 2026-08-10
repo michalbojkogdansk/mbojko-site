@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://mbojko.com/reports/2026-08-09/">
   <meta property="og:title" content="Earnings Prove It, Agents Ship It: The Autonomy Race Hits Escape Velocity | Michał Bojko">
   <meta property="og:description" content="Datadog and Dynatrace Q2 earnings, Grafana AI Week, Cribl at Black Hat, Elastic-OpenAI partnership">
-  <meta property="og:image" content="https://mbojko.com/assets/photo.jpg">
+  <meta property="og:image" content="https://mbojko.com/assets/reports-2026-08-09-summary.png">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--bg:#0b0d12;--bg2:#13151e;--border:rgba(255,255,255,0.08);--yellow:#FFD600;--white:#ffffff;--muted:#5a6070;--muted2:#8a92a6;--stripe:repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px)}
@@ -74,6 +74,16 @@
       .print-footer{display:block!important;border-top:1px solid #ccc;padding-top:1rem;margin-top:2rem;font-size:10px;color:#555;text-align:center}
     }
     .print-footer{display:none}
+    .report-figure{margin:2rem 0;border:1px solid var(--border);background:#fff;border-radius:4px;overflow:hidden;cursor:zoom-in;transition:border-color .15s}
+    .report-figure:hover{border-color:var(--yellow)}
+    .report-figure img{display:block;width:100%;height:auto}
+    .report-figure-caption{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--bg2);color:var(--muted2);font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;padding:.6rem 1rem;border-top:1px solid var(--border)}
+    .lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.9);cursor:zoom-out;align-items:center;justify-content:center;padding:2rem}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:2px}
+    .lightbox-close{position:absolute;top:1.5rem;right:2rem;color:var(--white);font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:none;border:1px solid var(--border);padding:8px 16px;cursor:pointer;border-radius:2px}
+    .lightbox-close:hover{border-color:var(--yellow);color:var(--yellow)}
+    @media print{.report-figure,.lightbox{display:none!important}}
   </style>
 </head>
 <body>
@@ -95,6 +105,11 @@
   </div>
   <div class="article-body">
     <p>The past two weeks delivered a sharper picture of where observability is heading than any analyst deck could. Earnings season proved the market is healthy, a wave of agentic product releases proved every vendor is racing to the same destination, and the security-meets-observability thesis got a second wind at Black Hat. The dominant thread running through all of it is autonomy: the idea that the right observability platform does not just show you what broke, it fixes it. Whether that ambition is real or marketing depends on which vendor is talking, but the investment behind it is real in every case.</p>
+
+    <figure class="report-figure" onclick="openLightbox()">
+      <img src="/assets/reports-2026-08-09-summary.png" alt="Graphical summary: Earnings Season, The Agentic Operations Race, Security Sharpens the Observability Case. Datadog Q2 2026 revenue $1.12B, up 36% YoY, 4,720 customers at $100k+ ARR, guidance raised to $4.45B-$4.47B. Dynatrace Q1 FY2027 revenue $554.55M missed consensus by about $12M, but ARR reached $2.14B, up 17% YoY, net new ARR growth accelerated 41%. Grafana Labs shipped six tools during AI Week including Assistant Investigations, Assistant Workspace, Assistant Automations, a Cloud MCP server, gcx, and Agent Observability. Dynatrace launched 2 Agents (Autonomous SRE Agent, Cloud SRE Agent) plus a no-code Agent Builder. Dash0 reached GA with Agent0. Cribl launched an AI Observability App at Black Hat 2026 and acquired CardinalOps. Elastic expanded its OpenAI partnership. Gartner downstream: Coralogix Leader, Honeycomb Visionary, New Relic outside Leaders. Bottom line: autonomy is now a platform feature, but the winners pair AI agents with control, permissions, and auditability.">
+      <figcaption class="report-figure-caption"><span>Update #4 at a glance</span><span>Click to enlarge</span></figcaption>
+    </figure>
 
     <h2>Earnings Season: The AI Tailwind Is Real, but Uneven</h2>
 
@@ -133,6 +148,12 @@
   </div>
   <div class="print-footer">mbojko.com/reports &nbsp;&middot;&nbsp; Michał Bojko &nbsp;&middot;&nbsp; Gdańsk, Poland</div>
 </div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(); event.stopPropagation()">Close ✕</button>
+  <img src="/assets/reports-2026-08-09-summary.png" alt="Graphical summary: Earnings Season, The Agentic Operations Race, Security Sharpens the Observability Case" onclick="event.stopPropagation()">
+</div>
+
 <div class="stripe-band"></div>
 <footer>
   <span class="footer-left">&copy; 2026 Michał Bojko &middot; Gdańsk, Poland</span>
@@ -150,6 +171,17 @@ function copyLink(){
     setTimeout(function(){s.style.display='none';},2500);
   });
 }
+function openLightbox(){
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){ closeLightbox(); }
+});
 </script>
 </body>
 </html>
