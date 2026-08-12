@@ -21,6 +21,20 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "MBA: Digital Transformation - Course Overview",
+    "description": "Overview video for the MBA Digital Transformation course by Michał Bojko: decision architecture, business data analysis, root cause analysis, problem solving and critical thinking, delivered as instructor-led workshops with a simulation game.",
+    "thumbnailUrl": "https://mbojko.com/assets/images/MBA-poster.jpg",
+    "uploadDate": "2026-07-03",
+    "duration": "PT1M32S",
+    "contentUrl": "https://mbojko.com/assets/images/MBA.mp4",
+    "embedUrl": "https://mbojko.com/teaching/",
+    "publisher": {"@type": "Person", "name": "Michał Bojko", "url": "https://mbojko.com"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Teaching Programmes: Michał Bojko",
     "url": "https://mbojko.com/teaching/",
@@ -121,8 +135,8 @@
     .play-btn svg { margin-left: 4px; }
     .video-label { font-size: 11px; font-weight: 700; color: var(--muted2); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3rem; }
     .video-title { font-size: 12px; color: var(--muted); text-align: center; padding: 0.5rem; }
-    .video-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1000; align-items: center; justify-content: center; }
-    .video-modal.active { display: flex; }
+    .video-modal { visibility: hidden; opacity: 0; pointer-events: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 1000; align-items: center; justify-content: center; transition: opacity 0.15s; }
+    .video-modal.active { visibility: visible; opacity: 1; pointer-events: auto; display: flex; }
     .video-modal-inner { width: 90vw; max-width: 900px; position: relative; }
     .video-modal video { width: 100%; display: block; border: 1px solid var(--border); }
     .video-modal-close { position: absolute; top: -44px; right: 0; background: var(--yellow); color: #000; border: none; padding: 8px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; }
@@ -366,7 +380,7 @@ document.addEventListener('keydown', function(e) {
 <div class="video-modal" id="videoModal" onclick="closeVideo(event)">
   <div class="video-modal-inner">
     <button class="video-modal-close" onclick="closeVideo()">Close</button>
-    <video id="mbaVideo" controls playsinline>
+    <video id="mbaVideo" controls playsinline poster="/assets/images/MBA-poster.jpg">
       <source src="/assets/images/MBA.mp4" type="video/mp4">
     </video>
   </div>
