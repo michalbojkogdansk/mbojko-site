@@ -7,10 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Sun, 09 Aug 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Observability Vendors Are Buying Their Way Into AI (August 10 - August 23, 2026)</title>
+      <link>https://mbojko.com/reports/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-08-23</guid>
+      <pubDate>Sun, 23 Aug 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>Three acquisitions landed in this window, each targeting a different layer of the AI stack: evaluation, security operations, and continuous profiling. Underneath the deal-making, telemetry data is becoming the context AI agents query directly.</p>
+        <p><strong>Key stories:</strong> Coralogix MCP Server gives AI agents direct access to logs, metrics, and traces. Dynatrace agrees to acquire Arize AI for $915M to cover the full AI lifecycle. Dash0 acquires Polar Signals for continuous profiling and GPU/CUDA insight. Cribl acquires Radiant Security AI SOC technology, its second security deal of 2026.</p>
+        <p><a href="https://mbojko.com/reports/">Read the full update</a></p>
+      ]]></description>
+    </item>
     <item>
       <title>Earnings Prove It, Agents Ship It: The Autonomy Race Hits Escape Velocity (July 28 - August 9, 2026)</title>
       <link>https://mbojko.com/reports/</link>
