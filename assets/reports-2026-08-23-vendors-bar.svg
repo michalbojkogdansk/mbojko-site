@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1200 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0b0d12; }
+      .name { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-weight: 800; font-size: 40px; fill: #ffffff; letter-spacing: 0.5px; }
+      .dot { fill: #FFD600; }
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 3px; fill: #FFD600; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="160"/>
+
+  <!-- hazard stripe accent, top -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#stripe)"/>
+  <defs>
+    <pattern id="stripe" width="18" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+      <rect width="18" height="6" fill="#111318"/>
+      <rect width="9" height="6" fill="#FFD600"/>
+    </pattern>
+  </defs>
+
+  <text x="60" y="40" class="label">Update #5 &#183; Vendors In This Report</text>
+
+  <!-- Coralogix -->
+  <text x="60" y="110" class="name">CORALOGIX</text>
+  <circle class="dot" cx="345" cy="100" r="4"/>
+
+  <!-- Dynatrace -->
+  <text x="385" y="110" class="name">DYNATRACE</text>
+  <circle class="dot" cx="655" cy="100" r="4"/>
+
+  <!-- Cribl -->
+  <text x="695" y="110" class="name">CRIBL</text>
+  <circle class="dot" cx="825" cy="100" r="4"/>
+
+  <!-- Dash0 -->
+  <text x="865" y="110" class="name">DASH0</text>
+
+  <!-- hazard stripe accent, bottom -->
+  <rect x="0" y="154" width="1200" height="6" fill="url(#stripe)"/>
+</svg>
