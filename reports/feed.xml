@@ -7,10 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Sun, 23 Aug 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Elastic Beats, Buys, and Bets on AI, While the Rest of the Market Goes Quiet (August 24 - September 6, 2026)</title>
+      <link>https://mbojko.com/reports/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-09-06</guid>
+      <pubDate>Sun, 06 Sep 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>Elastic closed an acquisition, beat earnings by a wide enough margin to send its stock up 23%, added a board member, and shipped an OpenAI security integration, all inside a fourteen-day window. The rest of the observability market stayed quiet.</p>
+        <p><strong>Key stories:</strong> Elastic closes Deductive AI acquisition for autonomous incident investigation. Elastic Q1 FY2027 revenue $478.1M, up 15.1%, stock jumps 23%, guidance raised. Elastic nominates Julia Liuson, former Microsoft Developer Division President, to its board. Elastic brings OpenAI GPT cyber models into Elastic Security. Widest two-week silence across the rest of the tracked market so far.</p>
+        <p><a href="https://mbojko.com/reports/">Read the full update</a></p>
+      ]]></description>
+    </item>
     <item>
       <title>Observability Vendors Are Buying Their Way Into AI (August 10 - August 23, 2026)</title>
       <link>https://mbojko.com/reports/</link>
