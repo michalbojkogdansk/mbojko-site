@@ -341,7 +341,7 @@
     <a href="/reports/" class="see-all">All reports →</a>
   </div>
   <div class="carousel-wrap">
-    <button class="carousel-btn prev" onclick="slide('c3',-1)">&#8249;</button>
+    <button class="carousel-btn prev" onclick="scrollCarousel('c3',-1)">&#8249;</button>
     <div class="carousel" id="c3">
     <a href="/reports/2026-09-06/" class="c-card" >
       <div class="c-tag">Observability Market · Update #6</div>
@@ -368,7 +368,7 @@
       <div class="c-meta">Free · PDF download</div>
     </a>
     </div>
-    <button class="carousel-btn next" onclick="slide('c3',1)">&#8250;</button>
+    <button class="carousel-btn next" onclick="scrollCarousel('c3',1)">&#8250;</button>
   </div>
 </section>
 
@@ -610,14 +610,6 @@
 </footer>
 
 
-<script>
-function scrollCarousel(id, dir) {
-  var c = document.getElementById(id);
-  var card = c.querySelector('.c-card');
-  var w = card ? card.offsetWidth + 14 : 294;
-  c.scrollBy({ left: dir * w, behavior: 'smooth' });
-}
-</script>
 <script>
 function scrollCarousel(id, dir) {
   var c = document.getElementById(id);
