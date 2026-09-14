@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gartner Magic Quadrants Analysis | Michał Bojko</title>
+  <meta name="description" content="An audit of roadmap claims across the 2025 and 2026 Gartner Magic Quadrants, checked against dated sources, plus an honest look at the pay-to-play question.">
+  <meta name="author" content="Michał Bojko">
+  <link rel="canonical" href="https://mbojko.com/reports/gartner-magic-quadrants-analysis/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbojko.com/reports/gartner-magic-quadrants-analysis/">
+  <meta property="og:title" content="Gartner Magic Quadrants Analysis | Michał Bojko">
+  <meta property="og:description" content="Every forward-looking roadmap statement in the 2025 and 2026 Gartner Magic Quadrants, checked against dated sources, plus the pay-to-play question sorted by evidence strength.">
+  <meta property="og:image" content="https://mbojko.com/assets/photo.jpg">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0b0d12;--bg2:#13151e;--border:rgba(255,255,255,0.08);--yellow:#FFD600;--white:#ffffff;--muted:#5a6070;--muted2:#8a92a6;--stripe:repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px)}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:#e2e2e2;line-height:1.6}
+    .stripe-band{height:10px;background:var(--stripe);opacity:.85}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,13,18,0.92);backdrop-filter:blur(14px);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:54px}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--white);text-decoration:none}
+    .nav-logo span{color:var(--yellow)}
+    .nav-right{display:flex;gap:1.5rem;align-items:center}
+    .nav-back{font-size:11px;font-weight:700;color:var(--muted2);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .15s}
+    .nav-back:hover{color:var(--yellow)}
+    .article-wrap{max-width:740px;margin:0 auto;padding:8rem 2.5rem 5rem}
+    .article-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+    .article-eyebrow::before{content:"";display:block;width:32px;height:2px;background:var(--yellow)}
+    .article-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--white);letter-spacing:-.025em;line-height:1.15;margin-bottom:1.5rem}
+    .article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .article-meta-item{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+    .article-meta-item span{color:var(--muted2);font-weight:400}
+    .article-body{font-size:16px;color:#d0d0d0;line-height:1.85}
+    .article-body p{margin-bottom:1.5rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body p.lede{font-style:italic;color:var(--muted2);font-size:14px;margin-bottom:2rem}
+    .article-body h2{font-size:20px;font-weight:800;color:var(--white);letter-spacing:-.01em;margin:2.75rem 0 1.25rem;padding-top:2rem;border-top:1px solid var(--border)}
+    .article-body h2:first-of-type{margin-top:0;padding-top:0;border-top:none}
+    .article-body h3{font-size:13px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin:2rem 0 .75rem}
+    .article-body a{color:var(--yellow);text-decoration:none}
+    .article-body a:hover{text-decoration:underline}
+    .article-body ul,.article-body ol{margin:.75rem 0 1.25rem 1.5rem}
+    .article-body li{font-size:15px;color:#d0d0d0;line-height:1.75;margin-bottom:.5rem}
+    .article-body ol li{font-size:13px;color:var(--muted2);line-height:1.6;margin-bottom:.6rem}
+    .deal-line{font-size:14px;color:var(--muted2);margin:0 0 1rem;padding-left:1rem;border-left:2px solid var(--border)}
+    .table-wrap{overflow-x:auto;margin:1.5rem 0 2rem;border:1px solid var(--border)}
+    .article-body table{width:100%;border-collapse:collapse;font-size:13px;min-width:660px}
+    .article-body th{background:var(--bg2);color:var(--yellow);text-align:left;padding:.7rem .85rem;font-size:10px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);white-space:nowrap}
+    .article-body td{padding:.85rem;border-bottom:1px solid var(--border);color:#c8c8c8;vertical-align:top;line-height:1.6}
+    .article-body tr:last-child td{border-bottom:none}
+    .article-body td strong{color:var(--white)}
+    .article-actions{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .btn-pdf{background:var(--yellow);color:#000;border:none;padding:10px 22px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:opacity .15s;display:inline-flex;align-items:center;gap:8px}
+    .btn-pdf:hover{opacity:.85}
+    .btn-copy{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:10px 22px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .15s}
+    .btn-copy:hover{border-color:var(--yellow);color:var(--yellow)}
+    .copy-status{font-size:12px;color:var(--yellow);font-weight:700;display:none}
+    .back-link{font-size:12px;color:var(--muted2);text-decoration:none;font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:color .15s;margin-left:auto}
+    .back-link:hover{color:var(--yellow)}
+    footer{max-width:740px;margin:0 auto;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border)}
+    .footer-left{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+    .footer-links{display:flex;gap:2rem}
+    .footer-links a{font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;font-weight:500;transition:color .15s}
+    .footer-links a:hover{color:var(--yellow)}
+    @media(max-width:640px){nav{padding:0 1.25rem}.article-wrap{padding:7rem 1.25rem 4rem}footer{padding:1.5rem 1.25rem;flex-direction:column;align-items:flex-start}.back-link{margin-left:0}}
+    @media print {
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      body{background:#fff;color:#111}
+      nav,.stripe-band,.article-actions,footer{display:none!important}
+      .article-wrap{padding:2rem 1.5rem;max-width:100%}
+      .article-eyebrow{color:#000;font-size:10px}
+      .article-eyebrow::before{background:#000}
+      .article-title{color:#000;font-size:24px}
+      .article-meta{border-bottom:1px solid #ccc}
+      .article-meta-item{color:#555}
+      .article-meta-item span{color:#333}
+      .article-body{color:#222;font-size:13px;line-height:1.7}
+      .article-body p.lede{color:#555}
+      .article-body h2{color:#000;border-top:1px solid #ccc;font-size:16px}
+      .article-body h3{color:#000;font-size:11px}
+      .article-body a{color:#333}
+      .article-body a::after{content:" (" attr(href) ")";font-size:9px;color:#666}
+      .article-body li{color:#222}
+      .article-body ol li{color:#555}
+      .deal-line{color:#555;border-left-color:#ccc}
+      .table-wrap{border-color:#ccc}
+      .article-body th{background:#f2f2f2;color:#000;border-color:#ccc}
+      .article-body td{color:#222;border-color:#ddd}
+      .article-body td strong{color:#000}
+      .print-footer{display:block!important;border-top:1px solid #ccc;padding-top:1rem;margin-top:2rem;font-size:10px;color:#555;text-align:center}
+    }
+    .print-footer{display:none}
+  </style>
+</head>
+<body>
+<div class="stripe-band"></div>
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <div class="nav-right">
+    <a href="/reports/" class="nav-back">← Reports</a>
+    <a href="/contact/" class="nav-back" style="color:var(--yellow)">Contact</a>
+  </div>
+</nav>
+<div class="article-wrap">
+  <p class="article-eyebrow">Observability Market · Gartner MQ Analysis</p>
+  <h1 class="article-title">Gartner Magic Quadrants Analysis</h1>
+  <div class="article-meta">
+    <div class="article-meta-item">Period <span>2021 - 2026</span></div>
+    <div class="article-meta-item">Author <span>Michał Bojko</span></div>
+    <div class="article-meta-item">Type <span>Roadmap &amp; Pay-to-Play Audit</span></div>
+  </div>
+  <div class="article-body">
+    <p class="lede">What gets called "vision" in a Magic Quadrant, and what it actually is. Covers the 2025 Gartner Magic Quadrant for Digital Experience Monitoring, the 2026 Gartner Magic Quadrant for Observability Platforms, and, for a longer-horizon check, the 2021 Gartner Magic Quadrant for Application Performance Monitoring.</p>
+
+    <p>Gartner research gets cited heavily in my bi-weekly reports, and readers have pushed back on one question: how much of what Gartner says about a vendor actually turns into something checkable.</p>
+
+    <p>Acquisitions can't be used as evidence of advance vendor-to-Gartner information sharing, because a publicly traded company sharing an unannounced deal with an outside analyst would be a securities-law violation (Regulation FD), and by the time an acquisition shows up in one of these reports, it's almost always already public. Timing an acquisition against a report's publication date mostly just shows which came first, which proves little on its own.</p>
+
+    <p>A better test is available inside the reports themselves: every vendor profile contains forward-looking "roadmap" language, and that language can be checked against the public record. This article pulls every such statement out of both reports, roughly two dozen of them, and checks each one against dated, independent sources to see whether it was genuinely unannounced at the time Gartner published it, or whether it was already shipped, announced, or documented before the report went to print.</p>
+
+    <h2>Executive Summary</h2>
+    <ul>
+      <li>Of 24 forward-looking "roadmap" statements found across the 2025 and 2026 reports, the two most current editions, only 4 were checked against dated, independent sources. The rest are sorted, not verified: 8 are specific enough to check but weren't, 12 are worded too vaguely to ever be checkable at all. A third, older report (2021) was checked separately for a longer-horizon test, see below.</li>
+      <li>Of the 4 checked, 2 turned out to describe features that were already public, one for a full year, before the report presented them as forward-looking. A third was still not shipped more than ten months after the report promised it. One was inconclusive.</li>
+      <li>Exactly half of all 24 roadmap statements fall into the "too vague to test" category. Phrases like "expanded AI capabilities" or "deeper integration" could describe almost any six months of normal product work at almost any vendor, and cannot be confirmed or falsified by any amount of checking.</li>
+      <li>IBM's own stated plan to unify Instana, Turbonomic and SevOne under its Concert platform is directly contradicted by Gartner's own caution text in the same profile: despite the unification roadmap, the three products "remain distinct products that require separate installation and administration in practice," meaning the underlying technical merge hasn't actually happened, only the marketing framing has. Gartner checking a vendor's claim against its own findings, in the same document, is worth noting on its own.</li>
+      <li>On pay-to-play: two lawsuits against Gartner exist, both dismissed on a legal technicality rather than a factual finding, so they prove less than they seem to. A real structural conflict of interest is disclosed in Gartner's own business model (a revenue-threshold inclusion rule that favors larger vendors, and a sales unit that sells to the same vendors it scores), but this doesn't prove any specific score was influenced. A securities-law barrier against sharing material nonpublic information is real, but only covers the roughly one-third of these vendors that are publicly traded. Gartner's own published counter-claim, that vendor briefings are open regardless of client status, is a specific, checkable claim that cuts the other way. No verdict is reached either way, and none should be assumed.</li>
+      <li>A third, older report (the 2021 Magic Quadrant for Application Performance Monitoring) allowed five roadmap claims to be checked over a five-year horizon instead of a few months. Result: two multiyear integration promises, from two different vendors, were not delivered, confirmed by Gartner's own more recent text; one caution was resolved within two years with a specific dated integration; one roadmap item was again already public before the report described it as forward-looking; one resolved into a real but loosely-defined capability.</li>
+      <li>Overall: the audit's real finding isn't "did feature X ship or not," it's what the "roadmap" language in these reports actually is. Based on what was checked, it's rarely independent analysis and rarely genuine advance information from the vendor either. Most often it's one of two things: already-public information restated in future tense, or phrasing too generic to be analysis at all, closer to a summary of a marketing deck than a checked, forward-looking claim. Genuinely new, later-resolved information was the exception, not the rule, in every sample checked, including the five-year one.</li>
+    </ul>
+
+    <h2>Part One: The Roadmap Audit</h2>
+    <h3>Method and honesty about coverage</h3>
+    <p>Every vendor profile in both reports contains a sentence or two of forward-looking language: "planned enhancements include...", "the roadmap emphasizes...", "upcoming plans include...". These are the closest thing in either document to a testable prediction. Twenty-four such statements appear across the two reports, excluding IBM's Concert-platform claim, which is covered on its own below because Gartner's own text already contradicts it.</p>
+    <p>Of those twenty-four, four were checked against dated, independent sources. The rest were not individually researched; they're sorted below by whether their wording is specific enough to be checkable at all, which is itself a finding.</p>
+
+    <h3>The four verified cases</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Vendor, report</th><th>Roadmap statement</th><th>Status found</th><th>Evidence</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>New Relic, Observability Platforms MQ (13 July 2026)</td>
+            <td>"Expanded integrations, including GitHub Copilot and ServiceNow"</td>
+            <td><strong>Already public before the report.</strong> General availability announced 15 July 2025, a full year earlier.</td>
+            <td>New Relic release notes, docs.newrelic.com, "Agentic integrations for GitHub Copilot and ServiceNow now generally available," 15 July 2025</td>
+          </tr>
+          <tr>
+            <td>Checkly, DEM MQ (27 October 2025)</td>
+            <td>"Broadening of uptime monitoring with native support for protocols like SSL"</td>
+            <td><strong>Already public before the report.</strong> Checkly's own SSL certificate monitoring documentation predates the report by at least nine months.</td>
+            <td>Checkly documentation, "Monitoring SSL certificate expiration in Checkly," last updated 14 January 2025</td>
+          </tr>
+          <tr>
+            <td>SolarWinds, DEM MQ (27 October 2025)</td>
+            <td>"Session replay functionality, RUM instrumentation for mobile applications, and synthetic monitoring for multifactor-authentication protected applications"</td>
+            <td><strong>Not found shipped, more than ten months after publication.</strong> SolarWinds' own 2026.1 and 2026.2 release notes (published through June 2026) list detailed feature sets and do not mention session replay. The company's own 29 October 2025 press release used identical roadmap language two days after the report published, suggesting it was still aspirational at that point too.</td>
+            <td>SolarWinds press release, 29 October 2025; SolarWinds Observability Self-Hosted 2026.1 and 2026.2 release notes, thwack.solarwinds.com</td>
+          </tr>
+          <tr>
+            <td>Elastic, Observability Platforms MQ (13 July 2026)</td>
+            <td>"AI-driven observability through automated investigations and 'Significant Events' detection"</td>
+            <td><strong>Inconclusive.</strong> No independent confirmation found either way.</td>
+            <td>Not resolved</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Two of four checked statements turned out to describe things that were already public before the report describing them as forward-looking was even published. That's a meaningful pattern from a sample of four, worth taking seriously as a general caution rather than dismissing as coincidence.</p>
+
+    <h3>Why a shipped feature is stronger evidence than a shipped acquisition</h3>
+    <p>An acquisition closing before a report publishes says little on its own: acquisitions are big, discrete, hard-to-miss events, and any profile written months later would naturally know about one. A product feature is different. The New Relic and Checkly cases show an already-shipped, already-documented <em>feature</em> described in forward-tense "roadmap" language a year or nine months after it actually launched, inside a document whose entire value proposition to a reader is that it tells you where a vendor is headed, not where it's already been. If that pattern holds across more of the twenty-four statements, a meaningful share of what reads as "vision" in these reports is old news wearing future tense.</p>
+
+    <h3>The remaining twenty statements, sorted by whether they could even be tested</h3>
+    <p><strong style="color:var(--white)">Specific enough to check, not yet checked:</strong></p>
+    <ul>
+      <li>Coralogix (Observability MQ): deeper "Olly" AI autonomy for schemaless investigation</li>
+      <li>Grafana Labs (Observability MQ): a unified Digital Experience Monitoring suite</li>
+      <li>Datadog (Observability MQ): expanding Bits AI into a unified autonomous-operations agent</li>
+      <li>Datadog (DEM MQ): canary rollout pipelines using feature flags</li>
+      <li>Blue Triangle (DEM MQ): new iOS traffic metrics</li>
+      <li>Riverbed (DEM MQ): retroactive "click-to-render" investigations</li>
+      <li>New Relic (DEM MQ): "DEM for machine customers," augmented AI DEM analyst technology</li>
+      <li>LogicMonitor (Observability MQ): expanded Edwin AI agents</li>
+    </ul>
+    <p>These eight are concrete and named enough that a search could plausibly confirm or date them. They simply weren't checked, and this article should not be read as having verified them.</p>
+
+    <p><strong style="color:var(--white)">Too generic to be a testable claim at all:</strong></p>
+    <ul>
+      <li>Alibaba Cloud: "evolving UModel into a comprehensive IT Digital Twin"</li>
+      <li>Apica: "embedding GenAI co-pilots and agentic AI for autonomous triage"</li>
+      <li>Chronosphere: "expanding Palo Alto Networks AgentiX"</li>
+      <li>ScienceLogic: "agentic AI observability and automation"</li>
+      <li>SolarWinds (Observability MQ): "deeper incident response, alert suppression... expanded agentic AI"</li>
+      <li>Catchpoint: "deepening AI investment for root cause analysis and intelligent agents"</li>
+      <li>Conviva: "expansion into e-commerce, travel and hospitality, and B2B use cases"</li>
+      <li>IBM/Instana (DEM MQ): "strengthening support for SRE and developers through CI/CD integration"</li>
+      <li>ip-label: "anomaly detection, automation of incident qualification"</li>
+      <li>ITRS Group: "natural language-based monitoring and intelligent alerting"</li>
+      <li>ManageEngine: "customer journey mapping... root cause analysis based on agentic AI"</li>
+      <li>Splunk (DEM MQ): "unified UI/UX... expanded AI- and analytics-led DEM features"</li>
+    </ul>
+    <p>Twelve of twenty-four statements, exactly half, are written in language too generic to confirm or deny against any evidence. "Expanded AI capabilities" and "deeper integration" could describe almost any six months of normal product work at almost any software company. This is worth stating as its own finding: half of what these reports present as vendor-specific vision is phrased in terms that could not be wrong even in principle, because there is nothing concrete enough in the phrasing to check.</p>
+
+    <h3>What the audit shows, put plainly</h3>
+    <p>Of the four statements specific enough to verify and actually checked, half turned out to be already-public information restated in roadmap language. Half of the remaining twenty are too vague to check under any amount of effort. The honest summary: this pair of reports contains very little that functions as a genuine, checkable, forward-looking prediction. What looks like vision is more often either a restatement of recent history or phrasing too soft to ever be falsified.</p>
+
+    <h3>A longer test: the 2021 Magic Quadrant for Application Performance Monitoring</h3>
+    <p>A third report, the April 2021 Magic Quadrant for Application Performance Monitoring, gives a much better test of the same question, because five years is long enough for a roadmap claim to actually resolve instead of sitting open. Five statements from that report were checked against what's happened since.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Vendor</th><th>2021 roadmap statement</th><th>Status found</th><th>Evidence</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IBM (Instana)</td>
+            <td>Plans to "integrate Instana more closely with the IBM portfolio, including IBM Cloud Pak for Watson AIOps"</td>
+            <td><strong>Not delivered, five years later.</strong> The 2026 Observability Platforms MQ states Instana, Turbonomic and SevOne "remain distinct products that require separate installation and administration in practice," under IBM's ongoing Concert unification effort.</td>
+            <td>Gartner, Magic Quadrant for Observability Platforms, 13 July 2026</td>
+          </tr>
+          <tr>
+            <td>Splunk</td>
+            <td>"Key aspect of the roadmap is to integrate these products through replatforming and the unification of back ends under a single platform"</td>
+            <td><strong>Not delivered, five years later, arguably compounded.</strong> The 2026 report shows Splunk downgraded from Leader to Challenger, citing unresolved integration between Splunk and its acquirer Cisco.</td>
+            <td>Gartner, Magic Quadrant for Observability Platforms, 13 July 2026</td>
+          </tr>
+          <tr>
+            <td>Cisco (AppDynamics)</td>
+            <td>Continuing to "modernize data collection agent technology and integration with ThousandEyes," flagged in the same report as a separate product with "unclear path for tighter native integration"</td>
+            <td><strong>Delivered, in stages.</strong> A bi-directional AppDynamics/ThousandEyes integration was announced May 2023, two years after the report, and was further extended at Cisco Live EMEA in 2026.</td>
+            <td>CX Today, "Cisco AppDynamics and ThousandEyes Form New Integration," 15 May 2023; ThousandEyes blog, Cisco Live EMEA 2026 announcement</td>
+          </tr>
+          <tr>
+            <td>Oracle</td>
+            <td>"APM roadmap is based on the OCI Observability and Management Platform, which will unify... capabilities... with native support for open standards"</td>
+            <td><strong>Already public before the report.</strong> The OCI Observability and Management Platform launched 6 October 2020, six months before this report described it as forward-looking.</td>
+            <td>Oracle press release, "Oracle Cloud Observability and Management Platform Now Available," 6 October 2020</td>
+          </tr>
+          <tr>
+            <td>Datadog</td>
+            <td>"Future areas include enhancements to its AIOps tooling (currently Watchdog)"</td>
+            <td><strong>Delivered, though as a generic evolution rather than a specific commitment.</strong> Watchdog's successor capabilities (Bits AI) are a central, actively marketed part of Datadog's platform in the 2026 report.</td>
+            <td>Gartner, Magic Quadrant for Observability Platforms, 13 July 2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>This is a more decisive result than the recent-report audit above, because there was time for the claims to actually play out. Two multiyear integration promises, from two different vendors, were checked five years later and found not delivered, with Gartner's own more recent text doing the checking in both cases. One caution from the same report was resolved within two years, positively, with a specific dated integration announcement. One "roadmap" item was, again, already public before the report described it as forward-looking, the same pattern found in both of the current reports covered in this article, now confirmed going back at least to 2021. One roadmap item resolved into a real but generic capability, hard to score as a precise hit given how loosely it was originally stated.</p>
+    <p>The remaining statements in the 2021 report, covering Alibaba Cloud, Aternity, Broadcom, Elastic, ManageEngine, Microsoft, New Relic, SolarWinds and Tingyun, were not individually checked and should not be read as verified either way.</p>
+    <p>Also worth naming plainly: IBM's own stated roadmap to unify Instana, Turbonomic and SevOne under its Concert platform brand is directly contradicted by Gartner's own caution text in the same profile, which states the underlying products "remain distinct products that require separate installation and administration in practice." This is Gartner checking a vendor's claim against its own findings and publishing the gap, inside the same document that lists the vendor's strengths.</p>
+
+    <h2>Part Two: The Pay-to-Play Question</h2>
+    <p>Readers asked about this directly. What follows is not a verdict. It's every argument found, sorted honestly by strength, including the ones that cut against the concern.</p>
+
+    <h3>Litigation shows less than it seems to</h3>
+    <p>Two vendors have sued Gartner over Magic Quadrant placement alleging pay-to-play. ZL Technologies (2009, California) was dismissed. NetScout Systems (2014, Connecticut) alleged Gartner "rewards clients who spend substantial sums on its various services by ranking them favorably," and stated it had not paid for Gartner consulting in the prior five years. The trial court dismissed the case in 2017; the Connecticut Supreme Court affirmed on 16 January 2020, on the grounds that Magic Quadrant statements are opinion, and opinion cannot support a defamation claim. The court never evaluated whether the underlying allegation was true. It ruled the claim couldn't be tested in a defamation suit at all. Two dismissed cases, decided on a threshold legal question, are weak evidence in either direction.</p>
+
+    <h3>A structural argument that doesn't need intent</h3>
+    <p>Gartner's own inclusion criteria for the 2026 Observability Platforms MQ require at least $75 million in annual GAAP revenue in the prior year, or at least $10 million combined with 25% year-over-year growth, printed in the report itself. Below that, a vendor cannot appear regardless of product quality. This mechanically filters toward larger, better-funded vendors, the same population more likely to already have commercial relationships with Gartner. Gartner's own 10-K describes its Research segment as split into Global Technology Sales, which sells to vendors, and Global Business Sales, which sells to enterprise buyers, both drawing on the same analyst base that writes the Magic Quadrant. This is disclosed and undisputed. It proves a structural conflict of interest exists. It does not prove that conflict changes any specific score.</p>
+
+    <h3>The legal barrier is real but narrow</h3>
+    <p>An unannounced acquisition, or any material nonpublic information, cannot legally be shared selectively with an outside analyst by a publicly traded company, under Regulation FD. But checking ownership across both reports shows this protection covers a minority of the vendors involved. Publicly traded: Datadog, Elastic, IBM, Microsoft, Amazon, Alibaba, Splunk via parent Cisco. Privately held, and therefore under no such restriction for anything: Grafana Labs, Coralogix, New Relic (taken private by Francisco Partners and TPG, completed 7 November 2023), SolarWinds (taken private by Turn/River Capital, completed 16 April 2025), LogicMonitor, BMC Helix, Honeycomb, ScienceLogic, Apica, and most of the smaller DEM-market vendors. Chronosphere and Catchpoint were both private at the time their profiles were written. For a private company, telling Gartner anything under NDA, including an unannounced acquisition or unreleased financials, is a private contractual matter with no regulator involved. The legal-barrier defense protects roughly a third of this market's vendors and not the rest.</p>
+
+    <h3>A practitioner's account, separate from litigation</h3>
+    <p>Richard Stiennon, who has authored Magic Quadrants as a former Gartner analyst and been evaluated in one from the vendor side, has described the methodology publicly: a roughly 150-question vendor survey, tracked inquiry volume, weighted scoring applied by the analyst. His own words: "the analyst can indeed use the Magic Quadrant to push an agenda. Analysts are not just researchers and reporters." A documented insider account of discretion, not of bribery.</p>
+
+    <h3>Gartner's own specific counter-claim</h3>
+    <p>Gartner's published FAQ states that vendor briefings, the process by which analysts gather information for reports like these, are open to any vendor regardless of client status: "all vendors, client or not, have the ability to engage with Gartner analysts through the Vendor Briefing process," citing more than 12,000 unique briefings conducted in 2018 alone. This is a specific, checkable process claim, distinct from the general denial, and worth weighing alongside the structural arguments above rather than dismissed with them.</p>
+
+    <h3>A small artifact from the documents themselves</h3>
+    <p>Inside the DEM report, on the same page as Gartner's own independence disclaimer, sits a house advertisement: "Unlock more AI value with unmatched, proprietary AI insights from Gartner. Explore the AI Hub." Not evidence of vendor-specific bias, but a directly observable instance of the same structural tension described above, visible without any outside source.</p>
+
+    <h3>What none of this proves</h3>
+    <p>No specific vendor's placement has been shown, in this article or anywhere checked for it, to have been purchased or influenced by Gartner spend. The revenue-threshold and dual-sales-segment arguments show a disclosed structural conflict of interest. Gartner's briefing-access claim cuts the other way on one specific mechanism. The Reg FD analysis shows a real but partial legal barrier. None of it proves the larger claim either way. The honest position: old, recurring, made under oath by more than one paying customer, structurally plausible, partially contested by Gartner's own specific claims, never tested on the merits in court.</p>
+
+    <h2>Sources</h2>
+    <ol>
+      <li>Gartner, Magic Quadrant for Digital Experience Monitoring, Padraig Byrne, Pankaj Prasad, DB Cummings, Martin Caren, Tanmay Bisht, 27 October 2025, ID G00823799.</li>
+      <li>Gartner, Magic Quadrant for Observability Platforms, Padraig Byrne, Martin Caren, Gregg Siegfried, Matt Crossley, 13 July 2026 (revised 23 July 2026), ID G00840178.</li>
+      <li>Gartner, Magic Quadrant for Application Performance Monitoring, Federico De Silva, Padraig Byrne and 1 more, 9 April 2021, ID G00733825.</li>
+      <li>CX Today, "Cisco AppDynamics and ThousandEyes Form New Integration," 15 May 2023.</li>
+      <li>ThousandEyes (Cisco), blog, "Driving Simplified IT Operations With New ThousandEyes Innovations," Cisco Live EMEA 2026.</li>
+      <li>Oracle, press release, "Oracle Cloud Observability and Management Platform Now Available," 6 October 2020.</li>
+      <li>New Relic, docs.newrelic.com, "Agentic integrations for GitHub Copilot and ServiceNow now generally available," 15 July 2025.</li>
+      <li>Checkly, checklyhq.com, "Monitoring SSL certificate expiration in Checkly," last updated 14 January 2025.</li>
+      <li>SolarWinds, press release, "SolarWinds Recognized for Second Consecutive Year in 2025 Gartner Magic Quadrant for Digital Experience Monitoring," 29 October 2025.</li>
+      <li>SolarWinds, thwack.solarwinds.com, Observability Self-Hosted 2026.1 and 2026.2 release notes.</li>
+      <li>Francisco Partners and TPG, press release, "Francisco Partners and TPG Complete Acquisition of New Relic," 7 November 2023.</li>
+      <li>SolarWinds Corporation, Form 8-K, "Turn/River Completes Acquisition of SolarWinds," 16 April 2025, SEC EDGAR.</li>
+      <li>Gartner, Inc., Form 10-K, FY2024, SEC EDGAR (Research segment structure: Global Technology Sales / Global Business Sales).</li>
+      <li>NetScout Systems, Inc. v. Gartner, Inc., Connecticut Superior Court, filed August 2014; dismissed 2017; affirmed Connecticut Supreme Court, 16 January 2020.</li>
+      <li>The Register, "Remember when Netscout got so upset at 'challenger' label in Gartner Magic Quadrant, it sued? Well, top court just ended all those shenanigans," 16 January 2020.</li>
+      <li>CIO.com / Computerworld, "3 things you need to know about Gartner Magic Quadrants," Richard Stiennon.</li>
+      <li>Gartner, Inc., Ombudsman FAQ, "Cost included Gartner research: the answer is simply nothing," gartner.com.</li>
+    </ol>
+    <p class="lede">Open items for a future pass: the eight specific-but-unchecked roadmap statements listed in Part One.</p>
+  </div>
+  <div class="article-actions">
+    <button class="btn-pdf" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+      Download PDF
+    </button>
+    <button class="btn-copy" onclick="copyLink()">Copy link</button>
+    <span class="copy-status" id="cs">Copied!</span>
+    <a href="/reports/" class="back-link">← All reports</a>
+  </div>
+  <div class="print-footer">mbojko.com/reports &nbsp;&middot;&nbsp; Michał Bojko &nbsp;&middot;&nbsp; Gdańsk, Poland</div>
+</div>
+<div class="stripe-band"></div>
+<footer>
+  <span class="footer-left">&copy; 2026 Michał Bojko &middot; Gdańsk, Poland</span>
+  <div class="footer-links">
+    <a href="https://github.com/michalbojkogdansk" target="_blank">GitHub</a>
+    <a href="https://medium.com/@michal.bojko.gdansk" target="_blank">Medium</a>
+    <a href="https://www.linkedin.com/in/mbojkogdansk/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+<script>
+function copyLink(){
+  navigator.clipboard.writeText('https://mbojko.com/reports/gartner-magic-quadrants-analysis/').then(function(){
+    var s=document.getElementById('cs');
+    s.style.display='inline';
+    setTimeout(function(){s.style.display='none';},2500);
+  });
+}
+</script>
+</body>
+</html>
