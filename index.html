@@ -293,7 +293,10 @@
     <p class="hero-bio">15 years in software engineering leadership. 10 years in technical IT roles. Experience across USA, UK, France, Germany, Spain, Estonia and Poland. Tech community leader, speaker, and university lecturer in Engineering and MBA programmes.</p>
   </div>
   <div class="hero-photo">
-    <img src="/assets/photo.jpg" alt="Michał Bojko" loading="eager">
+    <picture>
+      <source type="image/webp" srcset="/assets/photo-480.webp 480w, /assets/photo-768.webp 768w, /assets/photo-1200.webp 1200w, /assets/photo-1400.webp 1400w" sizes="(max-width: 680px) calc(100vw - 40px), 260px">
+      <img src="/assets/photo.jpg" srcset="/assets/photo-480.jpg 480w, /assets/photo-768.jpg 768w, /assets/photo-1200.jpg 1200w, /assets/photo-1400.jpg 1400w" sizes="(max-width: 680px) calc(100vw - 40px), 260px" width="1400" height="933" alt="Michał Bojko" loading="eager" fetchpriority="high">
+    </picture>
   </div>
 </div>
 
