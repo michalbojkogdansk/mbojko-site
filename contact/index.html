@@ -134,6 +134,12 @@
   const btn = document.getElementById('submitBtn');
   const status = document.getElementById('formStatus');
 
+  const presetTopic = new URLSearchParams(window.location.search).get('topic');
+  if (presetTopic) {
+    const match = Array.from(form.topic.options).find(o => o.value === presetTopic);
+    if (match) form.topic.value = presetTopic;
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
