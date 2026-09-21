@@ -7,10 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Sun, 06 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Observability Vendors Start Measuring What AI Costs (September 7 - September 20, 2026)</title>
+      <link>https://mbojko.com/reports/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-09-20</guid>
+      <pubDate>Sun, 20 Sep 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>The cost of running AI agents became the organizing theme of this window: Splunk launched Tokenomics at .conf26, Datadog's CEO described a shift to AI credits pricing, and Dash0 shipped a dashboard for coding-agent costs. Coralogix earned FedRAMP Moderate certification.</p>
+        <p><strong>Key stories:</strong> Splunk Agent Observability with Tokenomics, Cisco AI POD with NVIDIA, and Data Fabric at .conf26. Datadog CEO at Citi TMT: non-AI customer growth in the high 20s, about 750 AI-native customers, move to AI credits pricing. Coralogix U.S. GovOps FedRAMP Moderate certified. Dash0 AI SDLC Insights. Elastic cross-project search GA. Riverbed NPM 360.</p>
+        <p><a href="https://mbojko.com/reports/2026-09-20/">Read the full update</a></p>
+      ]]></description>
+    </item>
     <item>
       <title>Elastic Beats, Buys, and Bets on AI, While the Rest of the Market Goes Quiet (August 24 - September 6, 2026)</title>
       <link>https://mbojko.com/reports/</link>
