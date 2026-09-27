@@ -134,7 +134,9 @@
   const btn = document.getElementById('submitBtn');
   const status = document.getElementById('formStatus');
 
-  const presetTopic = new URLSearchParams(window.location.search).get('topic');
+  const presetParams = new URLSearchParams(window.location.search);
+
+  const presetTopic = presetParams.get('topic');
   if (presetTopic) {
     const needle = presetTopic.trim().toLowerCase();
     const match = Array.from(form.topic.options).find(o =>
@@ -142,6 +144,9 @@
     );
     if (match) form.topic.value = match.value;
   }
+
+  const presetMessage = presetParams.get('message');
+  if (presetMessage) form.message.value = presetMessage;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
