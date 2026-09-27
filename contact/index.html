@@ -136,8 +136,11 @@
 
   const presetTopic = new URLSearchParams(window.location.search).get('topic');
   if (presetTopic) {
-    const match = Array.from(form.topic.options).find(o => o.value === presetTopic);
-    if (match) form.topic.value = presetTopic;
+    const needle = presetTopic.trim().toLowerCase();
+    const match = Array.from(form.topic.options).find(o =>
+      o.value.toLowerCase() === needle || o.text.toLowerCase() === needle
+    );
+    if (match) form.topic.value = match.value;
   }
 
   form.addEventListener('submit', async (e) => {
