@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Observability Vendors Price AI Agents | Michał Bojko</title>
+  <meta name="description" content="Twelve observability vendors, three different AI pricing meters, no common unit. Public pricing pages, docs and earnings calls compared: Datadog, Grafana, Elastic, Dash0, Coralogix, Honeycomb, Dynatrace, Splunk and more.">
+  <meta name="author" content="Michał Bojko">
+  <link rel="canonical" href="https://mbojko.com/reports/ai-agent-pricing-analysis/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbojko.com/reports/ai-agent-pricing-analysis/">
+  <meta property="og:title" content="How Observability Vendors Price AI Agents | Michał Bojko">
+  <meta property="og:description" content="Twelve vendors, three pricing meters, no common unit. Public pricing pages, docs and earnings calls compared.">
+  <meta property="og:image" content="https://mbojko.com/assets/reports-ai-pricing-analysis-summary.png">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0b0d12;--bg2:#13151e;--bg3:#1a1d28;--border:rgba(255,255,255,0.08);--yellow:#FFD600;--white:#ffffff;--muted:#5a6070;--muted2:#8a92a6;--stripe:repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px)}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:#e2e2e2;line-height:1.6}
+    .stripe-band{height:10px;background:var(--stripe);opacity:.85}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,13,18,0.92);backdrop-filter:blur(14px);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:54px}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--white);text-decoration:none}
+    .nav-logo span{color:var(--yellow)}
+    .nav-right{display:flex;gap:1.5rem;align-items:center}
+    .nav-back{font-size:11px;font-weight:700;color:var(--muted2);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .15s}
+    .nav-back:hover{color:var(--yellow)}
+    .article-wrap{max-width:740px;margin:0 auto;padding:8rem 2.5rem 5rem}
+    .article-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+    .article-eyebrow::before{content:"";display:block;width:32px;height:2px;background:var(--yellow)}
+    .article-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--white);letter-spacing:-.025em;line-height:1.15;margin-bottom:1.5rem}
+    .article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .article-meta-item{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+    .article-meta-item span{color:var(--muted2);font-weight:400}
+    .article-body{font-size:16px;color:#d0d0d0;line-height:1.85}
+    .article-body p{margin-bottom:1.5rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body p.lede{font-style:italic;color:var(--muted2);font-size:14px;margin-bottom:2rem}
+    .article-body h2{font-size:20px;font-weight:800;color:var(--white);letter-spacing:-.01em;margin:2.75rem 0 1.25rem;padding-top:2rem;border-top:1px solid var(--border)}
+    .article-body h2:first-of-type{margin-top:0;padding-top:0;border-top:none}
+    .article-body h3{font-size:13px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin:2rem 0 .75rem}
+    .article-body a{color:var(--yellow);text-decoration:none}
+    .article-body a:hover{text-decoration:underline}
+    .article-body ul,.article-body ol{margin:.75rem 0 1.25rem 1.5rem}
+    .article-body li{font-size:15px;color:#d0d0d0;line-height:1.75;margin-bottom:.5rem}
+    .article-body ol.sources li{font-size:13px;color:var(--muted2);line-height:1.6;margin-bottom:.6rem}
+    .table-wrap{overflow-x:auto;margin:1.5rem 0 2rem;border:1px solid var(--border)}
+    .article-body table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
+    .article-body th{background:var(--bg2);color:var(--yellow);text-align:left;padding:.7rem .85rem;font-size:10px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);white-space:nowrap}
+    .article-body td{padding:.85rem;border-bottom:1px solid var(--border);color:#c8c8c8;vertical-align:top;line-height:1.6}
+    .article-body tr:last-child td{border-bottom:none}
+    .article-body td strong{color:var(--white)}
+    .report-figure{margin:2rem 0;border:1px solid var(--border);background:#fff;border-radius:4px;overflow:hidden;cursor:zoom-in;transition:border-color .15s}
+    .report-figure:hover{border-color:var(--yellow)}
+    .report-figure img{display:block;width:100%;height:auto}
+    .report-figure-caption{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--bg2);color:var(--muted2);font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;padding:.6rem 1rem;border-top:1px solid var(--border)}
+    .lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.9);cursor:zoom-out;align-items:center;justify-content:center;padding:2rem}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:2px}
+    .lightbox-close{position:absolute;top:1.5rem;right:2rem;color:var(--white);font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:none;border:1px solid var(--border);padding:8px 16px;cursor:pointer;border-radius:2px}
+    .lightbox-close:hover{border-color:var(--yellow);color:var(--yellow)}
+    @media print{.report-figure,.lightbox{display:none!important}}
+    .article-actions{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .btn-pdf{background:var(--yellow);color:#000;border:none;padding:10px 22px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:opacity .15s;display:inline-flex;align-items:center;gap:8px}
+    .btn-pdf:hover{opacity:.85}
+    .btn-copy{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:10px 22px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .15s}
+    .btn-copy:hover{border-color:var(--yellow);color:var(--yellow)}
+    .copy-status{font-size:12px;color:var(--yellow);font-weight:700;display:none}
+    .back-link{font-size:12px;color:var(--muted2);text-decoration:none;font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:color .15s;margin-left:auto}
+    .back-link:hover{color:var(--yellow)}
+    footer{max-width:740px;margin:0 auto;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border)}
+    .footer-left{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+    .footer-links{display:flex;gap:2rem}
+    .footer-links a{font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;font-weight:500;transition:color .15s}
+    .footer-links a:hover{color:var(--yellow)}
+    @media(max-width:640px){nav{padding:0 1.25rem}.article-wrap{padding:7rem 1.25rem 4rem}footer{padding:1.5rem 1.25rem;flex-direction:column;align-items:flex-start}.back-link{margin-left:0}}
+    @media print {
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      body{background:#fff;color:#111}
+      nav,.stripe-band,.article-actions,footer{display:none!important}
+      .article-wrap{padding:2rem 1.5rem;max-width:100%}
+      .article-eyebrow{color:#000;font-size:10px}
+      .article-eyebrow::before{background:#000}
+      .article-title{color:#000;font-size:24px}
+      .article-meta{border-bottom:1px solid #ccc}
+      .article-meta-item{color:#555}
+      .article-meta-item span{color:#333}
+      .article-body{color:#222;font-size:13px;line-height:1.7}
+      .article-body p.lede{color:#555}
+      .article-body h2{color:#000;border-top:1px solid #ccc;font-size:16px}
+      .article-body h3{color:#000;font-size:11px}
+      .article-body a{color:#333}
+      .article-body a::after{content:" (" attr(href) ")";font-size:9px;color:#666}
+      .article-body li{color:#222}
+      .article-body ol.sources li{color:#555}
+      .table-wrap{border-color:#ccc}
+      .article-body th{background:#f2f2f2;color:#000;border-color:#ccc}
+      .article-body td{color:#222;border-color:#ddd}
+      .article-body td strong{color:#000}
+      .print-footer{display:block!important;border-top:1px solid #ccc;padding-top:1rem;margin-top:2rem;font-size:10px;color:#555;text-align:center}
+    }
+    .print-footer{display:none}
+  </style>
+</head>
+<body>
+<div class="stripe-band"></div>
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <div class="nav-right">
+    <a href="/reports/" class="nav-back">← Reports</a>
+    <a href="/contact/" class="nav-back" style="color:var(--yellow)">Contact</a>
+  </div>
+</nav>
+<div class="article-wrap">
+  <p class="article-eyebrow">Observability Market · AI Pricing Analysis</p>
+  <h1 class="article-title">How Observability Vendors Price AI Agents</h1>
+  <div class="article-meta">
+    <div class="article-meta-item">Period <span>September 2026</span></div>
+    <div class="article-meta-item">Author <span>Michał Bojko</span></div>
+    <div class="article-meta-item">Type <span>Pricing Analysis</span></div>
+  </div>
+  <div class="article-body">
+    <p class="lede">Twelve vendors, three different meters for pricing AI agent work, and no common unit between them. Based on public price pages, documentation and earnings calls, retrieved September 24, 2026.</p>
+
+    <p>Observability vendors spent 2026 shipping agents that investigate incidents, write fixes, and answer questions about telemetry. Between May and October they also started charging for that work, and they chose different units to do it. This analysis reads the public pricing pages, documentation and earnings calls of twelve vendors to answer four questions: what is metered, what does it cost at list price, which vendors publish nothing, and what can a buyer cap or forecast before the bill arrives.</p>
+
+    <figure class="report-figure" onclick="openLightbox()">
+      <img src="/assets/reports-ai-pricing-analysis-summary.png" alt="Every vendor prices AI agents differently. Datadog $1.00 per credit, Dash0 $0.60 per credit, Grafana $2 per 1M tokens, Coralogix $1.50 per 1M tokens, Elastic $0.025 per execution, Honeycomb $3.00 per 1M events on the Pro plan. Splunk, Dynatrace and New Relic publish no public AI-specific price. Seven vendors, six different pricing meters.">
+      <figcaption class="report-figure-caption"><span>AI pricing at a glance</span><span>Click to enlarge</span></figcaption>
+    </figure>
+
+    <h2>Key Findings</h2>
+    <ul>
+      <li><strong style="color:var(--white)">Three meters, no common unit.</strong> Vendors bill AI work in credits (Datadog, Dash0), tokens (Grafana, Coralogix, Elastic's managed LLMs), or executions and generations (Elastic, Grafana Agent Observability). An "investigation" at one vendor and a "chat turn" at another describe different amounts of work, so unit prices cannot be compared directly across vendors.</li>
+      <li><strong style="color:var(--white)">Metering dates cluster in one window.</strong> Elastic began charging for Agent Builder and Workflows on May 1, Honeycomb moved its Pro plan to a new rate on July 1, Elastic's cross-project search prices took effect September 16, and Grafana starts metering Assistant Investigations and Agent Observability on October 1.</li>
+      <li><strong style="color:var(--white)">AI arrives bundled with a price move.</strong> Honeycomb's list rate on the Pro plan rose from $1.30 to $3.00 per million events on July 1, while the plan gained Canvas, MCP and metrics. Splunk is rolling out a pricing model that charges for search activity and lets customers defer indexing.</li>
+      <li><strong style="color:var(--white)">Caps and budgets exist, per-task estimates do not.</strong> Datadog, Grafana, New Relic and Splunk document ways to limit or alert on AI consumption. None of the vendors reviewed publish a cost estimate for a specific task before it runs. Datadog's published average credits per action comes closest.</li>
+      <li><strong style="color:var(--white)">Several vendors publish no AI rate at all.</strong> Dynatrace, New Relic, Splunk, Chronosphere and Cribl publish no AI metering price on the pages reviewed. Gartner reportedly described the resulting landscape as "total chaos in AI licensing," according to ITdaily's September 16 coverage of Splunk's .conf26.</li>
+    </ul>
+
+    <h2>Three Meters, One Market</h2>
+    <p>Credits abstract the work into a vendor-defined unit. Datadog sells AI Credits in bundles of 500 per month, and one credit is a unit of work by a Datadog AI product: about 0.5 credits for a Bits Chat message, 3 for an Agent Builder run, 5 for a code fix, 6.5 for an autonomous investigation. Dash0 sells Agent0 credits at $0.60 each, with simple checks using a fraction of a credit and complex analyses one to two.</p>
+    <p>Tokens pass the underlying model cost through directly. Grafana includes 40 million tokens per active AI user and charges from $2 per million beyond that. Coralogix charges $1.50 per million tokens for AI evaluation workloads. Elastic bills its managed LLMs at $4.50 per million input tokens and $21 per million output tokens, on top of the serverless project.</p>
+    <p>Executions and generations count events rather than compute. Elastic counts one execution per conversational turn, with turns above 50,000 input tokens counted as several. Grafana's Agent Observability bills generations from $1.50 per thousand, plus $2 per million tokens for evaluations and guards.</p>
+    <p>Underneath every AI meter sits the older telemetry meter: gigabytes ingested, events, data points, hosts or memory-hours. AI pricing is an extra layer on top of telemetry pricing, so total cost depends on both.</p>
+
+    <h2>What Vendors Publish</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Vendor</th><th>AI meter</th><th>Published list price</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Datadog</strong></td><td>AI Credits (Bits Chat, Investigation, Code, Agent Builder)</td><td>$500 per 500 credits/month on annual commit ($1.00/credit), $1.30 on demand. Reference averages: ~0.5 credits per chat message, 3 per Agent Builder run, 5 per code fix, 6.5 per investigation</td><td>Current, Sept 24</td></tr>
+          <tr><td><strong>Grafana Labs</strong></td><td>Active AI users plus tokens</td><td>From $20 per active AI user with 40M tokens, from $2 per 1M extra tokens. Free and Pro include a 25M-token pool for system-initiated use per organization</td><td>Metering starts Oct 1</td></tr>
+          <tr><td><strong>Grafana Labs</strong></td><td>Agent Observability</td><td>From $1.50 per 1k generations, from $2 per 1M evaluation and guard tokens</td><td>Metering starts Oct 1</td></tr>
+          <tr><td><strong>Elastic</strong></td><td>Executions, tokens</td><td>Agent Builder from $0.025/execution after 10,000 free/month, Workflows from $0.0108, managed LLM $4.50 and $21 per 1M input/output tokens</td><td>Agent Builder and Workflows May 1</td></tr>
+          <tr><td><strong>Dash0</strong></td><td>Credits, seats</td><td>Agent0 $0.60 per credit, AI SDLC Insights $10 per user per month</td><td>Available now</td></tr>
+          <tr><td><strong>Coralogix</strong></td><td>Tokens</td><td>$1.50 per 1M tokens for AI evaluation, measured monthly</td><td>Available now</td></tr>
+          <tr><td><strong>Honeycomb</strong></td><td>Events, AI bundled in</td><td>Pro $3.00 per 1M events versus $1.30 on legacy plans, now includes Canvas, MCP, Time Series Metrics</td><td>Effective July 1, legacy allowed to Dec 31</td></tr>
+          <tr><td><strong>Riverbed</strong></td><td>Bundled, no separate AI charge</td><td>NPM 360 initially at no premium to current AppResponse and NetProfiler pricing</td><td>Launched Sept 16</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>These are list prices. Several are "starts at" or "as low as" values, and enterprise contracts routinely differ from the published rate.</p>
+
+    <h2>Vendors That Publish No AI Rate</h2>
+    <p><strong style="color:var(--white)">Dynatrace.</strong> The public rate card itemizes Full-Stack Monitoring at $0.01 per memory-GiB-hour ($58 per month for an 8 GiB host), logs at $0.20 per GiB to ingest, and metrics and traces by volume. It carries no line for Davis CoPilot, Dynatrace Assist or the agents, and the documentation defers to the account-level rate card. On the August 5 earnings call, the CEO said each use of Dynatrace Intelligence through AI function calls or MCP integrations, and each autonomous action by an agent such as the SRE or Assist agent, drives DPS usage. He reported more than 1,000 customers observing AI and LLM workloads, up from roughly 850 the prior quarter, and more than 800 running operations with agentic capabilities, up from roughly 500. The CFO said the company has made no decision to change its pricing mechanism for on-demand consumption. Read together, the public statements indicate that agent activity is billed as consumption of existing DPS capabilities, priced through the standard rate card rather than a separate AI meter.</p>
+    <p><strong style="color:var(--white)">New Relic.</strong> Data ingest is public at $0.40 per GB beyond 100 GB free, or $0.60 with Data Plus, and a Pro full platform user costs $349 per month on an annual term. New Relic AI is generally available under Advanced Compute, which meters compute capacity units, and no unit price for a CCU appears on the pages reviewed. Feature Control Manager lets admins toggle Advanced Compute capabilities on or off, and compute and ingest budgets can carry threshold alerts.</p>
+    <p><strong style="color:var(--white)">Splunk.</strong> Splunk lists four pricing models, ingest, workload, entity and activity-based, and publishes no prices for any of them. Tokenomics tracks token usage and cost by request, model, agent and workflow, and supports thresholds and alerts. Neither the Splunk pages nor the coverage reviewed give a price for Tokenomics or Agent Observability. Activity-based pricing entered controlled availability in August, according to TechTarget's September 18 coverage, and does not require data to be indexed at ingestion, so customers can defer indexing until data is searched.</p>
+    <p><strong style="color:var(--white)">Chronosphere and Cribl.</strong> Chronosphere bills on persisted writes without a public price. Cribl's AI Observability app, announced August 3, shows token consumption and spend by model, application, department and workload, and the sources reviewed give no price for it.</p>
+
+    <h2>Pricing Power: Bundling and Repricing</h2>
+    <p>Honeycomb's July 1 change is the clearest example. The Pro list rate per million events rose about 131%, the top tier now stops at 750 million events per month, and the plan absorbed capabilities previously reserved for Enterprise. Customers can stay on legacy plans until December 31, and an annual commitment on a legacy tier during the grace period costs 20% above the legacy rate. The effect on any one bill depends on volume, tier and how much event volume moves into separately billed metrics.</p>
+    <p>Splunk's activity-based pricing takes a different route. Splunk's stated goal, per Kamal Hathi at .conf26, is for customers to grow data volume roughly tenfold without a proportional bill increase, a theme also covered in <a href="/reports/2026-09-20/">Update #7</a>.</p>
+    <p>Datadog is consolidating its AI products into one credit pool. At Citi's technology conference on September 8, its CEO described a move from volume-based pricing toward AI credits that bundle across hosts, logs, APM, security and AI services. The AI Credits documentation confirms unused commit credits do not roll over to the next month.</p>
+
+    <h2>What a Buyer Can Cap, Alert On, or Forecast</h2>
+    <p>The table below records what each vendor's public documentation describes. A blank marked "not documented" means the pages reviewed do not mention the capability, which may still exist without being public.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Vendor</th><th>Usage visibility</th><th>Caps or limits</th><th>Budgets or alerts</th><th>Forecast</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Datadog</strong></td><td>Per-product AI credit usage metrics</td><td>AI credit limits at org or per-user level</td><td>Budgets on customers' own AI provider spend (AI Costs)</td><td>Forecasting on AI Costs</td></tr>
+          <tr><td><strong>Grafana Labs</strong></td><td>Active AI user and token pools</td><td>Monthly active-user and token limits, RBAC</td><td>Not documented</td><td>Not documented</td></tr>
+          <tr><td><strong>Splunk</strong></td><td>Token cost by request, model, agent, workflow</td><td>Not documented</td><td>Workflow thresholds and alerts</td><td>Reported by ITdaily, not on Splunk's own page</td></tr>
+          <tr><td><strong>New Relic</strong></td><td>Not documented for AI specifically</td><td>Feature Control Manager toggles Advanced Compute on or off</td><td>Compute and ingest budgets with threshold alerts</td><td>Not documented</td></tr>
+          <tr><td><strong>Dynatrace</strong></td><td>Consumption by capability, team, workload (Cost Intelligence)</td><td>Not documented</td><td>Budgets and cost allocation referenced in DPS docs</td><td>Consumption forecast per capability</td></tr>
+          <tr><td><strong>Dash0</strong></td><td>Real-time Agent0 credit consumption</td><td>Not documented</td><td>Not documented</td><td>Not documented</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Datadog's AI Costs product deserves a separate mention: it tracks spend across outside providers, including Amazon Bedrock, Anthropic, Google Gemini, OpenAI, Vertex AI, GitHub Copilot and Cursor, with per-model and per-team attribution. That covers what customers spend on external AI, which sits beside the credits customers spend on Datadog's own agents. Dynatrace's Cost Intelligence documentation covers Dynatrace subscription consumption and does not mention AI token cost specifically.</p>
+    <p>The gap across every vendor reviewed is prediction. A cap stops spending at a threshold, and an alert reports it after the fact. A pre-execution estimate, the kind of "pre-execution cost governance" raised by a reader in one of the Reddit threads on this report series, would tell a team what a task is likely to cost before it starts. Datadog's published reference credits per action come nearest, since they let a team multiply expected task counts by an average, though the documentation states that actual consumption varies with task complexity and context.</p>
+
+    <h2>Reading the Numbers</h2>
+    <p>At list price, one Datadog investigation averages about 6.5 credits, or roughly $6.50 at the annual commit rate. A complex Dash0 Agent0 analysis uses one to two credits, roughly $0.60 to $1.20. An Elastic conversational turn starts at $0.025 beyond the free allocation. These figures describe different objects: a multi-step autonomous investigation, a single analysis, and one conversational turn. Their ratio says nothing about which vendor costs less for a given incident.</p>
+    <p>None of the vendors reviewed publish a cost per resolved incident, per accepted fix, or any other outcome measure. Every published price attaches to activity. The conversion risk sits with the buyer: if an agent needs three attempts, the meter runs three times.</p>
+
+    <h2>Questions to Ask Before Signing</h2>
+    <ol>
+      <li>What exactly does one unit measure, and what are the average and worst-case consumption for our workloads?</li>
+      <li>Can consumption be capped per user, per team and per automation, and do automated triggers count toward a separate pool?</li>
+      <li>Do failed or abandoned runs consume units?</li>
+      <li>What happens at the cap: a hard stop, degraded service, or automatic on-demand billing at a higher rate?</li>
+      <li>Which price changes take effect during the contract term, and when does any grace period end?</li>
+    </ol>
+
+    <h2>What to Watch Through Year-End</h2>
+    <ul>
+      <li>October 1: Grafana starts metering Assistant Investigations and Agent Observability, and the first bills reveal how the token pools behave.</li>
+      <li>December 31: Honeycomb's legacy-plan grace period ends.</li>
+      <li>Whether Splunk's activity-based pricing moves from controlled availability to general availability, and whether Tokenomics gets a public price.</li>
+      <li>Datadog's third-quarter results, for commentary on AI credit adoption.</li>
+      <li>Dynatrace's next earnings call, for any change to on-demand pricing or a dedicated agent meter.</li>
+      <li>New Relic's Compute Capacity Unit price, and whether Gartner's licensing commentary is published in full.</li>
+    </ul>
+
+    <h2>Method and Limits</h2>
+    <p>Only public sources were used: vendor price pages, product documentation, press releases and earnings-call transcripts, retrieved September 24, 2026. Third-party pricing aggregators were checked and excluded after they proved stale: one listed New Relic ingest at $0.30 per GB against $0.40 on the vendor's own page, and another showed Honeycomb's legacy event rate as current. Prices change often, so each figure here carries a retrieval date and should be checked against the live page before being relied on. Datadog's earlier per-investigation price and the exact date of its move to AI Credits are not documented on Datadog's own pages and are excluded rather than sourced from aggregators. Sumo Logic and Observe were not reviewed. The Gartner "chaos in AI licensing" remark comes from secondary coverage; its original document was not located.</p>
+
+    <h2>Sources</h2>
+    <ol class="sources">
+      <li>Datadog: <a href="https://www.datadoghq.com/pricing/" target="_blank" rel="noopener">pricing</a>, <a href="https://docs.datadoghq.com/account_management/billing/ai_credits/" target="_blank" rel="noopener">AI Credits documentation</a>, <a href="https://docs.datadoghq.com/cloud_cost_management/ai_costs/" target="_blank" rel="noopener">AI Costs documentation</a>, <a href="https://www.investing.com/news/transcripts/datadog-at-citis-2026-global-tmt-conference-ai-broadens-growth-93CH-4892140" target="_blank" rel="noopener">Citi TMT transcript coverage, September 8</a>.</li>
+      <li>Grafana Labs: <a href="https://grafana.com/pricing/" target="_blank" rel="noopener">pricing</a>, <a href="https://grafana.com/docs/grafana-cloud/platform/pricing-and-usage/assistant/" target="_blank" rel="noopener">Assistant pricing and usage</a>, <a href="https://grafana.com/docs/grafana-cloud/platform/pricing-and-usage/agent-observability/" target="_blank" rel="noopener">Agent Observability pricing</a>.</li>
+      <li>Elastic: <a href="https://www.elastic.co/pricing/serverless-observability" target="_blank" rel="noopener">Observability Serverless pricing</a>, <a href="https://www.elastic.co/docs/deploy-manage/cloud-organization/billing/elastic-observability-billing-dimensions" target="_blank" rel="noopener">billing dimensions</a>.</li>
+      <li>Dash0: <a href="https://www.dash0.com/pricing" target="_blank" rel="noopener">pricing</a>.</li>
+      <li>Coralogix: <a href="https://coralogix.com/pricing/" target="_blank" rel="noopener">pricing</a>.</li>
+      <li>Honeycomb: <a href="https://docs.honeycomb.io/get-started/honeycomb/2026-pro-plan-changes" target="_blank" rel="noopener">2026 Pro plan changes</a>.</li>
+      <li>Riverbed: <a href="https://www.financialcontent.com/article/bizwire-2026-9-16-riverbed-brings-powerful-agentic-ai-and-360-degree-visibility-to-network-operations" target="_blank" rel="noopener">NPM 360 release, September 16</a>.</li>
+      <li>Dynatrace: <a href="https://www.dynatrace.com/pricing/rate-card/" target="_blank" rel="noopener">rate card</a>, <a href="https://docs.dynatrace.com/docs/license/capabilities" target="_blank" rel="noopener">capability billing documentation</a>, <a href="https://docs.dynatrace.com/docs/dynatrace-intelligence/use-cases/cost-intelligence" target="_blank" rel="noopener">Cost Intelligence</a>, <a href="https://www.theglobeandmail.com/investing/markets/stocks/DT/pressreleases/3800978/dynatrace-dt-q1-2027-earnings-call-transcript/" target="_blank" rel="noopener">Q1 FY2027 earnings call transcript, August 5</a>.</li>
+      <li>New Relic: <a href="https://newrelic.com/pricing" target="_blank" rel="noopener">pricing</a>, <a href="https://newrelic.com/pricing/compute" target="_blank" rel="noopener">Compute pricing</a>.</li>
+      <li>Splunk: <a href="https://www.splunk.com/en_us/products/tokenomics.html" target="_blank" rel="noopener">Tokenomics</a>, <a href="https://www.splunk.com/en_us/products/pricing/pricing-models.html" target="_blank" rel="noopener">pricing models</a>, <a href="https://www.techtarget.com/it-infrastructure/news/366650721/Seismic-shift-in-Splunk-pricing-spotlights-AI-data-management" target="_blank" rel="noopener">TechTarget on activity-based pricing, September 18</a>, <a href="https://itdaily.com/news/software/cisco-brings-splunk-ai-to-its-own-data-center-and-adds-a-counter-to-every-token/" target="_blank" rel="noopener">ITdaily, September 16</a>.</li>
+      <li>Chronosphere: <a href="https://docs.chronosphere.io/control/shaping/shape-metrics/quotas" target="_blank" rel="noopener">metric quotas and pools</a>.</li>
+      <li>Cribl: <a href="https://www.globenewswire.com/news-release/2026/08/03/3337558/0/en/cribl-s-ai-platform-debuts-powerful-new-security-capabilities.html" target="_blank" rel="noopener">AI platform announcement, August 3</a>.</li>
+    </ol>
+  </div>
+  <div class="article-actions">
+    <button class="btn-pdf" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+      Download PDF
+    </button>
+    <button class="btn-copy" onclick="copyLink()">Copy link</button>
+    <span class="copy-status" id="cs">Copied!</span>
+    <a href="/reports/" class="back-link">← All reports</a>
+  </div>
+  <div class="print-footer">mbojko.com/reports &nbsp;&middot;&nbsp; Michał Bojko &nbsp;&middot;&nbsp; Gdańsk, Poland</div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(); event.stopPropagation()">Close ✕</button>
+  <img src="/assets/reports-ai-pricing-analysis-summary.png" alt="Every vendor prices AI agents differently: a pricing comparison across Datadog, Dash0, Grafana, Coralogix, Elastic and Honeycomb." onclick="event.stopPropagation()">
+</div>
+
+<div class="stripe-band"></div>
+<footer>
+  <span class="footer-left">&copy; 2026 Michał Bojko &middot; Gdańsk, Poland</span>
+  <div class="footer-links">
+    <a href="https://github.com/michalbojkogdansk" target="_blank">GitHub</a>
+    <a href="https://medium.com/@michal.bojko.gdansk" target="_blank">Medium</a>
+    <a href="https://www.linkedin.com/in/mbojkogdansk/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+<script>
+function copyLink(){
+  navigator.clipboard.writeText('https://mbojko.com/reports/ai-agent-pricing-analysis/').then(function(){
+    var s=document.getElementById('cs');
+    s.style.display='inline';
+    setTimeout(function(){s.style.display='none';},2500);
+  });
+}
+function openLightbox(){
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeLightbox();
+});
+</script>
+</body>
+</html>
