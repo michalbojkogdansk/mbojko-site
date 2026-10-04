@@ -96,6 +96,12 @@
     .report-item-tag{font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
     .report-item-title{font-size:14px;font-weight:700;color:var(--white);line-height:1.4}
     .report-item-sub{font-size:12px;color:var(--muted2);margin-top:.3rem;line-height:1.5}
+    .report-item[hidden]{display:none}
+    .q-filter{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem}
+    .q-chip{font-family:inherit;background:transparent;border:1px solid var(--border);color:var(--muted2);padding:5px 12px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .15s}
+    .q-chip:hover{border-color:var(--yellow);color:var(--yellow)}
+    .q-chip[aria-pressed="true"]{background:var(--yellow);border-color:var(--yellow);color:#000}
+    .q-chip .q-count{margin-left:6px;opacity:.6;font-weight:600}
     .report-empty{background:var(--bg2);border:1px solid var(--border);padding:2.5rem 1.5rem;text-align:center}
     .report-empty-num{font-size:3rem;font-weight:800;color:var(--yellow);opacity:.2;letter-spacing:-.03em}
     .report-empty-title{font-size:13px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;margin:.75rem 0 .4rem}
@@ -186,8 +192,9 @@
     <!-- LEFT: BI-WEEKLY -->
     <div>
       <div class="col-header">Bi-weekly Updates</div>
-      <div class="report-list">
-        <a class="report-item" href="/reports/2026-09-20/">
+      <div class="q-filter" id="qFilter" role="group" aria-label="Filter bi-weekly updates by quarter"></div>
+      <div class="report-list" id="biweeklyList">
+        <a class="report-item" data-quarter="Q3'26" href="/reports/2026-09-20/">
           <div class="report-item-top">
             <span class="report-item-date">September 7 - September 20, 2026</span>
             <span class="report-item-tag">Update #7</span>
@@ -195,7 +202,7 @@
           <div class="report-item-title">Observability Vendors Start Measuring What AI Costs</div>
           <div class="report-item-sub">Splunk Tokenomics at .conf26, Datadog AI customer numbers and AI credits pricing, Coralogix FedRAMP Moderate, Elastic cross-project search GA</div>
         </a>
-        <a class="report-item" href="/reports/2026-09-06/">
+        <a class="report-item" data-quarter="Q3'26" href="/reports/2026-09-06/">
           <div class="report-item-top">
             <span class="report-item-date">August 24 - September 6, 2026</span>
             <span class="report-item-tag">Update #6</span>
@@ -203,7 +210,7 @@
           <div class="report-item-title">Elastic Beats, Buys, and Bets on AI, While the Rest of the Market Goes Quiet</div>
           <div class="report-item-sub">Elastic Q1 FY2027 earnings beat and stock jumps 23%, Deductive AI acquisition closes, OpenAI GPT cyber models come to Elastic Security, Julia Liuson joins the board</div>
         </a>
-        <a class="report-item" href="/reports/2026-08-23/">
+        <a class="report-item" data-quarter="Q3'26" href="/reports/2026-08-23/">
           <div class="report-item-top">
             <span class="report-item-date">August 10 - August 23, 2026</span>
             <span class="report-item-tag">Update #5</span>
@@ -211,7 +218,7 @@
           <div class="report-item-title">Observability Vendors Are Buying Their Way Into AI</div>
           <div class="report-item-sub">Dynatrace acquires Arize AI for $915M, Dash0 acquires Polar Signals, Cribl acquires Radiant Security, MCP servers give AI agents direct telemetry access</div>
         </a>
-        <a class="report-item" href="/reports/2026-08-09/">
+        <a class="report-item" data-quarter="Q3'26" href="/reports/2026-08-09/">
           <div class="report-item-top">
             <span class="report-item-date">July 28 - August 9, 2026</span>
             <span class="report-item-tag">Update #4</span>
@@ -219,7 +226,7 @@
           <div class="report-item-title">Earnings Prove It, Agents Ship It: The Autonomy Race Hits Escape Velocity</div>
           <div class="report-item-sub">Datadog and Dynatrace Q2 earnings, Grafana AI Week, Cribl at Black Hat, Elastic-OpenAI partnership</div>
         </a>
-        <a class="report-item" href="/reports/2026-07-27/">
+        <a class="report-item" data-quarter="Q3'26" href="/reports/2026-07-27/">
           <div class="report-item-top">
             <span class="report-item-date">July 14 - July 27, 2026</span>
             <span class="report-item-tag">Update #3</span>
@@ -227,7 +234,7 @@
           <div class="report-item-title">Palo Alto Doubles Down, Gartner Names Six Leaders</div>
           <div class="report-item-sub">Palo Alto Networks to acquire Embrace, 2026 Gartner MQ six Leaders, Elastic AWS AI Security, Splunk Enterprise Security 8.6.0</div>
         </a>
-        <a class="report-item" href="/reports/2026-07-13/">
+        <a class="report-item" data-quarter="Q3'26" href="/reports/2026-07-13/">
           <div class="report-item-top">
             <span class="report-item-date">June 23 - July 13, 2026</span>
             <span class="report-item-tag">Update #2</span>
@@ -235,7 +242,7 @@
           <div class="report-item-title">Agentic Ops, Government Push, Elastic's Counter-Move</div>
           <div class="report-item-sub">Datadog RLOps acquisition, New Relic Autopilot, FedRAMP race, Elastic restructuring, Bernstein downgrade</div>
         </a>
-        <a class="report-item" href="/reports/2026-06-22/">
+        <a class="report-item" data-quarter="Q3'26" href="/reports/2026-06-22/">
           <div class="report-item-top">
             <span class="report-item-date">June 9 - June 22, 2026</span>
             <span class="report-item-tag">Update #1</span>
@@ -342,6 +349,43 @@ function switchTab(id, btn) {
   if (btn) btn.classList.add('active');
   history.replaceState(null, '', '#' + id);
 }
+
+// Quarter filter for bi-weekly updates
+(function() {
+  var list = document.getElementById('biweeklyList');
+  var bar = document.getElementById('qFilter');
+  if (!list || !bar) return;
+  var items = Array.prototype.slice.call(list.querySelectorAll('.report-item[data-quarter]'));
+  var quarters = [];
+  items.forEach(function(el) {
+    var q = el.getAttribute('data-quarter');
+    if (quarters.indexOf(q) === -1) quarters.push(q);
+  });
+  function apply(q) {
+    items.forEach(function(el) { el.hidden = q !== 'all' && el.getAttribute('data-quarter') !== q; });
+    Array.prototype.forEach.call(bar.children, function(b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-q') === q ? 'true' : 'false');
+    });
+  }
+  function chip(label, q, count) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'q-chip';
+    b.setAttribute('data-q', q);
+    b.appendChild(document.createTextNode(label));
+    var c = document.createElement('span');
+    c.className = 'q-count';
+    c.textContent = count;
+    b.appendChild(c);
+    b.addEventListener('click', function() { apply(q); });
+    bar.appendChild(b);
+  }
+  chip('All', 'all', items.length);
+  quarters.forEach(function(q) {
+    chip(q, q, items.filter(function(el) { return el.getAttribute('data-quarter') === q; }).length);
+  });
+  apply('all');
+})();
 
 // Activate tab from URL hash on load
 (function() {
