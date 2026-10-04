@@ -7,10 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Sun, 20 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Observe Returns, While Grafana and Dash0 Remove Adoption Barriers (September 21 - September 27, 2026)</title>
+      <link>https://mbojko.com/reports/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-09-27</guid>
+      <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>A quiet week by volume. Observe by Snowflake announced AI agent observability for private preview, its first product news since the acquisition. Grafana Labs and Dash0 shipped adoption blockers: an Alertmanager migration path, payment card redaction and a billing forecast.</p>
+        <p><strong>Key stories:</strong> Observe by Snowflake AI Agent Observability (private preview, launch event October 22). Grafana Alerting import of Alertmanager configuration (public preview). Dash0 Cardholder Data Redaction, Spend Forecast tab and GitHub Actions automation triggers.</p>
+        <p><a href="https://mbojko.com/reports/2026-09-27/">Read the full update</a></p>
+      ]]></description>
+    </item>
     <item>
       <title>Observability Vendors Start Measuring What AI Costs (September 7 - September 20, 2026)</title>
       <link>https://mbojko.com/reports/</link>
