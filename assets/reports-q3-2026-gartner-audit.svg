@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Gartner roadmap audit and 2026 Leaders</title>
+<desc id="d">Gartner roadmap audit. Of 24 forward-looking statements in the 2025 Digital Experience Monitoring and 2026 Observability Platforms Magic Quadrants, 4 were checked against dated sources: 2 described features already public, 1 was not found shipped more than ten months after publication, 1 was inconclusive. 8 were specific enough to check but were not checked, and 12 were too general to confirm or refute. A five-year test on the 2021 APM Magic Quadrant checked 5 statements: 2 integration plans not delivered, 1 delivered in stages, 1 already public, 1 loosely defined. Seven vendors announced Leader placements in the 2026 edition: Datadog, Grafana Labs, Dynatrace, Elastic, Chronosphere, IBM and Coralogix.</desc>
+<defs><pattern id="hz" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="12" height="26" fill="#FFD600"/><rect x="12" width="14" height="26" fill="#111318"/></pattern></defs>
+<rect width="1200" height="700" fill="#13151e"/>
+<rect width="1200" height="9" fill="url(#hz)" opacity=".9"/>
+<text x="60" y="56" font-size="28" fill="#ffffff" font-weight="800" text-anchor="start" >What the roadmap audit checked</text>
+<text x="60" y="82" font-size="16.0" fill="#8a92a6" font-weight="400" text-anchor="start" >Statements in Gartner Magic Quadrant vendor profiles, sorted by whether they could be tested</text>
+<text x="60" y="128" font-size="12.1" fill="#5a6070" font-weight="700" text-anchor="start" letter-spacing="1.5">24 FORWARD-LOOKING STATEMENTS, 2025 AND 2026 GARTNER REPORTS</text>
+<rect x="60" y="148" width="36" height="36" fill="#FFD600"/>
+<rect x="102" y="148" width="36" height="36" fill="#FFD600"/>
+<rect x="144" y="148" width="36" height="36" fill="#FFD600"/>
+<rect x="186" y="148" width="36" height="36" fill="#FFD600"/>
+<line x1="60" y1="198" x2="222" y2="198" stroke="#FFD600" stroke-width="2"/>
+<text x="60" y="226" font-size="17" fill="#ffffff" font-weight="800" text-anchor="start" >4 checked</text>
+<text x="60" y="248" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >against dated,</text>
+<text x="60" y="267" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >independent sources</text>
+<rect x="251" y="149" width="34" height="34" fill="none" stroke="#FFD600" stroke-width="2"/>
+<rect x="293" y="149" width="34" height="34" fill="none" stroke="#FFD600" stroke-width="2"/>
+<rect x="335" y="149" width="34" height="34" fill="none" stroke="#FFD600" stroke-width="2"/>
+<rect x="377" y="149" width="34" height="34" fill="none" stroke="#FFD600" stroke-width="2"/>
+<rect x="419" y="149" width="34" height="34" fill="none" stroke="#FFD600" stroke-width="2"/>
+<rect x="461" y="149" width="34" height="34" fill="none" stroke="#FFD600" stroke-width="2"/>
+<rect x="503" y="149" width="34" height="34" fill="none" stroke="#FFD600" stroke-width="2"/>
+<rect x="545" y="149" width="34" height="34" fill="none" stroke="#FFD600" stroke-width="2"/>
+<line x1="250" y1="198" x2="580" y2="198" stroke="#FFD600" stroke-width="2"/>
+<text x="250" y="226" font-size="17" fill="#ffffff" font-weight="800" text-anchor="start" >8 specific</text>
+<text x="250" y="248" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >enough to check,</text>
+<text x="250" y="267" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >not checked</text>
+<rect x="608" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="650" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="692" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="734" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="776" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="818" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="860" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="902" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="944" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="986" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="1028" y="148" width="36" height="36" fill="#5a6070"/>
+<rect x="1070" y="148" width="36" height="36" fill="#5a6070"/>
+<line x1="608" y1="198" x2="1106" y2="198" stroke="#5a6070" stroke-width="2"/>
+<text x="608" y="226" font-size="17" fill="#ffffff" font-weight="800" text-anchor="start" >12 too general</text>
+<text x="608" y="248" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >to confirm or refute</text>
+<text x="60" y="318" font-size="13.8" fill="#8a92a6" font-weight="700" text-anchor="start" >Of the 4 checked:</text>
+<text x="60" y="342" font-size="15.4" fill="#d0d0d0" font-weight="400" text-anchor="start" >2 described features already public before the report</text>
+<text x="60" y="364" font-size="15.4" fill="#d0d0d0" font-weight="400" text-anchor="start" >1 not found shipped more than ten months after publication</text>
+<text x="60" y="386" font-size="15.4" fill="#d0d0d0" font-weight="400" text-anchor="start" >1 inconclusive</text>
+<line x1="60" y1="416" x2="1140" y2="416" stroke="#2a2e3d"/>
+<text x="60" y="444" font-size="12.1" fill="#5a6070" font-weight="700" text-anchor="start" letter-spacing="1.5">FIVE-YEAR TEST, 2021 APM MAGIC QUADRANT: 5 STATEMENTS CHECKED</text>
+<rect x="60" y="468" width="36" height="36" fill="#FFD600"/>
+<rect x="102" y="468" width="36" height="36" fill="#FFD600"/>
+<text x="60" y="530" font-size="14.9" fill="#d0d0d0" font-weight="700" text-anchor="start" >2 integration plans</text>
+<text x="60" y="549" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >not delivered</text>
+<rect x="310" y="468" width="36" height="36" fill="#FFD600"/>
+<text x="310" y="530" font-size="14.9" fill="#d0d0d0" font-weight="700" text-anchor="start" >1 delivered</text>
+<text x="310" y="549" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >in stages</text>
+<rect x="560" y="468" width="36" height="36" fill="#FFD600"/>
+<text x="560" y="530" font-size="14.9" fill="#d0d0d0" font-weight="700" text-anchor="start" >1 already public</text>
+<text x="560" y="549" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >before publication</text>
+<rect x="810" y="468" width="36" height="36" fill="#FFD600"/>
+<text x="810" y="530" font-size="14.9" fill="#d0d0d0" font-weight="700" text-anchor="start" >1 loosely defined</text>
+<text x="810" y="549" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >capability</text>
+<line x1="60" y1="576" x2="1140" y2="576" stroke="#2a2e3d"/>
+<text x="60" y="628" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >7 vendors announced Leader placements in the 2026 Observability Platforms edition (dated July 13):</text>
+<text x="60" y="650" font-size="15.4" fill="#ffffff" font-weight="700" text-anchor="start" >Datadog  ·  Grafana Labs  ·  Dynatrace  ·  Elastic  ·  Chronosphere  ·  IBM  ·  Coralogix</text>
+<line x1="60" y1="656" x2="1140" y2="656" stroke="#2a2e3d"/>
+<text x="60" y="680" font-size="13.2" fill="#5a6070" font-weight="400" text-anchor="start" >Source: the Gartner Magic Quadrants analysis. Leader placements are by vendors' own announcements.</text>
+<text x="1140" y="680" font-size="13.2" fill="#5a6070" font-weight="700" text-anchor="end" >mbojko.com/reports/q3-2026</text>
+</svg>

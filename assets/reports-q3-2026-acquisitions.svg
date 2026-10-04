@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Seven acquisitions, June 30 to September 27, 2026</title>
+<desc id="d">Seven acquisitions announced or completed between June 30 and September 27, 2026: Datadog and Adaptive ML, Cribl and CardinalOps, Palo Alto Networks and Embrace, Dynatrace and Arize AI for $915 million, Dash0 and Polar Signals, Cribl and Radiant Security technology assets, Elastic and Deductive AI. Only the Arize price is stated in the published updates.</desc>
+<defs><pattern id="hz" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="12" height="26" fill="#FFD600"/><rect x="12" width="14" height="26" fill="#111318"/></pattern></defs>
+<rect width="1200" height="660" fill="#13151e"/>
+<rect width="1200" height="9" fill="url(#hz)" opacity=".9"/>
+<text x="60" y="56" font-size="28" fill="#ffffff" font-weight="800" text-anchor="start" >Seven acquisitions in the period</text>
+<text x="60" y="82" font-size="16.0" fill="#8a92a6" font-weight="400" text-anchor="start" >Announced or completed, with the capability each one adds</text>
+<text x="72" y="130" font-size="12.1" fill="#5a6070" font-weight="700" text-anchor="start" letter-spacing="1.5">DATE</text>
+<text x="170" y="130" font-size="12.1" fill="#5a6070" font-weight="700" text-anchor="start" letter-spacing="1.5">ACQUIRER</text>
+<text x="440" y="130" font-size="12.1" fill="#5a6070" font-weight="700" text-anchor="start" letter-spacing="1.5">TARGET</text>
+<text x="770" y="130" font-size="12.1" fill="#5a6070" font-weight="700" text-anchor="start" letter-spacing="1.5">CAPABILITY ADDED</text>
+<text x="1128" y="130" font-size="12.1" fill="#5a6070" font-weight="700" text-anchor="end" letter-spacing="1.5">PRICE STATED</text>
+<rect x="60" y="150" width="1080" height="52" fill="#1a1d28"/>
+<rect x="60" y="150" width="4" height="52" fill="#5a6070"/>
+<text x="72" y="182" font-size="16.5" fill="#8a92a6" font-weight="600" text-anchor="start" >Jun 30</text>
+<text x="170" y="182" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Datadog</text>
+<text x="400" y="182" font-size="17.6" fill="#FFD600" font-weight="700" text-anchor="start" >→</text>
+<text x="440" y="182" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Adaptive ML</text>
+<text x="770" y="182" font-size="15.4" fill="#8a92a6" font-weight="400" text-anchor="start" >Reinforcement learning operations</text>
+<text x="1128" y="182" font-size="14.9" fill="#5a6070" font-weight="600" text-anchor="end" >Not stated</text>
+<rect x="60" y="210" width="1080" height="52" fill="#171a24"/>
+<rect x="60" y="210" width="4" height="52" fill="#5a6070"/>
+<text x="72" y="242" font-size="16.5" fill="#8a92a6" font-weight="600" text-anchor="start" >Jul 14</text>
+<text x="170" y="242" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Cribl</text>
+<text x="400" y="242" font-size="17.6" fill="#FFD600" font-weight="700" text-anchor="start" >→</text>
+<text x="440" y="242" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >CardinalOps</text>
+<text x="770" y="242" font-size="15.4" fill="#8a92a6" font-weight="400" text-anchor="start" >AI detection engineering</text>
+<text x="1128" y="242" font-size="14.9" fill="#5a6070" font-weight="600" text-anchor="end" >Not stated</text>
+<rect x="60" y="270" width="1080" height="52" fill="#1a1d28"/>
+<rect x="60" y="270" width="4" height="52" fill="#5a6070"/>
+<text x="72" y="302" font-size="16.5" fill="#8a92a6" font-weight="600" text-anchor="start" >Jul 21</text>
+<text x="170" y="302" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Palo Alto Networks</text>
+<text x="400" y="302" font-size="17.6" fill="#FFD600" font-weight="700" text-anchor="start" >→</text>
+<text x="440" y="302" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Embrace</text>
+<text x="770" y="302" font-size="15.4" fill="#8a92a6" font-weight="400" text-anchor="start" >Mobile and web real user monitoring</text>
+<text x="1128" y="302" font-size="14.9" fill="#5a6070" font-weight="600" text-anchor="end" >Not stated</text>
+<rect x="60" y="330" width="1080" height="52" fill="#171a24"/>
+<rect x="60" y="330" width="4" height="52" fill="#FFD600"/>
+<text x="72" y="362" font-size="16.5" fill="#8a92a6" font-weight="600" text-anchor="start" >Aug 13</text>
+<text x="170" y="362" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Dynatrace</text>
+<text x="400" y="362" font-size="17.6" fill="#FFD600" font-weight="700" text-anchor="start" >→</text>
+<text x="440" y="362" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Arize AI</text>
+<text x="770" y="362" font-size="15.4" fill="#8a92a6" font-weight="400" text-anchor="start" >LLM evaluation and prompt testing</text>
+<text x="1128" y="362" font-size="17" fill="#FFD600" font-weight="800" text-anchor="end" >$915M</text>
+<rect x="60" y="390" width="1080" height="52" fill="#1a1d28"/>
+<rect x="60" y="390" width="4" height="52" fill="#5a6070"/>
+<text x="72" y="422" font-size="16.5" fill="#8a92a6" font-weight="600" text-anchor="start" >Aug 17</text>
+<text x="170" y="422" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Dash0</text>
+<text x="400" y="422" font-size="17.6" fill="#FFD600" font-weight="700" text-anchor="start" >→</text>
+<text x="440" y="422" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Polar Signals</text>
+<text x="770" y="422" font-size="15.4" fill="#8a92a6" font-weight="400" text-anchor="start" >Continuous profiling</text>
+<text x="1128" y="422" font-size="14.9" fill="#5a6070" font-weight="600" text-anchor="end" >Not stated</text>
+<rect x="60" y="450" width="1080" height="52" fill="#171a24"/>
+<rect x="60" y="450" width="4" height="52" fill="#5a6070"/>
+<text x="72" y="482" font-size="16.5" fill="#8a92a6" font-weight="600" text-anchor="start" >Aug 19</text>
+<text x="170" y="482" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Cribl</text>
+<text x="400" y="482" font-size="17.6" fill="#FFD600" font-weight="700" text-anchor="start" >→</text>
+<text x="440" y="482" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Radiant Security (assets)</text>
+<text x="770" y="482" font-size="15.4" fill="#8a92a6" font-weight="400" text-anchor="start" >AI security operations triage</text>
+<text x="1128" y="482" font-size="14.9" fill="#5a6070" font-weight="600" text-anchor="end" >Not stated</text>
+<rect x="60" y="510" width="1080" height="52" fill="#1a1d28"/>
+<rect x="60" y="510" width="4" height="52" fill="#5a6070"/>
+<text x="72" y="542" font-size="16.5" fill="#8a92a6" font-weight="600" text-anchor="start" >Aug 24</text>
+<text x="170" y="542" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Elastic</text>
+<text x="400" y="542" font-size="17.6" fill="#FFD600" font-weight="700" text-anchor="start" >→</text>
+<text x="440" y="542" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Deductive AI</text>
+<text x="770" y="542" font-size="15.4" fill="#8a92a6" font-weight="400" text-anchor="start" >AI incident investigation</text>
+<text x="1128" y="542" font-size="14.9" fill="#5a6070" font-weight="600" text-anchor="end" >Not stated</text>
+<text x="60" y="594" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >Status at the end of the period: Arize pending as of September 27. Embrace closing expected in Palo Alto Networks' first fiscal quarter of 2027.</text>
+<text x="60" y="614" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >Elastic announced completion of the Deductive AI acquisition on August 24.</text>
+<line x1="60" y1="616" x2="1140" y2="616" stroke="#2a2e3d"/>
+<text x="60" y="640" font-size="13.2" fill="#5a6070" font-weight="400" text-anchor="start" >Sources: bi-weekly Updates #2 to #8 and company releases. Price is the amount stated in the published updates.</text>
+<text x="1140" y="640" font-size="13.2" fill="#5a6070" font-weight="700" text-anchor="end" >mbojko.com/reports/q3-2026</text>
+</svg>

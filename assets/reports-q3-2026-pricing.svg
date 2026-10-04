@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">How observability vendors meter AI agent work</title>
+<desc id="d">Three AI agent pricing meters across twelve vendors, retrieved September 24, 2026. Credits: Datadog $1.00 per credit on an annual commit, Dash0 $0.60 per credit. Tokens: Grafana Labs from $2 per million tokens beyond an included pool, Coralogix $1.50 per million for AI evaluation, Elastic managed LLMs $4.50 input and $21 output per million. Executions and generations: Elastic from $0.025 per Agent Builder execution, Grafana Agent Observability from $1.50 per thousand generations. Dynatrace, New Relic, Splunk, Chronosphere and Cribl publish no AI rate on the pages reviewed.</desc>
+<defs><pattern id="hz" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="12" height="26" fill="#FFD600"/><rect x="12" width="14" height="26" fill="#111318"/></pattern></defs>
+<rect width="1200" height="600" fill="#13151e"/>
+<rect width="1200" height="9" fill="url(#hz)" opacity=".9"/>
+<text x="60" y="56" font-size="28" fill="#ffffff" font-weight="800" text-anchor="start" >Three meters for AI agent work</text>
+<text x="60" y="82" font-size="16.0" fill="#8a92a6" font-weight="400" text-anchor="start" >List prices from public pages, retrieved September 24, 2026</text>
+<rect x="60" y="118" width="340" height="322" fill="#1a1d28"/>
+<rect x="60" y="118" width="340" height="4" fill="#FFD600"/>
+<text x="84" y="160" font-size="26" fill="#ffffff" font-weight="800" text-anchor="start" >Credits</text>
+<text x="84" y="184" font-size="14.3" fill="#8a92a6" font-weight="400" text-anchor="start" >A vendor-defined unit of work</text>
+<line x1="84" y1="208" x2="376" y2="208" stroke="#2a2e3d"/>
+<text x="84" y="228" font-size="16.5" fill="#ffffff" font-weight="700" text-anchor="start" >Datadog</text>
+<text x="84" y="248" font-size="16.0" fill="#FFD600" font-weight="700" text-anchor="start" >$1.00 per credit</text>
+<text x="84" y="266" font-size="12.7" fill="#8a92a6" font-weight="400" text-anchor="start" >annual commit</text>
+<line x1="84" y1="280" x2="376" y2="280" stroke="#2a2e3d"/>
+<text x="84" y="300" font-size="16.5" fill="#ffffff" font-weight="700" text-anchor="start" >Dash0</text>
+<text x="84" y="320" font-size="16.0" fill="#FFD600" font-weight="700" text-anchor="start" >$0.60 per credit</text>
+<text x="84" y="338" font-size="12.7" fill="#8a92a6" font-weight="400" text-anchor="start" >Agent0</text>
+<rect x="430" y="118" width="340" height="322" fill="#1a1d28"/>
+<rect x="430" y="118" width="340" height="4" fill="#FFD600"/>
+<text x="454" y="160" font-size="26" fill="#ffffff" font-weight="800" text-anchor="start" >Tokens</text>
+<text x="454" y="184" font-size="14.3" fill="#8a92a6" font-weight="400" text-anchor="start" >Underlying model cost passed through</text>
+<line x1="454" y1="208" x2="746" y2="208" stroke="#2a2e3d"/>
+<text x="454" y="228" font-size="16.5" fill="#ffffff" font-weight="700" text-anchor="start" >Grafana Labs</text>
+<text x="454" y="248" font-size="16.0" fill="#FFD600" font-weight="700" text-anchor="start" >from $2 per 1M tokens</text>
+<text x="454" y="266" font-size="12.7" fill="#8a92a6" font-weight="400" text-anchor="start" >beyond an included pool</text>
+<line x1="454" y1="280" x2="746" y2="280" stroke="#2a2e3d"/>
+<text x="454" y="300" font-size="16.5" fill="#ffffff" font-weight="700" text-anchor="start" >Coralogix</text>
+<text x="454" y="320" font-size="16.0" fill="#FFD600" font-weight="700" text-anchor="start" >$1.50 per 1M tokens</text>
+<text x="454" y="338" font-size="12.7" fill="#8a92a6" font-weight="400" text-anchor="start" >AI evaluation</text>
+<line x1="454" y1="352" x2="746" y2="352" stroke="#2a2e3d"/>
+<text x="454" y="372" font-size="16.5" fill="#ffffff" font-weight="700" text-anchor="start" >Elastic</text>
+<text x="454" y="392" font-size="16.0" fill="#FFD600" font-weight="700" text-anchor="start" >$4.50 / $21 per 1M tokens</text>
+<text x="454" y="410" font-size="12.7" fill="#8a92a6" font-weight="400" text-anchor="start" >managed LLM input / output</text>
+<rect x="800" y="118" width="340" height="322" fill="#1a1d28"/>
+<rect x="800" y="118" width="340" height="4" fill="#FFD600"/>
+<text x="824" y="160" font-size="26" fill="#ffffff" font-weight="800" text-anchor="start" >Executions</text>
+<text x="824" y="184" font-size="14.3" fill="#8a92a6" font-weight="400" text-anchor="start" >Counts events, not compute</text>
+<line x1="824" y1="208" x2="1116" y2="208" stroke="#2a2e3d"/>
+<text x="824" y="228" font-size="16.5" fill="#ffffff" font-weight="700" text-anchor="start" >Elastic</text>
+<text x="824" y="248" font-size="16.0" fill="#FFD600" font-weight="700" text-anchor="start" >from $0.025 per execution</text>
+<text x="824" y="266" font-size="12.7" fill="#8a92a6" font-weight="400" text-anchor="start" >Agent Builder</text>
+<line x1="824" y1="280" x2="1116" y2="280" stroke="#2a2e3d"/>
+<text x="824" y="300" font-size="16.5" fill="#ffffff" font-weight="700" text-anchor="start" >Grafana Labs</text>
+<text x="824" y="320" font-size="16.0" fill="#FFD600" font-weight="700" text-anchor="start" >from $1.50 per 1K generations</text>
+<text x="824" y="338" font-size="12.7" fill="#8a92a6" font-weight="400" text-anchor="start" >Agent Observability</text>
+<rect x="60" y="458" width="1080" height="64" fill="#171a24"/>
+<rect x="60" y="458" width="4" height="64" fill="#5a6070"/>
+<text x="84" y="484" font-size="12.1" fill="#5a6070" font-weight="700" text-anchor="start" letter-spacing="1.5">NO PUBLIC AI RATE ON THE PAGES REVIEWED</text>
+<text x="84" y="508" font-size="17.6" fill="#ffffff" font-weight="700" text-anchor="start" >Dynatrace  ·  New Relic  ·  Splunk  ·  Chronosphere  ·  Cribl</text>
+<text x="1116" y="508" font-size="17.6" fill="#FFD600" font-weight="800" text-anchor="end" >5 of 12 vendors</text>
+<line x1="60" y1="556" x2="1140" y2="556" stroke="#2a2e3d"/>
+<text x="60" y="580" font-size="13.2" fill="#5a6070" font-weight="400" text-anchor="start" >Units are not equivalent across vendors. Several figures are starting prices. Source: the AI agent pricing analysis.</text>
+<text x="1140" y="580" font-size="13.2" fill="#5a6070" font-weight="700" text-anchor="end" >mbojko.com/reports/q3-2026</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Earnings reported in the period</title>
+<desc id="d">Revenue reported in the period. Datadog Q2 2026: $1.12 billion, up 36% year over year, 4,720 customers with ARR of $100,000 or more. Elastic Q1 fiscal 2027: $478.1 million, up 15.1%, more than 1,800 customers with ACV above $100,000. Dynatrace Q1 fiscal 2027: $554.55 million, up 16%, ARR $2.14 billion up 17%, revenue about $5 million above consensus.</desc>
+<defs><pattern id="hz" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="12" height="26" fill="#FFD600"/><rect x="12" width="14" height="26" fill="#111318"/></pattern></defs>
+<rect width="1200" height="500" fill="#13151e"/>
+<rect width="1200" height="9" fill="url(#hz)" opacity=".9"/>
+<text x="60" y="56" font-size="28" fill="#ffffff" font-weight="800" text-anchor="start" >Earnings reported in the period</text>
+<text x="60" y="82" font-size="16.0" fill="#8a92a6" font-weight="400" text-anchor="start" >Revenue and growth as reported by each company</text>
+<rect x="60" y="118" width="340" height="300" fill="#1a1d28"/>
+<rect x="60" y="118" width="340" height="4" fill="#FFD600"/>
+<text x="84" y="162" font-size="24" fill="#ffffff" font-weight="800" text-anchor="start" >Datadog</text>
+<text x="84" y="186" font-size="14.3" fill="#8a92a6" font-weight="400" text-anchor="start" >Q2 2026 · reported Aug 6</text>
+<text x="84" y="258" font-size="54" fill="#FFD600" font-weight="800" text-anchor="start" >$1.12B</text>
+<text x="84" y="282" font-size="14.3" fill="#8a92a6" font-weight="600" text-anchor="start" letter-spacing="1">revenue</text>
+<text x="84" y="326" font-size="28" fill="#ffffff" font-weight="800" text-anchor="start" >+36%</text>
+<text x="174" y="326" font-size="16.5" fill="#8a92a6" font-weight="400" text-anchor="start" >year over year</text>
+<line x1="84" y1="346" x2="376" y2="346" stroke="#2a2e3d"/>
+<text x="84" y="372" font-size="14.9" fill="#d0d0d0" font-weight="400" text-anchor="start" >4,720 customers with ARR of $100K or more</text>
+<rect x="430" y="118" width="340" height="300" fill="#1a1d28"/>
+<rect x="430" y="118" width="340" height="4" fill="#FFD600"/>
+<text x="454" y="162" font-size="24" fill="#ffffff" font-weight="800" text-anchor="start" >Elastic</text>
+<text x="454" y="186" font-size="14.3" fill="#8a92a6" font-weight="400" text-anchor="start" >Q1 fiscal 2027 · reported Aug 27</text>
+<text x="454" y="258" font-size="54" fill="#FFD600" font-weight="800" text-anchor="start" >$478.1M</text>
+<text x="454" y="282" font-size="14.3" fill="#8a92a6" font-weight="600" text-anchor="start" letter-spacing="1">revenue</text>
+<text x="454" y="326" font-size="28" fill="#ffffff" font-weight="800" text-anchor="start" >+15.1%</text>
+<text x="582" y="326" font-size="16.5" fill="#8a92a6" font-weight="400" text-anchor="start" >year over year</text>
+<line x1="454" y1="346" x2="746" y2="346" stroke="#2a2e3d"/>
+<text x="454" y="372" font-size="14.9" fill="#d0d0d0" font-weight="400" text-anchor="start" >More than 1,800 customers with ACV above $100K</text>
+<rect x="800" y="118" width="340" height="300" fill="#1a1d28"/>
+<rect x="800" y="118" width="340" height="4" fill="#FFD600"/>
+<text x="824" y="162" font-size="24" fill="#ffffff" font-weight="800" text-anchor="start" >Dynatrace</text>
+<text x="824" y="186" font-size="14.3" fill="#8a92a6" font-weight="400" text-anchor="start" >Q1 fiscal 2027 · reported Aug 5</text>
+<text x="824" y="258" font-size="54" fill="#FFD600" font-weight="800" text-anchor="start" >$554.55M</text>
+<text x="824" y="282" font-size="14.3" fill="#8a92a6" font-weight="600" text-anchor="start" letter-spacing="1">revenue</text>
+<text x="824" y="326" font-size="28" fill="#ffffff" font-weight="800" text-anchor="start" >+16%</text>
+<text x="914" y="326" font-size="16.5" fill="#8a92a6" font-weight="400" text-anchor="start" >year over year</text>
+<line x1="824" y1="346" x2="1116" y2="346" stroke="#2a2e3d"/>
+<text x="824" y="372" font-size="14.9" fill="#d0d0d0" font-weight="400" text-anchor="start" >ARR $2.14B, up 17%</text>
+<text x="824" y="394" font-size="14.9" fill="#d0d0d0" font-weight="400" text-anchor="start" >Revenue about $5M above consensus</text>
+<text x="60" y="446" font-size="13.8" fill="#8a92a6" font-weight="400" text-anchor="start" >Periods differ: Datadog's Q2 and Dynatrace's fiscal Q1 ended June 30, Elastic's fiscal Q1 ended July 31.</text>
+<line x1="60" y1="456" x2="1140" y2="456" stroke="#2a2e3d"/>
+<text x="60" y="480" font-size="13.2" fill="#5a6070" font-weight="400" text-anchor="start" >Sources: company results releases; consensus comparison from MarketBeat.</text>
+<text x="1140" y="480" font-size="13.2" fill="#5a6070" font-weight="700" text-anchor="end" >mbojko.com/reports/q3-2026</text>
+</svg>
