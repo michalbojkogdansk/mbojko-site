@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Who pays when an agent run fails</title>
+<desc id="d">Six pricing meters in use and three proposed designs placed on a scale from buyer to vendor, by who carries the cost of a failed or repeated agent run. Tokens, credits and executions put it on the buyer, bundles share it, seats and outcomes put it on the vendor. Proposed: B reserved capacity shares it, A quoted ceiling moves it to the vendor above the ceiling, C verified outcome leaves only a small floor with the buyer.</desc>
+<defs><pattern id="hz" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="12" height="26" fill="#FFD600"/><rect x="12" width="14" height="26" fill="#111318"/></pattern></defs>
+<rect width="1200" height="660" fill="#ffffff"/>
+<rect width="1200" height="9" fill="url(#hz)"/>
+<text x="60" y="50" font-size="12" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="2">THE RISK VIEW</text>
+<text x="60" y="88" font-size="30" fill="#0b0d12" font-weight="800" text-anchor="start">Who pays when an agent run fails?</text>
+<text x="60" y="116" font-size="16" fill="#6b7180" font-weight="400" text-anchor="start">Each pricing model decides who carries the cost of failed, repeated or runaway runs</text>
+<line x1="80" y1="200" x2="1120" y2="200" stroke="#0b0d12" stroke-width="2"/>
+<path d="M68,200 l14,-8 v16 z" fill="#0b0d12"/><path d="M1132,200 l-14,-8 v16 z" fill="#0b0d12"/>
+<text x="80" y="182" font-size="13" fill="#0b0d12" font-weight="800" text-anchor="start" letter-spacing="1.5">BUYER PAYS</text>
+<text x="1120" y="182" font-size="13" fill="#0b0d12" font-weight="800" text-anchor="end" letter-spacing="1.5">VENDOR PAYS</text>
+<text x="600" y="182" font-size="13" fill="#6b7180" font-weight="800" text-anchor="middle" letter-spacing="1.5">SHARED</text>
+<text x="60" y="252" font-size="12" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="2">IN USE TODAY</text>
+<rect x="88" y="268" width="204" height="60" rx="8" fill="#f4f5f7" stroke="#d5d8de" stroke-width="1"/>
+<text x="190" y="294" font-size="17" fill="#0b0d12" font-weight="800" text-anchor="middle">Tokens</text>
+<text x="190" y="315" font-size="13" fill="#6b7180" font-weight="400" text-anchor="middle">GitHub, Cursor, Grafana</text>
+<rect x="62" y="340" width="255" height="60" rx="8" fill="#f4f5f7" stroke="#d5d8de" stroke-width="1"/>
+<text x="190" y="366" font-size="17" fill="#0b0d12" font-weight="800" text-anchor="middle">Vendor credits</text>
+<text x="190" y="387" font-size="13" fill="#6b7180" font-weight="400" text-anchor="middle">Datadog, Salesforce, Microsoft</text>
+<rect x="343" y="268" width="175" height="60" rx="8" fill="#f4f5f7" stroke="#d5d8de" stroke-width="1"/>
+<text x="430" y="294" font-size="17" fill="#0b0d12" font-weight="800" text-anchor="middle">Executions</text>
+<text x="430" y="315" font-size="13" fill="#6b7180" font-weight="400" text-anchor="middle">Elastic, Salesforce</text>
+<rect x="519" y="340" width="182" height="60" rx="8" fill="#f4f5f7" stroke="#d5d8de" stroke-width="1"/>
+<text x="610" y="366" font-size="17" fill="#0b0d12" font-weight="800" text-anchor="middle">Bundled</text>
+<text x="610" y="387" font-size="13" fill="#6b7180" font-weight="400" text-anchor="middle">Dynatrace, Honeycomb</text>
+<rect x="725" y="268" width="189" height="60" rx="8" fill="#f4f5f7" stroke="#d5d8de" stroke-width="1"/>
+<text x="820" y="294" font-size="17" fill="#0b0d12" font-weight="800" text-anchor="middle">Seats</text>
+<text x="820" y="315" font-size="13" fill="#6b7180" font-weight="400" text-anchor="middle">up to fair-use limits</text>
+<rect x="901" y="340" width="218" height="60" rx="8" fill="#f4f5f7" stroke="#d5d8de" stroke-width="1"/>
+<text x="1010" y="366" font-size="17" fill="#0b0d12" font-weight="800" text-anchor="middle">Outcomes</text>
+<text x="1010" y="387" font-size="13" fill="#6b7180" font-weight="400" text-anchor="middle">Intercom, Zendesk, Sierra</text>
+<line x1="60" y1="432" x2="1140" y2="432" stroke="#e3e5ea"/>
+<text x="60" y="466" font-size="12" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="2">PROPOSED DESIGNS</text>
+<rect x="346" y="482" width="248" height="60" rx="8" fill="#FFD600" stroke="#0b0d12" stroke-width="1.5"/>
+<text x="470" y="508" font-size="17" fill="#0b0d12" font-weight="800" text-anchor="middle">B: Reserved capacity</text>
+<text x="470" y="529" font-size="13" fill="#3a3f4d" font-weight="400" text-anchor="middle">fixed lanes, unmetered inside</text>
+<rect x="636" y="482" width="248" height="60" rx="8" fill="#FFD600" stroke="#0b0d12" stroke-width="1.5"/>
+<text x="760" y="508" font-size="17" fill="#0b0d12" font-weight="800" text-anchor="middle">A: Quoted ceiling</text>
+<text x="760" y="529" font-size="13" fill="#3a3f4d" font-weight="400" text-anchor="middle">vendor absorbs cost above cap</text>
+<rect x="899" y="482" width="222" height="60" rx="8" fill="#FFD600" stroke="#0b0d12" stroke-width="1.5"/>
+<text x="1010" y="508" font-size="17" fill="#0b0d12" font-weight="800" text-anchor="middle">C: Verified outcome</text>
+<text x="1010" y="529" font-size="13" fill="#3a3f4d" font-weight="400" text-anchor="middle">buyer pays a small floor</text>
+<line x1="60" y1="608" x2="1140" y2="608" stroke="#e3e5ea"/>
+<text x="60" y="634" font-size="12.5" fill="#6b7180" font-weight="400" text-anchor="start">Positions reflect the author's qualitative reading of each model's public mechanics. Caps and contract terms can move a vendor.</text>
+<text x="1140" y="634" font-size="12.5" fill="#0b0d12" font-weight="700" text-anchor="end">mbojko.com</text>
+</svg>

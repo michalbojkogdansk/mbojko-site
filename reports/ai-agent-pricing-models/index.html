@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing AI Agents: Six Meters, Three Designs | Michał Bojko</title>
+  <meta name="description" content="AI agent pricing across observability, CRM, customer service, workplace automation and coding agents: six meters in use, vendor and buyer factors, the effect on internal adoption and shadow AI, three proposed pricing designs and a recommendation.">
+  <meta name="author" content="Michał Bojko">
+  <link rel="canonical" href="https://mbojko.com/reports/ai-agent-pricing-models/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbojko.com/reports/ai-agent-pricing-models/">
+  <meta property="og:title" content="Pricing AI Agents: Six Meters, Three Designs | Michał Bojko">
+  <meta property="og:description" content="Six AI agent pricing meters in use, the factors that matter to vendors and buyers, and three pricing designs compared.">
+  <meta property="og:image" content="https://mbojko.com/assets/reports-ai-pricing-models-summary.png">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0b0d12;--bg2:#13151e;--bg3:#1a1d28;--border:rgba(255,255,255,0.08);--yellow:#FFD600;--white:#ffffff;--muted:#5a6070;--muted2:#8a92a6;--stripe:repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px)}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:#e2e2e2;line-height:1.6}
+    .stripe-band{height:10px;background:var(--stripe);opacity:.85}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,13,18,0.92);backdrop-filter:blur(14px);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:54px}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--white);text-decoration:none}
+    .nav-logo span{color:var(--yellow)}
+    .nav-right{display:flex;gap:1.5rem;align-items:center}
+    .nav-back{font-size:11px;font-weight:700;color:var(--muted2);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .15s}
+    .nav-back:hover{color:var(--yellow)}
+    .article-wrap{max-width:740px;margin:0 auto;padding:8rem 2.5rem 5rem}
+    .article-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+    .article-eyebrow::before{content:"";display:block;width:32px;height:2px;background:var(--yellow)}
+    .article-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--white);letter-spacing:-.025em;line-height:1.15;margin-bottom:1.5rem}
+    .article-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .article-meta-item{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+    .article-meta-item span{color:var(--muted2);font-weight:400}
+    .article-body{font-size:16px;color:#d0d0d0;line-height:1.85}
+    .article-body p{margin-bottom:1.5rem}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body p.lede{font-style:italic;color:var(--muted2);font-size:14px;margin-bottom:2rem}
+    .article-body h2{font-size:20px;font-weight:800;color:var(--white);letter-spacing:-.01em;margin:2.75rem 0 1.25rem;padding-top:2rem;border-top:1px solid var(--border)}
+    .article-body h2:first-of-type{margin-top:0;padding-top:0;border-top:none}
+    .article-body h3{font-size:13px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin:2rem 0 .75rem}
+    .article-body a{color:var(--yellow);text-decoration:none}
+    .article-body a:hover{text-decoration:underline}
+    .article-body ul,.article-body ol{margin:.75rem 0 1.25rem 1.5rem}
+    .article-body li{font-size:15px;color:#d0d0d0;line-height:1.75;margin-bottom:.5rem}
+    .article-body ol.sources li{font-size:13px;color:var(--muted2);line-height:1.6;margin-bottom:.6rem}
+    .table-wrap{overflow-x:auto;margin:1.5rem 0 2rem;border:1px solid var(--border)}
+    .article-body table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
+    .article-body th{background:var(--bg2);color:var(--yellow);text-align:left;padding:.7rem .85rem;font-size:10px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);white-space:nowrap}
+    .article-body td{padding:.85rem;border-bottom:1px solid var(--border);color:#c8c8c8;vertical-align:top;line-height:1.6}
+    .article-body tr:last-child td{border-bottom:none}
+    .article-body td strong{color:var(--white)}
+    .report-figure{margin:2rem 0;border:1px solid var(--border);background:#fff;border-radius:4px;overflow:hidden;cursor:zoom-in;transition:border-color .15s}
+    .report-figure:hover{border-color:var(--yellow)}
+    .report-figure img{display:block;width:100%;height:auto}
+    .report-figure-caption{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--bg2);color:var(--muted2);font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;padding:.6rem 1rem;border-top:1px solid var(--border)}
+    .lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.9);cursor:zoom-out;align-items:center;justify-content:center;padding:2rem}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:2px}
+    .lightbox-close{position:absolute;top:1.5rem;right:2rem;color:var(--white);font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:none;border:1px solid var(--border);padding:8px 16px;cursor:pointer;border-radius:2px}
+    .lightbox-close:hover{border-color:var(--yellow);color:var(--yellow)}
+    @media print{.report-figure,.lightbox{display:none!important}}
+    .article-actions{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .btn-pdf{background:var(--yellow);color:#000;border:none;padding:10px 22px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:opacity .15s;display:inline-flex;align-items:center;gap:8px}
+    .btn-pdf:hover{opacity:.85}
+    .btn-copy{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:10px 22px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .15s}
+    .btn-copy:hover{border-color:var(--yellow);color:var(--yellow)}
+    .copy-status{font-size:12px;color:var(--yellow);font-weight:700;display:none}
+    .back-link{font-size:12px;color:var(--muted2);text-decoration:none;font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:color .15s;margin-left:auto}
+    .back-link:hover{color:var(--yellow)}
+    footer{max-width:740px;margin:0 auto;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border)}
+    .footer-left{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+    .footer-links{display:flex;gap:2rem}
+    .footer-links a{font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;font-weight:500;transition:color .15s}
+    .footer-links a:hover{color:var(--yellow)}
+    @media(max-width:640px){nav{padding:0 1.25rem}.article-wrap{padding:7rem 1.25rem 4rem}footer{padding:1.5rem 1.25rem;flex-direction:column;align-items:flex-start}.back-link{margin-left:0}}
+    @media print {
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      body{background:#fff;color:#111}
+      nav,.stripe-band,.article-actions,footer{display:none!important}
+      .article-wrap{padding:2rem 1.5rem;max-width:100%}
+      .article-eyebrow{color:#000;font-size:10px}
+      .article-eyebrow::before{background:#000}
+      .article-title{color:#000;font-size:24px}
+      .article-meta{border-bottom:1px solid #ccc}
+      .article-meta-item{color:#555}
+      .article-meta-item span{color:#333}
+      .article-body{color:#222;font-size:13px;line-height:1.7}
+      .article-body p.lede{color:#555}
+      .article-body h2{color:#000;border-top:1px solid #ccc;font-size:16px}
+      .article-body h3{color:#000;font-size:11px}
+      .article-body a{color:#333}
+      .article-body a::after{content:" (" attr(href) ")";font-size:9px;color:#666}
+      .article-body li{color:#222}
+      .article-body ol.sources li{color:#555}
+      .table-wrap{border-color:#ccc}
+      .article-body th{background:#f2f2f2;color:#000;border-color:#ccc}
+      .article-body td{color:#222;border-color:#ddd}
+      .article-body td strong{color:#000}
+      .print-footer{display:block!important;border-top:1px solid #ccc;padding-top:1rem;margin-top:2rem;font-size:10px;color:#555;text-align:center}
+    }
+    .print-footer{display:none}
+  </style>
+</head>
+<body>
+<div class="stripe-band"></div>
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <div class="nav-right">
+    <a href="/reports/" class="nav-back">← Reports</a>
+    <a href="/contact/" class="nav-back" style="color:var(--yellow)">Contact</a>
+  </div>
+</nav>
+<div class="article-wrap">
+  <p class="article-eyebrow">AI Agents · Pricing Models</p>
+  <h1 class="article-title">Pricing AI Agents: Six Meters in Use, Three Designs Worth Testing</h1>
+  <div class="article-meta">
+    <div class="article-meta-item">Period <span>October 2026</span></div>
+    <div class="article-meta-item">Author <span>Michał Bojko</span></div>
+    <div class="article-meta-item">Type <span>Pricing Analysis</span></div>
+  </div>
+  <div class="article-body">
+    <p class="lede">A follow-up to <a href="/reports/ai-agent-pricing-analysis/">How Observability Vendors Price AI Agents</a>. This piece widens the lens to customer service, CRM, workplace automation and coding agents, sets out the factors that matter to the vendor and to the buyer, proposes three pricing designs, and scores them against the models already on the market. Public sources only, retrieved October 5, 2026.</p>
+    <p>The September analysis found three meters in observability (credits, tokens and executions) and one consistent gap: no vendor tells a buyer what a task will cost before it runs. Outside observability the picture has more variety. Customer service vendors charge per resolved conversation, Salesforce sells both per-conversation and per-action pricing, Microsoft prices each type of agent step in credits, and the large coding-agent vendors have moved to token pass-through at API rates. Each choice moves risk between the vendor and the buyer in a different way, and that allocation of risk is the clearest way to compare them.</p>
+    <h2>Key Findings</h2>
+    <ul>
+      <li><strong style="color:var(--white)">Six meters are in use across industries.</strong> Vendor credits, tokens at API rates, executions or conversations, bundling into an existing platform meter, seats or active users, and outcomes such as a resolved conversation. Observability uses the first five. Outcome pricing appears mainly in customer service.</li>
+      <li><strong style="color:var(--white)">Coding agents converged on token pass-through.</strong> GitHub moved every Copilot plan to token-based billing at API rates on June 1, 2026, Cursor made the same shift in June 2025, and Devin's pricing page now sells extra usage "consumed at API pricing."</li>
+      <li><strong style="color:var(--white)">Outcome pricing is visible but rare.</strong> Intercom charges $0.99 per Fin outcome and Zendesk $1.50 to $2.00 per automated resolution, yet a sample of 80 AI agent companies published by billing vendor Orb puts outcome-based pricing at 3.8%, against 91.3% using some usage component.</li>
+      <li><strong style="color:var(--white)">The same workload can cost 15 times more under one meter than another.</strong> At list price, 1,000 support conversations range from about $130 to $2,000 depending on whether the vendor counts generative steps, actions, conversations or resolutions (worked example below). Seat and platform fees come on top in every case.</li>
+      <li><strong style="color:var(--white)">The missing piece is the same everywhere.</strong> Caps, budgets and usage estimators exist (Microsoft publishes an agent usage estimator, GitHub ran a preview bill before its switch), but no vendor reviewed commits to a price for a single task before it runs.</li>
+    </ul>
+    <h2>The Six Meters in Use</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Meter</th><th>Observability examples</th><th>Examples elsewhere</th><th>Who carries the risk of a failed or repeated run</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Vendor credits</strong></td><td>Datadog AI Credits ($1.00 per credit on annual commit), Dash0 Agent0 ($0.60), New Relic compute capacity units (no public price)</td><td>Salesforce Flex Credits ($500 per 100,000, 20 credits per action, so $0.10 per action), Microsoft Copilot Credits ($200 per 25,000 pack, $0.01 pay-as-you-go), ServiceNow assists</td><td>Buyer</td></tr>
+          <tr><td><strong>Tokens</strong></td><td>Grafana (from $2 per 1M beyond the per-user pool), Coralogix ($1.50 per 1M), Elastic managed LLMs ($4.50 / $21 per 1M input / output)</td><td>GitHub Copilot since June 1, 2026, Cursor since June 2025, Devin extra usage</td><td>Buyer</td></tr>
+          <tr><td><strong>Executions or conversations</strong></td><td>Elastic Agent Builder (from $0.025 per execution), Grafana Agent Observability (from $1.50 per 1,000 generations)</td><td>Salesforce Agentforce at $2 per customer-facing conversation</td><td>Buyer</td></tr>
+          <tr><td><strong>Bundled into platform consumption</strong></td><td>Dynatrace (agent activity drives existing DPS capability usage), Honeycomb (AI features inside the repriced Pro plan), Riverbed (no premium at launch)</td><td>Microsoft 365 Copilot licensed users run many Copilot Studio agent features at no extra charge</td><td>Shared, through the platform rate</td></tr>
+          <tr><td><strong>Seats or active users</strong></td><td>Grafana ($20 per active AI user with 40M tokens), Dash0 AI SDLC Insights ($10 per user)</td><td>Salesforce Agentforce add-ons ($125 per user per month, unmetered)</td><td>Vendor, up to fair-use limits</td></tr>
+          <tr><td><strong>Outcomes</strong></td><td>None published</td><td>Intercom Fin ($0.99 per outcome), Zendesk ($1.50 committed, $2.00 pay-as-you-go per automated resolution), Sierra (resolutions, saved cancellations, upsells)</td><td>Vendor</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Observability prices sit as reported in the <a href="/reports/ai-agent-pricing-analysis/">September 24 analysis</a>. Other prices come from vendor pages retrieved October 5, 2026. All are list prices and many are "from" values.</p>
+    <h3>What changed outside observability</h3>
+    <p><strong style="color:var(--white)">Coding agents.</strong> GitHub announced on April 27, 2026 that all Copilot plans would move to usage-based billing on June 1. Each plan now includes a monthly allotment of AI Credits equal in dollars to the plan price ($10 on Pro, $39 on Pro+, $19 per user on Business, $39 on Enterprise), and usage is calculated from input, output and cached tokens at each model's API rate. GitHub's stated reason was that a quick chat question and a multi-hour autonomous session could cost the user the same amount, which it called "no longer sustainable." Cursor made a similar move in June 2025 and published an apology on July 4, 2025, offering refunds for unexpected charges between June 16 and July 4 because it had not communicated the change clearly. GitHub's rollout included a preview bill and admin budgets at enterprise, cost center and user level.</p>
+    <p><strong style="color:var(--white)">CRM and workplace automation.</strong> Salesforce runs three parallel options for Agentforce: $2 per conversation for customer-facing agents, Flex Credits at $0.10 per standard action ($0.15 for voice actions), and per-user add-ons from $125 per month with unmetered use for employee-facing scenarios. Microsoft prices each kind of agent step separately: 1 Copilot Credit for a classic answer, 2 for a generative answer, 5 for an agent action, 10 for tenant graph grounding, with token-based surcharges for reasoning models. When prepaid capacity reaches 125%, Microsoft disables custom agents until capacity is added, and admins can set monthly limits per agent.</p>
+    <p><strong style="color:var(--white)">Customer service.</strong> Intercom counts an outcome when a customer confirms the issue is resolved, when the customer does not ask for more help after Fin responds, or when Fin completes a defined workflow. Zendesk includes 5 to 10 automated resolutions per agent seat per month depending on plan and charges for additional resolutions. Sierra's December 2024 explanation of its model says escalated cases are, in most cases, not charged. In all three, seats or a platform subscription are billed separately.</p>
+    <h2>Worked Example: 1,000 Support Conversations</h2>
+    <p>The table applies list prices to one hypothetical month: 1,000 customer conversations, of which the agent resolves 600 without a human. Each conversation averages three agent actions, or four generative answers plus one action where the vendor meters by step type. The assumptions are illustrative, and the totals exclude seat and platform fees, which differ by vendor and plan.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Meter and vendor</th><th>Calculation</th><th>AI charge</th><th>Charge for the 400 unresolved</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Step credits</strong> (Microsoft Copilot Studio, pay-as-you-go)</td><td>1,000 × (4 × 2 + 1 × 5) credits × $0.01</td><td>$130</td><td>Yes</td></tr>
+          <tr><td><strong>Action credits</strong> (Salesforce Flex Credits)</td><td>3,000 actions × $0.10</td><td>$300</td><td>Yes</td></tr>
+          <tr><td><strong>Outcome</strong> (Intercom Fin)</td><td>600 × $0.99</td><td>$594</td><td>No</td></tr>
+          <tr><td><strong>Outcome</strong> (Zendesk, committed rate)</td><td>600 × $1.50, before included resolutions</td><td>$900</td><td>No</td></tr>
+          <tr><td><strong>Conversation</strong> (Salesforce per conversation)</td><td>1,000 × $2</td><td>$2,000</td><td>Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The spread runs from $130 to $2,000, a factor of about 15. Two points follow. First, the unit price on its own predicts very little: the cheapest unit ($0.01 per credit) and the most expensive unit ($2 per conversation) bill different objects. Second, the outcome meters charge nothing for the 400 unresolved conversations, so the buyer's bill rises when the agent performs better, while the activity meters charge for every attempt regardless of result. A buyer whose resolution rate is low pays relatively less under outcome pricing, and one whose rate is high may pay less under action pricing. The break-even depends on the resolution rate, the number of steps per conversation and the seat fees that sit outside this table.</p>
+    <figure class="report-figure" onclick="openLightbox('/assets/reports-ai-pricing-models-cost-spread.svg', this.querySelector('img').alt)">
+      <img src="/assets/reports-ai-pricing-models-cost-spread.svg" alt="Bar chart: AI charge at list price for 1,000 support conversations with 600 resolved by the agent. Microsoft step credits $130, Salesforce Flex Credits $300, Intercom Fin $594, Zendesk $900, Salesforce per conversation $2,000. Outcome meters charge only for resolved conversations." loading="lazy">
+      <figcaption class="report-figure-caption"><span>Buyer view: cost spread</span><span>Click to enlarge</span></figcaption>
+    </figure>
+    <h2>What Matters to the Vendor</h2>
+    <ol>
+      <li><strong style="color:var(--white)">Inference cost variance.</strong> Agent tasks vary widely in tokens, tool calls and retries. A flat price exposes the vendor's gross margin to the heaviest users, the problem GitHub named when it retired request-based pricing.</li>
+      <li><strong style="color:var(--white)">Seat cannibalization.</strong> When an agent does work that a licensed user used to do, seat revenue falls as the product succeeds. Gartner's George Brocklehurst said agentic AI "breaks the link between user growth and revenue growth," in a July 2026 release estimating up to $234 billion of application software spend at risk by 2030.</li>
+      <li><strong style="color:var(--white)">Revenue predictability.</strong> Commits, prepaid packs and non-rolling monthly pools (Datadog, Microsoft) stabilize revenue. Pure consumption and pure outcome models make it harder to forecast.</li>
+      <li><strong style="color:var(--white)">Model price deflation.</strong> When per-token model prices fall, a vendor-defined credit lets the vendor keep the difference, while token pass-through hands it to the buyer.</li>
+      <li><strong style="color:var(--white)">Measurement and billing cost.</strong> Counting tokens is cheap. Verifying an outcome needs a definition, telemetry and a dispute process, and the measurement method itself can become contested.</li>
+      <li><strong style="color:var(--white)">Sales friction and trust.</strong> A unit buyers cannot predict slows procurement. Cursor's 2025 refund episode shows the cost of a change buyers did not anticipate.</li>
+      <li><strong style="color:var(--white)">Runaway and abuse protection.</strong> Autonomous triggers and loops can generate large volumes of work. Hard caps protect both sides, though Microsoft's 125% enforcement shows that a cap can also switch a production agent off.</li>
+    </ol>
+    <h2>What Matters to the Buyer</h2>
+    <ol>
+      <li><strong style="color:var(--white)">Predictability.</strong> Finance needs a number at budget time, and engineering needs to know whether running a task is affordable before running it.</li>
+      <li><strong style="color:var(--white)">Value alignment.</strong> Whether the bill tracks something the business values (a resolved ticket, a merged fix, a shorter incident) or only activity.</li>
+      <li><strong style="color:var(--white)">Failure risk.</strong> Who pays when the agent fails, retries or is abandoned halfway. Under every activity meter in this review, the buyer does.</li>
+      <li><strong style="color:var(--white)">Control.</strong> Caps per user, team, agent and automation, with a documented behavior at the cap: stop, degrade or bill on demand.</li>
+      <li><strong style="color:var(--white)">Comparability.</strong> The ability to compare vendors and to explain the bill internally. Vendor-defined credits score lowest here, because a credit means something different at each vendor.</li>
+      <li><strong style="color:var(--white)">Auditability.</strong> Whether the buyer can verify the count independently. Outcome definitions measured by the vendor's own systems, such as Intercom counting silence after an answer as an outcome, need checking against the buyer's own data.</li>
+      <li><strong style="color:var(--white)">Double charging.</strong> In observability the AI meter sits on top of the telemetry meter, so the total cost of an investigation includes both the agent's charge and the data it reads.</li>
+      <li><strong style="color:var(--white)">Effect on internal adoption.</strong> Whether the pricing model lets teams use agents freely within a budget, or pushes the organization toward approval steps before each run. The next section looks at this in more detail.</li>
+    </ol>
+    <h2>Effect on Organizational Culture and Shadow AI</h2>
+    <p>The way a vendor prices agent work shapes how the buyer's organization governs it. When token or credit consumption is hard to predict, a common response is internal control: approval chains for who may start an agent, pools held centrally by finance or a platform team, and rules that restrict agents to a small group of users. Each of these protects the budget, and each slows adoption.</p>
+    <p>Two effects follow. The first is pace: if running an investigation agent requires a ticket or a manager's sign-off, engineers use it for fewer incidents, which lowers both the cost and the value the organization gets from the purchase. The second is shadow AI: when the sanctioned agent is gated, some employees turn to tools outside the organization's control, such as personal subscriptions or free tiers of general-purpose assistants. That moves spend outside procurement's view and can move company data to services without a data processing agreement. Spend-tracking products have started to cover this ground. Datadog's AI Costs, for example, tracks spend on outside providers including GitHub Copilot and Cursor, as noted in the September analysis.</p>
+    <p>The models differ in how much internal control they invite:</p>
+    <ul>
+      <li><strong style="color:var(--white)">Tokens and credits</strong> tend to produce the most gating, because the cost of a single run is unknown in advance and a monthly pool can be exhausted by a few heavy users.</li>
+      <li><strong style="color:var(--white)">Executions or conversations</strong> are easier to budget per run, though volume still needs watching.</li>
+      <li><strong style="color:var(--white)">Seats and bundles</strong> remove per-run decisions for licensed users, and move the restriction to who gets a license.</li>
+      <li><strong style="color:var(--white)">Outcomes</strong> reduce the fear of paying for failed runs, though the total still grows with use.</li>
+      <li><strong style="color:var(--white)">Design A</strong> can replace per-run approval with a policy that auto-approves tasks below a ceiling threshold, so only expensive tasks need a decision.</li>
+      <li><strong style="color:var(--white)">Design B</strong> removes per-run decisions inside the reservation entirely.</li>
+    </ul>
+    <p>No public data reviewed for this analysis measures how pricing models affect internal adoption rates or shadow AI use. Buyers can measure it themselves: track agent runs per engineer, the share of incidents where an agent was used, time from request to approval, and spend on AI tools outside the sanctioned contract, before and after a pricing or policy change.</p>
+    <h2>Three Pricing Designs</h2>
+    <p>The three designs below are proposals, each built from mechanisms that already exist in some form on the market. None is offered in full by any vendor reviewed.</p>
+    <h3>Design A: Quoted-ceiling task pricing</h3>
+    <p>Before a task starts, the agent returns an estimate and a ceiling in the vendor's existing unit, for example "this investigation is likely to use 4 to 6 credits, ceiling 8." The buyer approves it, or a policy approves it automatically below a threshold set per team. The bill is actual consumption, never above the ceiling. Retries inside the same task count against the same ceiling, and consumption above it is absorbed by the vendor. Underneath, the meter stays as it is today (credits or tokens), so the design adds a pricing commitment without introducing a new unit.</p>
+    <p>Building blocks already exist: Datadog publishes average credits per action type, Microsoft publishes an agent usage estimator and per-agent monthly limits, and GitHub ran a preview bill before switching to tokens.</p>
+    <ul>
+      <li><strong style="color:var(--white)">Pros:</strong> predictability per task, which is the gap identified in September; the vendor carries the cost of runaway loops and repeated attempts; it works on top of any existing meter; ceilings in currency are comparable across vendors for similar tasks.</li>
+      <li><strong style="color:var(--white)">Cons:</strong> the vendor needs an accurate cost estimator, and estimation errors land on its margin; vendors have an incentive to pad ceilings, so buyers need data on actual against ceiling; open-ended work such as a novel incident investigation will produce wide ranges; an approval step adds latency unless policies handle it; activity is still what gets billed, rather than value.</li>
+    </ul>
+    <h3>Design B: Reserved agent capacity</h3>
+    <p>The buyer reserves a number of agent lanes, each with a monthly throughput allowance (for example, a number of task-hours or concurrent runs), for a fixed annual fee. Work inside the reservation is unmetered. Bursts above it are billed at a published on-demand rate, or queued if the buyer prefers. The model resembles reserved cloud capacity.</p>
+    <ul>
+      <li><strong style="color:var(--white)">Pros:</strong> the most budget-friendly option, a fixed line item that finance can plan around; no incentive to ration use inside the reservation, which supports adoption; revenue predictability for the vendor; the throughput allowance bounds the vendor's inference cost better than an unmetered seat.</li>
+      <li><strong style="color:var(--white)">Cons:</strong> buyers pay for idle capacity, the same waste as unused seats or non-rolling credits; sizing the reservation needs usage history most buyers do not have yet; a "lane" is defined by the vendor and hard to compare across vendors; heavy tasks inside the allowance still erode vendor margin unless the allowance is measured in compute rather than time.</li>
+    </ul>
+    <h3>Design C: Verified-outcome hybrid</h3>
+    <p>Three components: a small platform fee, a per-attempt floor priced near the vendor's inference cost, and an outcome fee charged only when a contract-defined result is verified with the buyer's own data. Examples of definitions: a support ticket closed and not reopened within 7 days; a pull request merged and not reverted within 14 days; an incident closed with a root cause the on-call engineer accepted. A dispute window lets the buyer contest outcomes before invoicing.</p>
+    <ul>
+      <li><strong style="color:var(--white)">Pros:</strong> the closest alignment between bill and value; failed attempts cost only the floor, so most of the failure risk moves to the vendor; outcome prices are comparable across vendors when definitions match; the floor protects the vendor from paying for failures out of margin, the main weakness of pure outcome pricing.</li>
+      <li><strong style="color:var(--white)">Cons:</strong> outcomes must be discrete, attributable and verifiable, which suits support tickets far better than incident response, where resolution has many contributors; three components are harder to explain than one meter; verification needs integration with the buyer's ticketing or source control; the buyer's bill rises with the agent's success, which can surprise a budget; revenue is the least predictable of the three designs.</li>
+    </ul>
+    <h2>How the Designs Compare with Existing Models</h2>
+    <p>The ratings below are the author's qualitative assessment of each model's public mechanics against the factors above, independent of any single vendor's implementation. Caps, estimators or contract terms can move a given vendor up or down.</p>
+    <h3>Buyer view</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Model</th><th>Predictability</th><th>Value alignment</th><th>Failure risk on buyer</th><th>Comparability</th><th>Control</th><th>Internal adoption</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Vendor credits</strong></td><td>Medium</td><td>Low</td><td>High</td><td>Low</td><td>High where caps exist</td><td>Medium</td></tr>
+          <tr><td><strong>Tokens</strong></td><td>Low</td><td>Low</td><td>High</td><td>Medium</td><td>Medium</td><td>Low</td></tr>
+          <tr><td><strong>Executions or conversations</strong></td><td>Medium</td><td>Low</td><td>High</td><td>Low</td><td>Medium</td><td>Medium</td></tr>
+          <tr><td><strong>Bundled in platform</strong></td><td>Medium</td><td>Low</td><td>Hidden in rate</td><td>Low</td><td>Depends on platform</td><td>High</td></tr>
+          <tr><td><strong>Seats or active users</strong></td><td>High</td><td>Low</td><td>Low</td><td>Medium</td><td>High</td><td>High for licensed users</td></tr>
+          <tr><td><strong>Outcomes</strong></td><td>Medium</td><td>High</td><td>Low</td><td>Medium</td><td>Medium</td><td>Medium to high</td></tr>
+          <tr><td><strong>A: Quoted ceiling</strong></td><td>High</td><td>Low to medium</td><td>Low above ceiling</td><td>Medium</td><td>High</td><td>Medium to high, with auto-approval policies</td></tr>
+          <tr><td><strong>B: Reserved capacity</strong></td><td>High</td><td>Medium</td><td>Medium</td><td>Low</td><td>High</td><td>High</td></tr>
+          <tr><td><strong>C: Verified outcome</strong></td><td>Medium</td><td>High</td><td>Low</td><td>Medium to high</td><td>Medium</td><td>Medium</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Vendor view</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Model</th><th>Margin protection</th><th>Revenue predictability</th><th>Billing complexity</th><th>Sales friction</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Vendor credits</strong></td><td>High</td><td>Medium to high</td><td>Medium</td><td>Medium</td></tr>
+          <tr><td><strong>Tokens</strong></td><td>High</td><td>Low</td><td>Low</td><td>High</td></tr>
+          <tr><td><strong>Executions or conversations</strong></td><td>Medium</td><td>Medium</td><td>Low</td><td>Low</td></tr>
+          <tr><td><strong>Bundled in platform</strong></td><td>Low to medium</td><td>High</td><td>Low</td><td>Low</td></tr>
+          <tr><td><strong>Seats or active users</strong></td><td>Low</td><td>High</td><td>Low</td><td>Low</td></tr>
+          <tr><td><strong>Outcomes</strong></td><td>Low to medium</td><td>Low to medium</td><td>High</td><td>Low at signing, higher at invoicing</td></tr>
+          <tr><td><strong>A: Quoted ceiling</strong></td><td>Medium to high</td><td>Medium</td><td>High</td><td>Low to medium</td></tr>
+          <tr><td><strong>B: Reserved capacity</strong></td><td>Medium</td><td>High</td><td>Medium</td><td>Medium</td></tr>
+          <tr><td><strong>C: Verified outcome</strong></td><td>Medium</td><td>Medium</td><td>High</td><td>Medium</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>No row scores well on every factor. The pattern in both tables is a trade between the two sides: the models that protect the vendor's margin best (tokens, credits) leave the buyer with the failure risk and the least predictability, and the models that align best with buyer value (outcomes) put the vendor's margin and revenue forecast at risk. Each of the three designs targets one part of that gap.</p>
+    <figure class="report-figure" onclick="openLightbox('/assets/reports-ai-pricing-models-risk.svg', this.querySelector('img').alt)">
+      <img src="/assets/reports-ai-pricing-models-risk.svg" alt="Scale from buyer pays to vendor pays. Tokens, vendor credits and executions sit on the buyer side, bundled pricing in the middle, seats and outcomes on the vendor side. Proposed designs: B reserved capacity near the middle, A quoted ceiling toward the vendor, C verified outcome near the vendor side." loading="lazy">
+      <figcaption class="report-figure-caption"><span>Risk view: who pays for a failed run</span><span>Click to enlarge</span></figcaption>
+    </figure>
+    <h2>Recommendation</h2>
+    <figure class="report-figure" onclick="openLightbox('/assets/reports-ai-pricing-models-recommendation.svg', this.querySelector('img').alt)">
+      <img src="/assets/reports-ai-pricing-models-recommendation.svg" alt="Three cards. A, quoted ceiling, recommended default for agent platforms and observability, watch out: vendors must estimate well. B, reserved capacity, for steady high-volume automation, watch out: paying for idle capacity. C, verified outcome, for support tickets and clear outcomes, watch out: defining and auditing outcomes." loading="lazy">
+      <figcaption class="report-figure-caption"><span>Recommendation: which design fits where</span><span>Click to enlarge</span></figcaption>
+    </figure>
+    <p>As a default for agent platforms, including observability, <strong style="color:var(--white)">Design A, quoted-ceiling task pricing on top of an existing credit or token meter</strong>, offers the best balance on the evidence available. The reasons:</p>
+    <ul>
+      <li>It addresses the gap recorded in both analyses: buyers can cap and alert today, but cannot see a task's price before it runs.</li>
+      <li>It keeps the vendor's cost coverage. The underlying meter still tracks inference cost, which is the concern behind the coding-agent moves to token pricing.</li>
+      <li>It needs no new unit, no outcome definitions and no integration with the buyer's systems, so it can be added to the credit and token models observability vendors already run.</li>
+      <li>It moves the cost of runaway loops and repeated attempts to the party that controls the agent's behavior.</li>
+      <li>With an auto-approval threshold, it lets teams run routine tasks without an approval step, which limits the internal gating that unpredictable meters tend to produce.</li>
+    </ul>
+    <p>The recommendation has limits. Design A depends on cost estimators that vendors have not shown publicly at task level, and its value to buyers depends on ceilings being reasonably tight. It also keeps billing tied to activity. Where outcomes are discrete and the buyer can verify them independently, as with support tickets, <strong style="color:var(--white)">Design C</strong> aligns better with value and the customer service market already shows buyers will accept per-outcome prices. Where usage is steady and high, such as scheduled internal automation, <strong style="color:var(--white)">Design B</strong> gives finance the simplest number. A buyer evaluating any of the three should ask for 90 days of actual consumption data on comparable workloads before committing.</p>
+    <h2>Questions to Ask Under Each Model</h2>
+    <ul>
+      <li><strong style="color:var(--white)">Credits, tokens or executions:</strong> what is the distribution of units per task, including the 95th percentile, and do failed or abandoned runs consume units?</li>
+      <li><strong style="color:var(--white)">Outcomes:</strong> who measures the outcome, with which data, can the buyer audit it, and what is the dispute window?</li>
+      <li><strong style="color:var(--white)">Seats and bundles:</strong> what fair-use limits apply, and what happens to price at renewal once usage data exists?</li>
+      <li><strong style="color:var(--white)">Any model:</strong> what happens at the cap, and does the agent stop mid-task, finish the task, or switch to on-demand billing?</li>
+      <li><strong style="color:var(--white)">Internally, before signing:</strong> who will be allowed to start an agent, what approval will a run need, and how will the organization notice if teams move to unsanctioned AI tools instead?</li>
+    </ul>
+    <h2>Method and Limits</h2>
+    <p>Vendor prices were taken from the vendors' own pricing pages and documentation on October 5, 2026: Salesforce, Intercom, Zendesk, Microsoft Learn, GitHub Docs and the GitHub blog, Devin and Sierra. Observability prices are as reported in the September 24 analysis and were not re-checked. Several third-party pricing guides surfaced in search were stale (one still described Devin's pricing in agent compute units, which no longer appear on Devin's pricing page) and were not used for prices. The Gartner figures come from CIO Dive's July 6, 2026 coverage of a July 1 Gartner release, because the Gartner page could not be retrieved directly. The 3.8% outcome-pricing share comes from Orb, a usage-billing software vendor, based on a sample of 80 companies; its method is only partly described. ServiceNow's assist-based model is mentioned without prices, because no public ServiceNow price page was found. The section on organizational culture and shadow AI describes likely mechanisms; no public study measuring them was found. The worked example uses list prices and illustrative assumptions and excludes seat and platform fees. The three designs are analytical proposals, and the ratings are qualitative judgments.</p>
+    <h2>Sources</h2>
+    <ol class="sources">
+      <li>Earlier analysis: <a href="/reports/ai-agent-pricing-analysis/">How Observability Vendors Price AI Agents</a>, September 2026, with its observability vendor sources.</li>
+      <li>Salesforce: <a href="https://www.salesforce.com/agentforce/pricing/" target="_blank" rel="noopener">Agentforce pricing</a>.</li>
+      <li>Microsoft: <a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management" target="_blank" rel="noopener">Copilot Studio billing rates and management</a>, <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio" target="_blank" rel="noopener">Copilot Studio pricing</a>.</li>
+      <li>GitHub: <a href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener">GitHub Copilot is moving to usage-based billing, April 27, 2026</a>, <a href="https://docs.github.com/en/copilot/concepts/billing/copilot-requests" target="_blank" rel="noopener">Copilot requests documentation</a>.</li>
+      <li>Cursor: <a href="https://cursor.com/blog/june-2025-pricing" target="_blank" rel="noopener">pricing update and apology, July 4, 2025</a>.</li>
+      <li>Devin: <a href="https://devin.ai/pricing" target="_blank" rel="noopener">pricing</a>.</li>
+      <li>Intercom: <a href="https://www.intercom.com/pricing" target="_blank" rel="noopener">pricing</a>.</li>
+      <li>Zendesk: <a href="https://www.zendesk.com/pricing/" target="_blank" rel="noopener">pricing</a>.</li>
+      <li>Sierra: <a href="https://sierra.ai/blog/outcome-based-pricing-for-ai-agents" target="_blank" rel="noopener">Outcome-based pricing for AI agents, December 10, 2024</a>.</li>
+      <li>Gartner via CIO Dive: <a href="https://www.ciodive.com/news/agentic-ai-disrupt-234-billion-saas-spending/824530/" target="_blank" rel="noopener">coverage of Gartner's July 1 release, July 6, 2026</a>.</li>
+      <li>Orb: <a href="https://www.withorb.com/blog/ai-agent-pricing-trends" target="_blank" rel="noopener">AI agent pricing trends</a>.</li>
+    </ol>
+  </div>
+  <div class="article-actions">
+    <button class="btn-pdf" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+      Download PDF
+    </button>
+    <button class="btn-copy" onclick="copyLink()">Copy link</button>
+    <span class="copy-status" id="cs">Copied!</span>
+    <a href="/reports/" class="back-link">← All reports</a>
+  </div>
+  <div class="print-footer">mbojko.com/reports &nbsp;&middot;&nbsp; Michał Bojko &nbsp;&middot;&nbsp; Gdańsk, Poland</div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(); event.stopPropagation()">Close ✕</button>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+</div>
+
+<div class="stripe-band"></div>
+<footer>
+  <span class="footer-left">&copy; 2026 Michał Bojko &middot; Gdańsk, Poland</span>
+  <div class="footer-links">
+    <a href="https://github.com/michalbojkogdansk" target="_blank">GitHub</a>
+    <a href="https://medium.com/@michal.bojko.gdansk" target="_blank">Medium</a>
+    <a href="https://www.linkedin.com/in/mbojkogdansk/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+<script>
+function copyLink(){
+  navigator.clipboard.writeText('https://mbojko.com/reports/ai-agent-pricing-models/').then(function(){
+    var s=document.getElementById('cs');
+    s.style.display='inline';
+    setTimeout(function(){s.style.display='none';},2500);
+  });
+}
+function openLightbox(src,alt){
+  var img=document.getElementById('lightbox-img');
+  img.src=src; img.alt=alt||'';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeLightbox();
+});
+</script>
+</body>
+</html>

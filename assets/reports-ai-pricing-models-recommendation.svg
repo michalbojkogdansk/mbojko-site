@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Which pricing design fits where</title>
+<desc id="d">Three proposed pricing designs. A, quoted-ceiling task pricing, is the recommended default for agent platforms including observability: the agent quotes a price cap before the task runs. B, reserved agent capacity, fits steady high-volume automation. C, verified-outcome hybrid, fits discrete outcomes the buyer can verify, such as support tickets.</desc>
+<defs><pattern id="hz" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="12" height="26" fill="#FFD600"/><rect x="12" width="14" height="26" fill="#111318"/></pattern></defs>
+<rect width="1200" height="660" fill="#ffffff"/>
+<rect width="1200" height="9" fill="url(#hz)"/>
+<text x="60" y="50" font-size="12" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="2">THE RECOMMENDATION</text>
+<text x="60" y="88" font-size="30" fill="#0b0d12" font-weight="800" text-anchor="start">Which pricing design fits where</text>
+<text x="60" y="116" font-size="16" fill="#6b7180" font-weight="400" text-anchor="start">Three designs built from mechanisms already on the market</text>
+<rect x="60" y="150" width="340" height="390" rx="10" fill="#ffffff" stroke="#0b0d12" stroke-width="2"/>
+<rect x="61" y="151" width="338" height="10" fill="url(#hz)"/>
+<circle cx="106" cy="212" r="22" fill="#FFD600" stroke="#0b0d12"/>
+<text x="106" y="220" font-size="22" fill="#0b0d12" font-weight="800" text-anchor="middle">A</text>
+<text x="140" y="220" font-size="22" fill="#0b0d12" font-weight="800" text-anchor="start">Quoted ceiling</text>
+<text x="84" y="264" font-size="12" fill="#0b0d12" font-weight="800" text-anchor="start" letter-spacing="1.5">RECOMMENDED DEFAULT</text>
+<text x="84" y="302" font-size="16" fill="#3a3f4d" font-weight="400" text-anchor="start">Agent quotes a price cap</text>
+<text x="84" y="326" font-size="16" fill="#3a3f4d" font-weight="400" text-anchor="start">before the task runs.</text>
+<text x="84" y="350" font-size="16" fill="#3a3f4d" font-weight="400" text-anchor="start">Retries count inside the cap.</text>
+<line x1="84" y1="390" x2="376" y2="390" stroke="#e3e5ea"/>
+<text x="84" y="422" font-size="11.5" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="1.5">BEST FIT</text>
+<text x="84" y="446" font-size="15.5" fill="#0b0d12" font-weight="700" text-anchor="start">Agent platforms, observability</text>
+<text x="84" y="484" font-size="11.5" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="1.5">WATCH OUT</text>
+<text x="84" y="508" font-size="15.5" fill="#0b0d12" font-weight="700" text-anchor="start">Vendors must estimate well</text>
+<rect x="430" y="150" width="340" height="390" rx="10" fill="#ffffff" stroke="#d5d8de" stroke-width="1"/>
+<circle cx="476" cy="212" r="22" fill="#f4f5f7" stroke="#d5d8de"/>
+<text x="476" y="220" font-size="22" fill="#0b0d12" font-weight="800" text-anchor="middle">B</text>
+<text x="510" y="220" font-size="22" fill="#0b0d12" font-weight="800" text-anchor="start">Reserved capacity</text>
+<text x="454" y="302" font-size="16" fill="#3a3f4d" font-weight="400" text-anchor="start">Fixed fee for agent lanes</text>
+<text x="454" y="326" font-size="16" fill="#3a3f4d" font-weight="400" text-anchor="start">with a monthly throughput.</text>
+<text x="454" y="350" font-size="16" fill="#3a3f4d" font-weight="400" text-anchor="start">Unmetered inside the reservation.</text>
+<line x1="454" y1="390" x2="746" y2="390" stroke="#e3e5ea"/>
+<text x="454" y="422" font-size="11.5" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="1.5">BEST FIT</text>
+<text x="454" y="446" font-size="15.5" fill="#0b0d12" font-weight="700" text-anchor="start">Steady, high-volume automation</text>
+<text x="454" y="484" font-size="11.5" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="1.5">WATCH OUT</text>
+<text x="454" y="508" font-size="15.5" fill="#0b0d12" font-weight="700" text-anchor="start">Paying for idle capacity</text>
+<rect x="800" y="150" width="340" height="390" rx="10" fill="#ffffff" stroke="#d5d8de" stroke-width="1"/>
+<circle cx="846" cy="212" r="22" fill="#f4f5f7" stroke="#d5d8de"/>
+<text x="846" y="220" font-size="22" fill="#0b0d12" font-weight="800" text-anchor="middle">C</text>
+<text x="880" y="220" font-size="22" fill="#0b0d12" font-weight="800" text-anchor="start">Verified outcome</text>
+<text x="824" y="302" font-size="16" fill="#3a3f4d" font-weight="400" text-anchor="start">Small floor per attempt, plus</text>
+<text x="824" y="326" font-size="16" fill="#3a3f4d" font-weight="400" text-anchor="start">a fee per result the buyer</text>
+<text x="824" y="350" font-size="16" fill="#3a3f4d" font-weight="400" text-anchor="start">verifies with its own data.</text>
+<line x1="824" y1="390" x2="1116" y2="390" stroke="#e3e5ea"/>
+<text x="824" y="422" font-size="11.5" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="1.5">BEST FIT</text>
+<text x="824" y="446" font-size="15.5" fill="#0b0d12" font-weight="700" text-anchor="start">Support tickets, clear outcomes</text>
+<text x="824" y="484" font-size="11.5" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="1.5">WATCH OUT</text>
+<text x="824" y="508" font-size="15.5" fill="#0b0d12" font-weight="700" text-anchor="start">Defining and auditing outcomes</text>
+<line x1="60" y1="608" x2="1140" y2="608" stroke="#e3e5ea"/>
+<text x="60" y="634" font-size="12.5" fill="#6b7180" font-weight="400" text-anchor="start">Pricing AI Agents: Six Meters in Use, Three Designs Worth Testing. October 2026.</text>
+<text x="1140" y="634" font-size="12.5" fill="#0b0d12" font-weight="700" text-anchor="end">mbojko.com</text>
+</svg>
