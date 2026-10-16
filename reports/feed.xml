@@ -7,9 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Mon, 12 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Cribl Enters SIEM as AI Quality Scores Move Into Production Traces (September 28 - October 11, 2026)</title>
+      <link>https://mbojko.com/reports/2026-10-11/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-10-11</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>Update #9 covers the first two weeks of Q4: CriblCon 26, New Relic Now and Honeycomb's September 29 release.</p>
+        <p><strong>Covered:</strong> Cribl launches the Detect SIEM and StreamAI gateway, Dynatrace completes the Arize acquisition, New Relic names a new CEO and launches AI Evaluation, Honeycomb ships AI Ecosystem. Also a Riverbed survey on autonomous IT operations and OllyGarden's $4M round backed by Datadog, Grafana Labs and Dash0.</p>
+        <p><a href="https://mbojko.com/reports/2026-10-11/">Read the full update</a></p>
+      ]]></description>
+    </item>
 
     <item>
       <title>Pricing AI Agents: Six Meters in Use, Three Designs Worth Testing</title>
