@@ -1,37 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
 <title id="t">Same 1,000 conversations, up to 15 times apart</title>
-<desc id="d">AI charge at list price for 1,000 support conversations with 600 resolved by the agent: Microsoft step credits $130, Salesforce Flex Credits $300, Intercom Fin $594, Zendesk $900, Salesforce per conversation $2,000. Outcome meters charge only for resolved conversations. Seat and platform fees excluded.</desc>
+<desc id="d">AI charge at list price for 1,000 support conversations with 600 resolved by the agent: Microsoft step credits $130, Salesforce Flex Credits $300, Intercom Fin $594, Zendesk $900, Salesforce Help Agent Resolutions $1,200, Salesforce per conversation $2,000. Outcome meters charge mainly for resolved conversations. Seat and platform fees excluded.</desc>
 <defs><pattern id="hz" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="12" height="26" fill="#FFD600"/><rect x="12" width="14" height="26" fill="#111318"/></pattern></defs>
 <rect width="1200" height="660" fill="#ffffff"/>
 <rect width="1200" height="9" fill="url(#hz)"/>
 <text x="60" y="50" font-size="12" fill="#6b7180" font-weight="700" text-anchor="start" letter-spacing="2">THE BUYER'S VIEW</text>
 <text x="60" y="88" font-size="30" fill="#0b0d12" font-weight="800" text-anchor="start">Same 1,000 conversations, up to 15× apart</text>
 <text x="60" y="116" font-size="16" fill="#6b7180" font-weight="400" text-anchor="start">AI charge at list price for one month of support, 600 of 1,000 conversations resolved by the agent</text>
-<text x="60" y="180" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Step credits</text>
-<text x="60" y="201" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Microsoft Copilot Studio</text>
-<rect x="330" y="160" width="46.8" height="46" rx="4" fill="#2a2f3d"/>
-<text x="388.8" y="190" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$130</text>
-<text x="60" y="254" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Action credits</text>
-<text x="60" y="275" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Salesforce Flex Credits</text>
-<rect x="330" y="234" width="108.0" height="46" rx="4" fill="#2a2f3d"/>
-<text x="450.0" y="264" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$300</text>
-<text x="60" y="328" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Per outcome</text>
-<text x="60" y="349" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Intercom Fin</text>
-<rect x="330" y="308" width="213.8" height="46" rx="4" fill="#FFD600"/>
-<text x="555.84" y="338" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$594</text>
-<text x="60" y="402" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Per outcome</text>
-<text x="60" y="423" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Zendesk, committed rate</text>
-<rect x="330" y="382" width="324.0" height="46" rx="4" fill="#FFD600"/>
-<text x="666.0" y="412" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$900</text>
-<text x="60" y="476" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Per conversation</text>
-<text x="60" y="497" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Salesforce Agentforce</text>
-<rect x="330" y="456" width="720.0" height="46" rx="4" fill="#2a2f3d"/>
-<text x="1062.0" y="486" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$2,000</text>
-<rect x="60" y="536" width="16" height="16" rx="3" fill="#2a2f3d"/>
-<text x="84" y="549" font-size="14" fill="#3a3f4d" font-weight="400" text-anchor="start">Charges for every conversation, resolved or not</text>
-<rect x="520" y="536" width="16" height="16" rx="3" fill="#FFD600"/>
-<text x="544" y="549" font-size="14" fill="#3a3f4d" font-weight="400" text-anchor="start">Charges only for the 600 resolved</text>
+<text x="60" y="168" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Step credits</text>
+<text x="60" y="188" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Microsoft Copilot Studio</text>
+<rect x="360" y="150" width="44.9" height="42" rx="4" fill="#2a2f3d"/>
+<text x="416.85" y="178" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$130</text>
+<text x="60" y="228" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Action credits</text>
+<text x="60" y="248" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Salesforce Flex Credits</text>
+<rect x="360" y="210" width="103.5" height="42" rx="4" fill="#2a2f3d"/>
+<text x="475.5" y="238" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$300</text>
+<text x="60" y="288" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Per outcome</text>
+<text x="60" y="308" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Intercom Fin</text>
+<rect x="360" y="270" width="204.9" height="42" rx="4" fill="#FFD600"/>
+<text x="576.9300000000001" y="298" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$594</text>
+<text x="60" y="348" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Per outcome</text>
+<text x="60" y="368" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Zendesk, committed rate</text>
+<rect x="360" y="330" width="310.5" height="42" rx="4" fill="#FFD600"/>
+<text x="682.5" y="358" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$900</text>
+<text x="60" y="408" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Per resolution</text>
+<text x="60" y="428" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Salesforce Help Agent Resolutions</text>
+<rect x="360" y="390" width="414.0" height="42" rx="4" fill="#FFD600"/>
+<text x="786.0" y="418" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$1,200</text>
+<text x="60" y="468" font-size="17" fill="#0b0d12" font-weight="700" text-anchor="start">Per conversation</text>
+<text x="60" y="488" font-size="14" fill="#6b7180" font-weight="400" text-anchor="start">Salesforce Agentforce</text>
+<rect x="360" y="450" width="690.0" height="42" rx="4" fill="#2a2f3d"/>
+<text x="1062.0" y="478" font-size="20" fill="#0b0d12" font-weight="800" text-anchor="start">$2,000</text>
+<rect x="60" y="518" width="16" height="16" rx="3" fill="#2a2f3d"/>
+<text x="84" y="531" font-size="14" fill="#3a3f4d" font-weight="400" text-anchor="start">Charges for every conversation, resolved or not</text>
+<rect x="520" y="518" width="16" height="16" rx="3" fill="#FFD600"/>
+<text x="544" y="531" font-size="14" fill="#3a3f4d" font-weight="400" text-anchor="start">Charges mainly for the 600 resolved outcomes</text>
 <line x1="60" y1="608" x2="1140" y2="608" stroke="#e3e5ea"/>
-<text x="60" y="634" font-size="12.5" fill="#6b7180" font-weight="400" text-anchor="start">Illustrative: 3 actions, or 4 generative answers + 1 action, per conversation. List prices, Oct 5, 2026. Seat and platform fees excluded.</text>
+<text x="60" y="634" font-size="12.5" fill="#6b7180" font-weight="400" text-anchor="start">Illustrative: 3 actions, or 4 generative answers + 1 action, per conversation. List prices, Oct 18, 2026. Seat and platform fees excluded.</text>
 <text x="1140" y="634" font-size="12.5" fill="#0b0d12" font-weight="700" text-anchor="end">mbojko.com</text>
 </svg>
