@@ -7,9 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Grafana Goes Agentic at ObservabilityCON as Splunk Patches a Critical Flaw (October 12 - October 25, 2026)</title>
+      <link>https://mbojko.com/reports/2026-10-25/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-10-25</guid>
+      <pubDate>Mon, 26 Oct 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>Update #10 covers ObservabilityCON 2026, a critical Splunk Enterprise fix and the State of Observability 2026 survey.</p>
+        <p><strong>Covered:</strong> Grafana ships Assistant Watchers, Agent Observability, Managed Sandboxes and Marketplace GA at ObservabilityCON 2026, Splunk fixes a 9.8-rated Enterprise flaw and publishes State of Observability 2026, Coralogix launches live benchmarks. Also Observe at Snowflake World Tour, Dynatrace's Carahsoft award and Q2 FY2027 results date, and two releases missed in the previous period (Splunk 10.6, Cortex XCOR).</p>
+        <p><a href="https://mbojko.com/reports/2026-10-25/">Read the full update</a></p>
+      ]]></description>
+    </item>
 
     <item>
       <title>Cribl Enters SIEM as AI Quality Scores Move Into Production Traces (September 28 - October 11, 2026)</title>
