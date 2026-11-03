@@ -7,7 +7,7 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Mon, 26 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
@@ -63,8 +63,20 @@
       ]]></description>
     </item>
     <item>
+      <title>How Observability Vendors Price AI Agents</title>
+      <link>https://mbojko.com/reports/ai-agent-pricing-analysis/</link>
+      <guid isPermaLink="false">mbojko-reports-ai-agent-pricing-analysis</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <category>Analysis</category>
+      <description><![CDATA[
+        <p>Twelve observability vendors, three different meters for pricing AI agent work, and no common unit between them. Based on public price pages, documentation and earnings calls.</p>
+        <p><strong>Covered:</strong> credits, tokens and executions as AI meters, list prices, metering start dates, spend caps and budgets, and which vendors publish no AI rate.</p>
+        <p><a href="https://mbojko.com/reports/ai-agent-pricing-analysis/">Read the full analysis</a></p>
+      ]]></description>
+    </item>
+    <item>
       <title>Observe Returns, While Grafana and Dash0 Remove Adoption Barriers (September 21 - September 27, 2026)</title>
-      <link>https://mbojko.com/reports/</link>
+      <link>https://mbojko.com/reports/2026-09-27/</link>
       <guid isPermaLink="false">mbojko-reports-2026-09-27</guid>
       <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
       <category>Bi-weekly Update</category>
@@ -76,7 +88,7 @@
     </item>
     <item>
       <title>Observability Vendors Start Measuring What AI Costs (September 7 - September 20, 2026)</title>
-      <link>https://mbojko.com/reports/</link>
+      <link>https://mbojko.com/reports/2026-09-20/</link>
       <guid isPermaLink="false">mbojko-reports-2026-09-20</guid>
       <pubDate>Sun, 20 Sep 2026 12:00:00 +0000</pubDate>
       <category>Bi-weekly Update</category>
@@ -87,8 +99,20 @@
       ]]></description>
     </item>
     <item>
+      <title>Gartner Magic Quadrants Analysis</title>
+      <link>https://mbojko.com/reports/gartner-magic-quadrants-analysis/</link>
+      <guid isPermaLink="false">mbojko-reports-gartner-magic-quadrants-analysis</guid>
+      <pubDate>Mon, 14 Sep 2026 12:00:00 +0000</pubDate>
+      <category>Analysis</category>
+      <description><![CDATA[
+        <p>An audit of the forward-looking roadmap statements in the 2025 and 2026 Gartner Magic Quadrants, checked against dated, independent sources.</p>
+        <p><strong>Covered:</strong> 24 roadmap statements sorted by how checkable they are, 4 checked against dated sources, a longer-horizon check of the 2021 APM Magic Quadrant, and the pay-to-play question.</p>
+        <p><a href="https://mbojko.com/reports/gartner-magic-quadrants-analysis/">Read the full analysis</a></p>
+      ]]></description>
+    </item>
+    <item>
       <title>Elastic Beats, Buys, and Bets on AI, While the Rest of the Market Goes Quiet (August 24 - September 6, 2026)</title>
-      <link>https://mbojko.com/reports/</link>
+      <link>https://mbojko.com/reports/2026-09-06/</link>
       <guid isPermaLink="false">mbojko-reports-2026-09-06</guid>
       <pubDate>Sun, 06 Sep 2026 12:00:00 +0000</pubDate>
       <category>Bi-weekly Update</category>
@@ -99,8 +123,20 @@
       ]]></description>
     </item>
     <item>
+      <title>Observability Market Consolidation and Acquisitions, 2017-2026</title>
+      <link>https://mbojko.com/reports/observability-consolidation-2017-2026/</link>
+      <guid isPermaLink="false">mbojko-reports-observability-consolidation-2017-2026</guid>
+      <pubDate>Sun, 30 Aug 2026 12:00:00 +0000</pubDate>
+      <category>Analysis</category>
+      <description><![CDATA[
+        <p>Thirteen acquirers across the observability market, 2017-2026, with transaction prices, dates and outcomes cited from primary sources, SEC filings and financial press.</p>
+        <p><strong>Covered:</strong> Cisco, IBM, ServiceNow, Splunk, Datadog, Elastic, Dynatrace, Chronosphere, the telemetry pipeline deals of 2025 and 2026, Coralogix, and private equity buyouts of Sumo Logic and New Relic.</p>
+        <p><a href="https://mbojko.com/reports/observability-consolidation-2017-2026/">Read the full analysis</a></p>
+      ]]></description>
+    </item>
+    <item>
       <title>Observability Vendors Are Buying Their Way Into AI (August 10 - August 23, 2026)</title>
-      <link>https://mbojko.com/reports/</link>
+      <link>https://mbojko.com/reports/2026-08-23/</link>
       <guid isPermaLink="false">mbojko-reports-2026-08-23</guid>
       <pubDate>Sun, 23 Aug 2026 12:00:00 +0000</pubDate>
       <category>Bi-weekly Update</category>
@@ -112,7 +148,7 @@
     </item>
     <item>
       <title>Earnings Prove It, Agents Ship It: The Autonomy Race Hits Escape Velocity (July 28 - August 9, 2026)</title>
-      <link>https://mbojko.com/reports/</link>
+      <link>https://mbojko.com/reports/2026-08-09/</link>
       <guid isPermaLink="false">mbojko-reports-2026-08-09</guid>
       <pubDate>Sun, 09 Aug 2026 12:00:00 +0000</pubDate>
       <category>Bi-weekly Update</category>
@@ -124,7 +160,7 @@
     </item>
     <item>
       <title>Palo Alto Doubles Down, Gartner Names Six Leaders (July 14 - July 27, 2026)</title>
-      <link>https://mbojko.com/reports/</link>
+      <link>https://mbojko.com/reports/2026-07-27/</link>
       <guid isPermaLink="false">mbojko-reports-2026-07-27</guid>
       <pubDate>Mon, 27 Jul 2026 12:00:00 +0000</pubDate>
       <category>Bi-weekly Update</category>
@@ -136,7 +172,7 @@
     </item>
     <item>
       <title>Agentic Ops, Government Push, Elastic's Counter-Move (June 23 - July 13, 2026)</title>
-      <link>https://mbojko.com/reports/</link>
+      <link>https://mbojko.com/reports/2026-07-13/</link>
       <guid isPermaLink="false">mbojko-reports-2026-07-13</guid>
       <pubDate>Sun, 13 Jul 2026 12:00:00 +0000</pubDate>
       <category>Bi-weekly Update</category>
@@ -148,7 +184,7 @@
     </item>
     <item>
       <title>Autonomous Ops Race, Splunk Crisis, AI Code Paradox (June 9-22, 2026)</title>
-      <link>https://mbojko.com/reports/</link>
+      <link>https://mbojko.com/reports/2026-06-22/</link>
       <guid isPermaLink="false">mbojko-reports-2026-06-22</guid>
       <pubDate>Mon, 22 Jun 2026 12:00:00 +0000</pubDate>
       <category>Bi-weekly Update</category>
