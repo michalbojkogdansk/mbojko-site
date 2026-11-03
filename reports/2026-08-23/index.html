@@ -145,6 +145,11 @@
     @media print{.report-figure,.lightbox{display:none!important}}
   </style>
   <style id="report-extras">
+    .cite-box{margin-top:3rem;padding:1.5rem;background:#13151e;border:1px solid rgba(255,255,255,0.08)}
+    .cite-text{font-size:14px;color:#d0d0d0;line-height:1.7;word-break:break-word;margin-bottom:1rem}
+    .cite-text em{font-style:italic}
+    .cite-status{font-size:12px;color:#FFD600;font-weight:700;margin-left:1rem;display:none}
+    @media print{.cite-box{background:#fff;border:1px solid #ccc}.cite-box .btn-copy,.cite-status{display:none!important}.cite-text{color:#222}.extras-title{color:#000}}
     .related-reports{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08)}
     .extras-title{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#FFD600;margin-bottom:1.25rem}
     .related-list{display:grid;gap:.75rem}
@@ -210,6 +215,11 @@
     <span class="copy-status" id="cs">Copied!</span>
     <a href="/reports/" class="back-link">← All reports</a>
   </div>
+  <section class="cite-box" aria-label="Cite this report">
+    <p class="extras-title">Cite this report</p>
+    <p class="cite-text" id="cite-text">Bojko, M. (2026, August 23). <em>Observability Vendors Are Buying Their Way Into AI</em>. mbojko.com. https://mbojko.com/reports/2026-08-23/</p>
+    <button class="btn-copy" onclick="copyCitation()">Copy citation</button><span class="cite-status" id="cite-cs">Copied!</span>
+  </section>
   <section class="related-reports" aria-label="Related reports">
     <p class="extras-title">Related reports</p>
     <div class="related-list">
@@ -256,5 +266,17 @@ document.addEventListener('keydown',function(e){
 });
 </script>
 <script src="/assets/report-cta.js" defer></script>
+<script>
+function copyCitation(){
+  navigator.clipboard.writeText("Bojko, M. (2026, August 23). Observability Vendors Are Buying Their Way Into AI. mbojko.com. https://mbojko.com/reports/2026-08-23/").then(function(){
+    var s=document.getElementById('cite-cs');
+    s.style.display='inline';
+    setTimeout(function(){s.style.display='none';},2500);
+  }).catch(function(){
+    var r=document.createRange();r.selectNodeContents(document.getElementById('cite-text'));
+    var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+  });
+}
+</script>
 </body>
 </html>
