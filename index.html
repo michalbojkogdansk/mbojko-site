@@ -272,6 +272,10 @@
       .c-card { flex: 0 0 240px; }
       footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
     }
+    .most-read { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.5rem; margin-top: 1.5rem; }
+    .most-read-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted2); }
+    .most-read a { font-size: 14px; font-weight: 600; color: var(--yellow); text-decoration: none; }
+    .most-read a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -388,6 +392,12 @@
     </a>
     </div>
     <button class="carousel-btn next" onclick="scrollCarousel('c3',1)">&#8250;</button>
+  </div>
+  <div class="most-read">
+    <span class="most-read-label">Most read</span>
+    <a href="/reports/observability-consolidation-2017-2026/">Observability M&amp;A, 2017-2026</a>
+    <a href="/reports/ai-agent-pricing-analysis/">How Observability Vendors Price AI Agents</a>
+    <a href="/reports/gartner-magic-quadrants-analysis/">Gartner Magic Quadrants Analysis</a>
   </div>
 </section>
 
