@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTO Talks Gdańsk: karta wykładu</title>
+  <meta name="description" content="Jeden slajd, dziewięć historii. Wypełnij kartę wykładu dla studentów w 3 minuty, a slajd złoży się sam.">
+  <meta name="author" content="Michał Bojko">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CTO Talks Gdańsk: karta wykładu">
+  <meta property="og:description" content="Jeden slajd, dziewięć historii. Wypełnij kartę w 3 minuty, a slajd złoży się sam.">
+  <meta property="og:image" content="https://mbojko.com/assets/photo.jpg">
+  <meta property="og:site_name" content="mbojko.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0b0d12;--bg2:#13151e;--bg3:#1a1d28;--border:rgba(255,255,255,0.08);--yellow:#FFD600;--white:#ffffff;--muted:#5a6070;--muted2:#8a92a6;--stripe:repeating-linear-gradient(-45deg,#FFD600 0px,#FFD600 8px,#111318 8px,#111318 18px)}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:#e2e2e2;line-height:1.6;min-height:100vh}
+    .stripe-band{height:10px;background:var(--stripe);opacity:.85}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,13,18,0.92);backdrop-filter:blur(14px);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:54px}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--white);text-decoration:none}
+    .nav-logo span{color:var(--yellow)}
+    .nav-tag{font-size:11px;font-weight:700;color:var(--muted2);letter-spacing:.06em;text-transform:uppercase}
+    .page-header{max-width:1240px;margin:0 auto;padding:7rem 2.5rem 2.5rem}
+    .page-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem;display:flex;align-items:center;gap:10px}
+    .page-eyebrow::before{content:"";display:block;width:32px;height:2px;background:var(--yellow)}
+    .page-title{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:800;color:var(--white);letter-spacing:-.025em;text-transform:uppercase;margin-bottom:1rem;line-height:1.05}
+    .page-sub{font-size:15px;color:var(--muted2);max-width:560px;line-height:1.8;border-left:2px solid var(--yellow);padding-left:1.25rem}
+    .steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem;max-width:860px}
+    .steps li{background:var(--bg2);border:1px solid var(--border);padding:1rem 1.1rem;font-size:13px;color:var(--muted2);line-height:1.6}
+    .steps b{display:block;color:var(--yellow);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25rem}
+    .stripe-divider{height:6px;background:var(--stripe);opacity:.5;max-width:1240px;margin:0 auto}
+    .layout{max-width:1240px;margin:0 auto;padding:3rem 2.5rem 4rem;display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:3rem;align-items:start}
+    .preview{position:sticky;top:78px}
+    .preview-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem;display:flex;justify-content:space-between;gap:1rem}
+    .preview-label span:last-child{color:var(--muted2)}
+    #slide{width:100%;height:auto;display:block;border:1px solid var(--border);background:#0b0d12}
+    .preview-actions{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+    .btn-ghost{background:transparent;color:var(--yellow);padding:11px 22px;border:1px solid var(--yellow);border-radius:2px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .15s,color .15s;font-family:inherit}
+    .btn-ghost:hover{background:var(--yellow);color:#000}
+    .hint{font-size:12px;color:var(--muted2)}
+    .form-group{margin-bottom:1.5rem}
+    label,.lbl{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:.5rem}
+    .opt{color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0}
+    input[type=text],input[type=email],input[type=url],textarea,select{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--white);font-size:14px;font-family:inherit;padding:.8rem 1rem;border-radius:2px;transition:border-color .15s;outline:none}
+    input:focus,textarea:focus,select:focus{border-color:var(--yellow)}
+    input::placeholder,textarea::placeholder{color:var(--muted)}
+    textarea{resize:vertical;min-height:84px;line-height:1.6}
+    select option{background:var(--bg2)}
+    input[type=file]{width:100%;font-size:13px;color:var(--muted2);font-family:inherit}
+    input[type=file]::file-selector-button{background:var(--bg3);color:var(--white);border:1px solid var(--border);padding:.55rem .9rem;margin-right:.9rem;font-family:inherit;font-size:12px;cursor:pointer;border-radius:2px}
+    .counter{font-size:11px;color:var(--muted);text-align:right;margin-top:.25rem}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .form-row-num{display:grid;grid-template-columns:130px 1fr;gap:1rem}
+    .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+    .chip{background:var(--bg2);border:1px solid var(--border);color:var(--muted2);font-size:12px;padding:.4rem .75rem;border-radius:999px;cursor:pointer;font-family:inherit;transition:border-color .15s,color .15s}
+    .chip:hover{border-color:var(--yellow);color:var(--white)}
+    .consent{display:flex;gap:.75rem;align-items:flex-start;font-size:13px;color:var(--muted2);line-height:1.6;text-transform:none;letter-spacing:0;font-weight:400;color:var(--muted2)}
+    .consent input{margin-top:.3rem;accent-color:#FFD600;flex:none}
+    .cf-turnstile{margin-bottom:1.5rem}
+    .btn-submit{background:var(--yellow);color:#000;padding:13px 32px;border:none;border-radius:2px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:opacity .15s;width:100%;font-family:inherit}
+    .btn-submit:hover{opacity:.85}
+    .btn-submit:disabled{opacity:.4;cursor:default}
+    .form-status{margin-top:1.25rem;padding:1rem 1.25rem;border-radius:2px;font-size:14px;display:none}
+    .form-status.success{background:rgba(29,158,117,0.1);border:1px solid rgba(29,158,117,0.3);color:#5DCAA5}
+    .form-status.error{background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.2);color:#ff8080}
+    footer{max-width:1240px;margin:0 auto;padding:2rem 2.5rem;border-top:1px solid var(--border)}
+    .footer-left{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+    @media(max-width:960px){.layout{grid-template-columns:1fr;gap:2rem}.preview{position:static;order:-1}.steps{grid-template-columns:1fr}}
+    @media(max-width:640px){nav{padding:0 1.25rem}.page-header,.layout,footer{padding-left:1.25rem;padding-right:1.25rem}.form-row,.form-row-num{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="stripe-band"></div>
+<nav>
+  <a href="/" class="nav-logo">MB<span>.</span></a>
+  <span class="nav-tag">CTO Talks · Gdańsk</span>
+</nav>
+
+<header class="page-header">
+  <p class="page-eyebrow">CTO Talks · Gdańsk</p>
+  <h1 class="page-title">Jeden slajd.<br>Dziewięć historii.</h1>
+  <p class="page-sub">Wykład dla ponad 200 studentów. Każdy z nas dostaje kilka minut. Wypełnij kartę w 3 minuty, a slajd złoży się sam. Ta strona jest prywatna: nie ma jej w wyszukiwarkach ani w nawigacji, link znamy tylko my.</p>
+  <ol class="steps">
+    <li><b>1. Karta</b>Wypełniasz pięć pól. Slajd rośnie obok na żywo.</li>
+    <li><b>2. Slajd</b>Pobierasz gotowy PNG, np. do posta na LinkedIn.</li>
+    <li><b>3. Całość</b>Składam dziewięć kart w jedną prezentację i pokazuję ją na styczniowym spotkaniu.</li>
+  </ol>
+</header>
+
+<div class="stripe-divider"></div>
+
+<main class="layout">
+  <section class="formcol">
+    <form id="cardForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fName">Imię i nazwisko</label>
+          <input type="text" id="fName" maxlength="60" placeholder="Jan Kowalski" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="fEmail">Email</label>
+          <input type="email" id="fEmail" placeholder="jan@firma.pl" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fRole">Stanowisko i firma</label>
+        <input type="text" id="fRole" maxlength="80" placeholder="CTO, Nazwa firmy" required>
+      </div>
+
+      <div class="form-group">
+        <label for="fLinkedin">Link do LinkedIn <span class="opt">(opcjonalnie, wezmę stamtąd zdjęcie)</span></label>
+        <input type="url" id="fLinkedin" placeholder="https://www.linkedin.com/in/...">
+      </div>
+
+      <div class="form-group">
+        <label for="fTitle">Tytuł Twojego wykładu</label>
+        <input type="text" id="fTitle" maxlength="70" placeholder="Max 70 znaków, najlepiej mniej" required data-count="70">
+        <div class="counter" data-for="fTitle"></div>
+        <div class="chips" id="chips">
+          <button type="button" class="chip">Jak AI zmienia rolę programisty</button>
+          <button type="button" class="chip">Pierwsza praca w IT: co liczy się naprawdę</button>
+          <button type="button" class="chip">Od programisty do lidera</button>
+          <button type="button" class="chip">Czego nie uczą na studiach</button>
+          <button type="button" class="chip">Największa wpadka mojej kariery</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fMonday">Co student ma zrobić inaczej już w poniedziałek?</label>
+        <textarea id="fMonday" maxlength="140" placeholder="Jedno zdanie, konkretna czynność." required></textarea>
+        <div class="counter" data-for="fMonday"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="fFailure">Twoja największa wpadka, z której wyciągnąłeś najwięcej</label>
+        <textarea id="fFailure" maxlength="220" placeholder="Dwa zdania: co się stało i czego Cię nauczyło." required></textarea>
+        <div class="counter" data-for="fFailure"></div>
+      </div>
+
+      <div class="form-group">
+        <span class="lbl">Liczba z Twojej pracy <span class="opt">(opcjonalnie)</span></span>
+        <div class="form-row-num">
+          <input type="text" id="fNum" maxlength="12" placeholder="9 000" aria-label="Liczba">
+          <input type="text" id="fCap" maxlength="70" placeholder="kontenerów dziennie w naszym systemie" aria-label="Co ta liczba oznacza">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fFormat">Format wystąpienia</label>
+        <select id="fFormat" required>
+          <option value="Lightning talk, 6 minut" selected>Lightning talk, 6 minut</option>
+          <option value="Rozmowa 10 minut, pytania od studentów">Rozmowa 10 minut, pytania od studentów</option>
+          <option value="Obojętne, dopasuję się">Obojętne, dopasuję się</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fPhoto">Zdjęcie na slajd <span class="opt">(zostaje w Twojej przeglądarce, nie jest wysyłane)</span></label>
+        <input type="file" id="fPhoto" accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <label class="consent"><input type="checkbox" id="fConsent" required> Zgadzam się na użycie imienia, nazwiska, stanowiska i treści karty w materiałach wykładu oraz na mbojko.com.</label>
+      </div>
+
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAADhc4xzH7NKSG-M1" data-theme="dark"></div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">Wyślij kartę</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </section>
+
+  <section class="preview">
+    <div class="preview-label"><span>Podgląd slajdu</span><span>aktualizuje się na żywo</span></div>
+    <canvas id="slide" width="1920" height="1080" aria-label="Podgląd slajdu"></canvas>
+    <div class="preview-actions">
+      <button type="button" class="btn-ghost" id="dlBtn">Pobierz PNG</button>
+      <span class="hint">1920 × 1080, gotowy do posta lub prezentacji</span>
+    </div>
+  </section>
+</main>
+
+<div class="stripe-band"></div>
+
+<footer>
+  <span class="footer-left">© 2026 Michał Bojko · Gdańsk, Poland</span>
+</footer>
+
+<script>
+(function () {
+  var W = 1920, H = 1080;
+  var FONT = '"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif';
+  var Y = '#FFD600', BG = '#0b0d12', TXT = '#e2e2e2', MUTED = '#8a92a6', LINE = 'rgba(255,255,255,0.12)';
+  var canvas = document.getElementById('slide');
+  var ctx = canvas.getContext('2d');
+  var photo = null;
+  var rafId = 0;
+
+  var PH = {
+    fName: 'Imię Nazwisko',
+    fRole: 'Stanowisko, Firma',
+    fTitle: 'Tytuł Twojego wykładu',
+    fMonday: 'Jedno zdanie: co student ma zrobić inaczej już w poniedziałek.',
+    fFailure: 'Dwa zdania o wpadce, z której wyciągnąłeś najwięcej.',
+    fNum: '42',
+    fCap: 'liczba z Twojej pracy, która zaskoczy studentów'
+  };
+
+  function val(id, preview) {
+    var v = (document.getElementById(id).value || '').trim();
+    if (v) return { t: v, ph: false };
+    return preview ? { t: PH[id], ph: true } : { t: '', ph: false };
+  }
+
+  function setSpacing(s) { if ('letterSpacing' in ctx) ctx.letterSpacing = s; }
+
+  function wrap(text, maxW) {
+    var words = text.split(/\s+/), lines = [], cur = '';
+    for (var i = 0; i < words.length; i++) {
+      var test = cur ? cur + ' ' + words[i] : words[i];
+      if (ctx.measureText(test).width <= maxW || !cur) { cur = test; }
+      else { lines.push(cur); cur = words[i]; }
+    }
+    if (cur) lines.push(cur);
+    return lines;
+  }
+
+  function fit(text, maxW, maxLines, start, min, weight, upper) {
+    if (upper) text = text.toUpperCase();
+    var size = start, lines = [];
+    while (true) {
+      ctx.font = weight + ' ' + size + 'px ' + FONT;
+      lines = wrap(text, maxW);
+      if (lines.length <= maxLines || size <= min) break;
+      size -= 2;
+    }
+    if (lines.length > maxLines) {
+      lines = lines.slice(0, maxLines);
+      var last = lines[maxLines - 1];
+      while (last.length > 1 && ctx.measureText(last + '…').width > maxW) last = last.slice(0, -1);
+      lines[maxLines - 1] = last + '…';
+    }
+    return { size: size, lines: lines };
+  }
+
+  function drawLines(lines, x, y, lineH, color, alpha) {
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = color;
+    ctx.textBaseline = 'top';
+    for (var i = 0; i < lines.length; i++) ctx.fillText(lines[i], x, y + i * lineH);
+    ctx.globalAlpha = 1;
+  }
+
+  function label(text, x, y) {
+    setSpacing('3px');
+    ctx.font = '700 22px ' + FONT;
+    ctx.fillStyle = Y;
+    ctx.textBaseline = 'top';
+    ctx.fillText(text, x, y);
+    setSpacing('0px');
+  }
+
+  function stripe(y, h, a) {
+    ctx.save();
+    ctx.globalAlpha = a;
+    ctx.beginPath(); ctx.rect(0, y, W, h); ctx.clip();
+    ctx.fillStyle = '#111318'; ctx.fillRect(0, y, W, h);
+    ctx.fillStyle = Y;
+    for (var x = -h; x < W + h; x += 26) {
+      ctx.beginPath();
+      ctx.moveTo(x, y + h); ctx.lineTo(x + h, y); ctx.lineTo(x + h + 11, y); ctx.lineTo(x + 11, y + h);
+      ctx.closePath(); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  function initials(name) {
+    var p = name.split(/\s+/).filter(Boolean);
+    if (!p.length) return '';
+    return (p[0][0] + (p.length > 1 ? p[p.length - 1][0] : '')).toUpperCase();
+  }
+
+  function render(preview) {
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H);
+    stripe(0, 22, 0.9);
+    stripe(H - 22, 22, 0.9);
+    ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+
+    setSpacing('5px');
+    ctx.font = '700 26px ' + FONT; ctx.fillStyle = Y;
+    ctx.fillText('CTO TALKS · GDAŃSK · WYKŁAD DLA STUDENTÓW', 96, 78);
+    setSpacing('0px');
+
+    var L = 96, colW = 1090, y = 140;
+
+    var t = val('fTitle', preview);
+    if (t.t) {
+      var tf = fit(t.t, colW, 3, 88, 52, '800', true);
+      var tl = Math.round(tf.size * 1.08);
+      drawLines(tf.lines, L, y, tl, '#ffffff', t.ph ? 0.4 : 1);
+      y += tf.lines.length * tl + 26;
+    }
+    ctx.fillStyle = Y; ctx.fillRect(L, y, 120, 6); y += 42;
+
+    var a = val('fMonday', preview);
+    if (a.t) {
+      label('W PONIEDZIAŁEK ZRÓB INACZEJ', L, y); y += 40;
+      var af = fit(a.t, colW, 3, 40, 28, '600', false);
+      var al = Math.round(af.size * 1.35);
+      drawLines(af.lines, L, y, al, TXT, a.ph ? 0.4 : 1);
+      y += af.lines.length * al + 40;
+    }
+
+    var f = val('fFailure', preview);
+    if (f.t) {
+      label('MOJA NAJWIĘKSZA WPADKA', L, y); y += 40;
+      var ff = fit(f.t, colW, 4, 32, 24, '400', false);
+      var fl = Math.round(ff.size * 1.38);
+      drawLines(ff.lines, L, y, fl, '#b0b6c6', f.ph ? 0.4 : 1);
+    }
+
+    // right column
+    ctx.fillStyle = LINE; ctx.fillRect(1250, 140, 2, 740);
+    var cx = 1557, cy = 250, r = 100, colX = 1290, colR = 534;
+
+    var nm = val('fName', preview);
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.closePath();
+    ctx.fillStyle = '#13151e'; ctx.fill();
+    if (photo) {
+      ctx.clip();
+      var d = r * 2, s = Math.max(d / photo.width, d / photo.height);
+      var pw = photo.width * s, ph = photo.height * s;
+      ctx.drawImage(photo, cx - pw / 2, cy - ph / 2, pw, ph);
+    }
+    ctx.restore();
+    if (!photo) {
+      ctx.globalAlpha = nm.ph ? 0.4 : 1;
+      ctx.font = '800 72px ' + FONT; ctx.fillStyle = Y;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(initials(nm.t), cx, cy + 4);
+      ctx.textAlign = 'left'; ctx.globalAlpha = 1;
+    }
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.lineWidth = 6; ctx.strokeStyle = Y; ctx.stroke();
+
+    var num = val('fNum', preview);
+    if (num.t) {
+      var nf = fit(num.t, colR, 1, 230, 80, '800', false);
+      drawLines(nf.lines, colX, 470, nf.size, Y, num.ph ? 0.4 : 1);
+      var cap = val('fCap', preview);
+      if (cap.t) {
+        var cf = fit(cap.t, colR, 3, 34, 24, '500', false);
+        drawLines(cf.lines, colX, 470 + nf.size + 24, Math.round(cf.size * 1.35), MUTED, cap.ph ? 0.4 : 1);
+      }
+    }
+
+    // footer
+    var rl = val('fRole', preview);
+    if (nm.t) {
+      ctx.font = '700 46px ' + FONT;
+      drawLines([nm.t], L, 944, 52, '#ffffff', nm.ph ? 0.4 : 1);
+    }
+    if (rl.t) {
+      ctx.font = '500 30px ' + FONT;
+      drawLines([rl.t], L, 1000, 36, MUTED, rl.ph ? 0.4 : 1);
+    }
+    ctx.font = '500 24px ' + FONT;
+    ctx.textAlign = 'right';
+    ctx.globalAlpha = 0.8; ctx.fillStyle = MUTED; ctx.textBaseline = 'top';
+    ctx.fillText('kurator: Michał Bojko · mbojko.com', W - 96, 1006);
+    ctx.globalAlpha = 1; ctx.textAlign = 'left';
+  }
+
+  function schedule() {
+    if (rafId) return;
+    rafId = requestAnimationFrame(function () { rafId = 0; render(true); });
+  }
+
+  // wiring
+  var form = document.getElementById('cardForm');
+  var ids = ['fName', 'fRole', 'fTitle', 'fMonday', 'fFailure', 'fNum', 'fCap'];
+  ids.forEach(function (id) { document.getElementById(id).addEventListener('input', schedule); });
+
+  var counters = document.querySelectorAll('.counter');
+  function updateCounter(c) {
+    var el = document.getElementById(c.getAttribute('data-for'));
+    c.textContent = el.value.length + ' / ' + el.maxLength;
+  }
+  Array.prototype.forEach.call(counters, function (c) {
+    var el = document.getElementById(c.getAttribute('data-for'));
+    el.addEventListener('input', function () { updateCounter(c); });
+    updateCounter(c);
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('#chips .chip'), function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById('fTitle');
+      el.value = b.textContent;
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      el.focus();
+    });
+  });
+
+  document.getElementById('fPhoto').addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) { photo = null; schedule(); return; }
+    var reader = new FileReader();
+    reader.onload = function () {
+      var img = new Image();
+      img.onload = function () { photo = img; schedule(); };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  function slug() {
+    var s = (document.getElementById('fName').value || '').toLowerCase().replace(/ł/g, 'l');
+    s = s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    return s || 'karta';
+  }
+
+  function download() {
+    render(false);
+    canvas.toBlob(function (b) {
+      var u = URL.createObjectURL(b);
+      var a = document.createElement('a');
+      a.href = u; a.download = 'cto-talks-' + slug() + '.png';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(u); }, 1000);
+    }, 'image/png');
+    render(true);
+  }
+  document.getElementById('dlBtn').addEventListener('click', download);
+
+  var btn = document.getElementById('submitBtn');
+  var statusEl = document.getElementById('formStatus');
+  function showStatus(type, msg) {
+    statusEl.className = 'form-status ' + type;
+    statusEl.textContent = msg;
+    statusEl.style.display = 'block';
+  }
+  function g(id) { return document.getElementById(id).value.trim(); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var tokenEl = document.querySelector('[name="cf-turnstile-response"]');
+    var token = tokenEl && tokenEl.value;
+    if (!token) { showStatus('error', 'Dokończ weryfikację, że jesteś człowiekiem.'); return; }
+
+    var card = {
+      title: g('fTitle'), monday: g('fMonday'), failure: g('fFailure'),
+      number: g('fNum'), caption: g('fCap'), format: g('fFormat'), linkedin: g('fLinkedin')
+    };
+    var message = [
+      'KARTA WYKŁADU (CTO Talks Gdańsk)',
+      '',
+      'Tytuł: ' + card.title,
+      'W poniedziałek zrób inaczej: ' + card.monday,
+      'Moja największa wpadka: ' + card.failure,
+      'Liczba: ' + (card.number || '-') + ' | ' + (card.caption || '-'),
+      'Format: ' + card.format,
+      'LinkedIn: ' + (card.linkedin || '-'),
+      'Zgoda na użycie w materiałach wykładu i na mbojko.com: TAK',
+      '',
+      'JSON: ' + JSON.stringify(card)
+    ].join('\n');
+
+    btn.disabled = true;
+    btn.textContent = 'Wysyłam...';
+
+    fetch('https://contact-form.michal-bojko-gdansk.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: g('fName'),
+        email: g('fEmail'),
+        organisation: g('fRole'),
+        topic: 'CTO Talks: karta wykładu',
+        message: message,
+        turnstileToken: token
+      })
+    }).then(function (res) {
+      return res.json().then(function (json) { return { ok: res.ok, json: json }; });
+    }).then(function (r) {
+      if (r.ok) {
+        showStatus('success', 'Karta wysłana, dziękuję! Pobierz swój slajd przyciskiem obok podglądu. Jeśli coś zmienisz, wyślij kartę ponownie.');
+        if (window.turnstile) window.turnstile.reset();
+      } else {
+        showStatus('error', (r.json && r.json.error) || 'Coś poszło nie tak. Spróbuj ponownie.');
+      }
+    }).catch(function () {
+      showStatus('error', 'Błąd sieci. Spróbuj ponownie albo napisz do mnie bezpośrednio.');
+    }).then(function () {
+      btn.disabled = false;
+      btn.textContent = 'Wyślij kartę';
+    });
+  });
+
+  render(true);
+})();
+</script>
+</body>
+</html>

@@ -1,2 +1,8 @@
 /reports/feed.xml
   X-Robots-Tag: noindex
+
+/cto-talks/
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/cto-talks/*
+  X-Robots-Tag: noindex, nofollow, noarchive
