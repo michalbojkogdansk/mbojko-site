@@ -206,9 +206,9 @@
       <span class="ia-label">Immediate Action</span>
     </div>
     <span class="ia-tag">Security / Critical</span>
-    <span style="font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;font-weight:700;margin-left:.5rem">Added: October 26, 2026</span>
+    <span style="font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;font-weight:700;margin-left:.5rem">Updated: November 11, 2026</span>
     <div class="ia-item-title">Patch Splunk Enterprise now</div>
-    <p class="ia-item-text">CVE-2026-76268 (CVSS 9.8): an unauthenticated attacker with network access to the Patroni REST API can run operating system commands on Splunk Enterprise 10.4 and 10.2. Splunk's October advisories <a href="https://advisory.splunk.com/advisories/SVD-2026-1001" target="_blank" rel="noopener" style="color:var(--yellow)">SVD-2026-1001</a> and <a href="https://advisory.splunk.com/advisories/SVD-2026-1002" target="_blank" rel="noopener" style="color:var(--yellow)">SVD-2026-1002</a> also fix further critical issues across all supported branches. No exploitation in the wild has been reported. Upgrade to 10.4.3, 10.2.7, 10.0.10 or 9.4.15; versions recommended in June for CVE-2026-20253 are affected. If you cannot upgrade and do not use Edge Processor, OpAmp or SPL2 data pipelines, set <code>disabled = true</code> in the <code>[postgres]</code> stanza of <code>server.conf</code> and restart.</p>
+    <p class="ia-item-text">Splunk advisory <a href="https://advisory.splunk.com/advisories/SVD-2026-1008" target="_blank" rel="noopener" style="color:var(--yellow)">SVD-2026-1008</a> (October 21) fixes CVE-2026-76299 and CVE-2026-76302, both rated CVSS 9.9, in Splunk Enterprise. Upgrade to 10.4.4, 10.2.8, 10.0.11 or 9.4.16. The versions recommended earlier for <a href="https://advisory.splunk.com/advisories/SVD-2026-1001" target="_blank" rel="noopener" style="color:var(--yellow)">CVE-2026-76268</a> (10.4.3, 10.2.7, 10.0.10, 9.4.15) are affected. These new versions also fix CVE-2026-76268 (CVSS 9.8), which lets an unauthenticated attacker with network access to the Patroni REST API run operating system commands on 10.4 and 10.2. If you cannot upgrade immediately and do not use Edge Processor, OpAmp or SPL2 data pipelines, Splunk's workaround for CVE-2026-76268 is <code>disabled = true</code> in the <code>[postgres]</code> stanza of <code>server.conf</code>, followed by a restart. No exploitation in the wild has been reported for any of these CVEs.</p>
   </div>
 
   <!-- TWO COLUMNS -->
@@ -219,6 +219,14 @@
       <div class="col-header">Bi-weekly Updates</div>
       <div class="q-filter" id="qFilter" role="group" aria-label="Filter bi-weekly updates by quarter"></div>
       <div class="report-list" id="biweeklyList">
+        <a class="report-item" data-quarter="Q4'26" href="/reports/2026-11-08/">
+          <div class="report-item-top">
+            <span class="report-item-date">October 26 - November 8, 2026</span>
+            <span class="report-item-tag">Update #11</span>
+          </div>
+          <div class="report-item-title">Earnings, a Forrester Wave and Agents Built Into the Developer Workflow</div>
+          <div class="report-item-sub">Datadog and Dynatrace report quarterly results and are named Leaders in the Forrester Wave AIOps Platforms Q4 2026, Honeycomb ships AI SRE agents, New Relic brings Change Tracking into GitHub Copilot, Dynatrace and CrowdStrike partner, Splunk adds 9.9-rated fixes</div>
+        </a>
         <a class="report-item" data-quarter="Q4'26" href="/reports/2026-10-25/">
           <div class="report-item-top">
             <span class="report-item-date">October 12 - October 25, 2026</span>

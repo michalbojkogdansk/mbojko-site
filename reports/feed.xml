@@ -7,10 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Tue, 03 Nov 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Earnings, a Forrester Wave and Agents Built Into the Developer Workflow (October 26 - November 8, 2026)</title>
+      <link>https://mbojko.com/reports/2026-11-08/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-11-08</guid>
+      <pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>Update #11 covers Datadog and Dynatrace quarterly results, the Forrester Wave for AIOps platforms and agent releases from Honeycomb and New Relic.</p>
+        <p><strong>Covered:</strong> Datadog and Dynatrace report quarterly results and are named Leaders in the Forrester Wave AIOps Platforms Q4 2026, Honeycomb ships AI SRE agents, New Relic brings Change Tracking into GitHub Copilot, Dynatrace and CrowdStrike partner, Splunk adds 9.9-rated fixes. Also Grafana 13.3, Dash0 Session Replay and CloudWatch scraping, and New Relic's new board chair.</p>
+        <p><a href="https://mbojko.com/reports/2026-11-08/">Read the full update</a></p>
+      ]]></description>
+    </item>
     <item>
       <title>Grafana Goes Agentic at ObservabilityCON as Splunk Patches a Critical Flaw (October 12 - October 25, 2026)</title>
       <link>https://mbojko.com/reports/2026-10-25/</link>
