@@ -1,3 +1,17 @@
+// Daily cap on CTO Talks card submissions per IP. Best-effort: the counter lives in the memory of
+// this worker instance (no KV bound), so it can reset when the instance is recycled and is not
+// shared between instances. It slows down repeated clicking, it is not a hard guarantee.
+const CTO_DAILY_LIMIT = 10;
+const ctoHits = new Map();
+function ctoOverLimit(ip) {
+  const day = new Date().toISOString().slice(0, 10);
+  if (ctoHits.size > 2000) { for (const [k, v] of ctoHits) if (v.day !== day) ctoHits.delete(k); }
+  const e = ctoHits.get(ip);
+  if (!e || e.day !== day) { ctoHits.set(ip, { day, n: 1 }); return false; }
+  e.n++;
+  return e.n > CTO_DAILY_LIMIT;
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors() });
@@ -10,6 +24,10 @@ export default {
     const { name, email, organisation, topic, message, turnstileToken, attachment } = body;
     if (!name || !email || !topic || !message) return jsonError('Missing required fields', 400);
     if (!turnstileToken) return jsonError('Human verification required', 400);
+
+    if (String(topic).startsWith('CTO Talks') && ctoOverLimit(request.headers.get('CF-Connecting-IP') || 'unknown')) {
+      return jsonError('Dzienny limit wysyłek został wyczerpany. Spróbuj jutro albo napisz do mnie.', 429);
+    }
 
     // Optional PNG attachment (used by the CTO Talks card page). Strictly validated:
     // PNG only, size-capped, base64 only.
