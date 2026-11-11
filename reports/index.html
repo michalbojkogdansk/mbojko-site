@@ -453,7 +453,10 @@ function switchTab(id, btn) {
   quarters.forEach(function(q) {
     chip(q, q, items.filter(function(el) { return el.getAttribute('data-quarter') === q; }).length);
   });
-  apply('all');
+  // Default to the current calendar quarter; fall back to the newest quarter with updates
+  var now = new Date();
+  var current = 'Q' + (Math.floor(now.getMonth() / 3) + 1) + "'" + String(now.getFullYear()).slice(-2);
+  apply(quarters.indexOf(current) !== -1 ? current : (quarters[0] || 'all'));
 })();
 
 // Activate tab from URL hash on load
