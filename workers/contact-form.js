@@ -7,9 +7,20 @@ export default {
     try { body = await request.json(); }
     catch { return jsonError('Invalid request', 400); }
 
-    const { name, email, organisation, topic, message, turnstileToken } = body;
+    const { name, email, organisation, topic, message, turnstileToken, attachment } = body;
     if (!name || !email || !topic || !message) return jsonError('Missing required fields', 400);
     if (!turnstileToken) return jsonError('Human verification required', 400);
+
+    // Optional PNG attachment (used by the CTO Talks card page). Strictly validated:
+    // PNG only, size-capped, base64 only.
+    let attachments;
+    if (attachment !== undefined && attachment !== null) {
+      const okName = typeof attachment.name === 'string' && /^[A-Za-z0-9._-]{1,80}\.png$/.test(attachment.name);
+      const okBody = typeof attachment.content === 'string' && attachment.content.length <= 4000000 &&
+        attachment.content.startsWith('iVBORw0KGgo') && /^[A-Za-z0-9+/]+={0,2}$/.test(attachment.content);
+      if (!okName || !okBody) return jsonError('Invalid attachment', 400);
+      attachments = [{ name: attachment.name, content: attachment.content }];
+    }
 
     const tsRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
@@ -24,6 +35,7 @@ export default {
       to: [{ email: 'michal@mbojko.com', name: 'Michal Bojko' }],
       replyTo: { email, name },
       subject: '[mbojko.com] ' + topic + ' - ' + name,
+      ...(attachments ? { attachment: attachments } : {}),
       htmlContent: '<h2>New contact form submission</h2><p><b>Name:</b> ' + esc(name) + '</p><p><b>Email:</b> ' + esc(email) + '</p><p><b>Organisation:</b> ' + esc(organisation||'-') + '</p><p><b>Topic:</b> ' + esc(topic) + '</p><p><b>Message:</b><br>' + esc(message).replace(/\n/g,'<br>') + '</p>'
     };
 
@@ -37,7 +49,7 @@ export default {
     const emailBody = await emailRes.text();
 
     if (!emailRes.ok) return jsonError('Brevo error ' + emailStatus + ': ' + emailBody, 500);
-    return new Response(JSON.stringify({ ok: true }), { status: 200, headers: { 'Content-Type': 'application/json', ...cors() } });
+    return new Response(JSON.stringify({ ok: true, attached: !!attachments }), { status: 200, headers: { 'Content-Type': 'application/json', ...cors() } });
   }
 };
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
