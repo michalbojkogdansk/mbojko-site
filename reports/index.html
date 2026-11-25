@@ -206,9 +206,9 @@
       <span class="ia-label">Immediate Action</span>
     </div>
     <span class="ia-tag">Security / Critical</span>
-    <span style="font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;font-weight:700;margin-left:.5rem">Updated: November 11, 2026</span>
-    <div class="ia-item-title">Patch Splunk Enterprise now</div>
-    <p class="ia-item-text">Splunk advisory <a href="https://advisory.splunk.com/advisories/SVD-2026-1008" target="_blank" rel="noopener" style="color:var(--yellow)">SVD-2026-1008</a> (October 21) fixes CVE-2026-76299 and CVE-2026-76302, both rated CVSS 9.9, in Splunk Enterprise. Upgrade to 10.4.4, 10.2.8, 10.0.11 or 9.4.16. The versions recommended earlier for <a href="https://advisory.splunk.com/advisories/SVD-2026-1001" target="_blank" rel="noopener" style="color:var(--yellow)">CVE-2026-76268</a> (10.4.3, 10.2.7, 10.0.10, 9.4.15) are affected. These new versions also fix CVE-2026-76268 (CVSS 9.8), which lets an unauthenticated attacker with network access to the Patroni REST API run operating system commands on 10.4 and 10.2. If you cannot upgrade immediately and do not use Edge Processor, OpAmp or SPL2 data pipelines, Splunk's workaround for CVE-2026-76268 is <code>disabled = true</code> in the <code>[postgres]</code> stanza of <code>server.conf</code>, followed by a restart. No exploitation in the wild has been reported for any of these CVEs.</p>
+    <span style="font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;font-weight:700;margin-left:.5rem">Updated: November 25, 2026</span>
+    <div class="ia-item-title">Patch Splunk SOAR and Splunk Enterprise now</div>
+    <p class="ia-item-text">Splunk's November 18 advisories fix CVE-2026-131253 (CVSS 9.9) in Splunk SOAR below 8.8.0, which lets a logged-in user with app and playbook rights run arbitrary code through the App Wizard, and CVE-2026-131287 (CVSS 9.6). Upgrade SOAR to 8.8.0 (<a href="https://advisory.splunk.com/advisories/SVD-2026-1108" target="_blank" rel="noopener" style="color:var(--yellow)">SVD-2026-1108</a>). Splunk Enterprise received fixes for two improper authentication flaws, CVE-2026-76536 (9.4) and CVE-2026-76535 (9.1), reported as reachable without a login: upgrade to 10.6.1, 10.4.5, 10.2.9, 10.0.12 or 9.4.17. These versions supersede the ones recommended for <a href="https://advisory.splunk.com/advisories/SVD-2026-1008" target="_blank" rel="noopener" style="color:var(--yellow)">SVD-2026-1008</a> (10.4.4, 10.2.8, 10.0.11, 9.4.16) and <a href="https://advisory.splunk.com/advisories/SVD-2026-1001" target="_blank" rel="noopener" style="color:var(--yellow)">CVE-2026-76268</a>. No exploitation in the wild has been reported for any of these CVEs.</p>
   </div>
 
   <!-- TWO COLUMNS -->
@@ -219,6 +219,14 @@
       <div class="col-header">Bi-weekly Updates</div>
       <div class="q-filter" id="qFilter" role="group" aria-label="Filter bi-weekly updates by quarter"></div>
       <div class="report-list" id="biweeklyList">
+        <a class="report-item" data-quarter="Q4'26" href="/reports/2026-11-22/">
+          <div class="report-item-top">
+            <span class="report-item-date">November 9 - November 22, 2026</span>
+            <span class="report-item-tag">Update #12</span>
+          </div>
+          <div class="report-item-title">Observability Pipelines Get a Gartner Quadrant as Cribl Buys Tero</div>
+          <div class="report-item-sub">Gartner publishes its first Magic Quadrant for Observability Pipelines with Cribl, Datadog and Dynatrace (Bindplane) as Leaders, Cribl buys Tero, Dash0 and New Relic launch at KubeCon, Elastic and Honeycomb report growth, Dynatrace expands with Google Cloud, Splunk fixes a 9.9 SOAR flaw</div>
+        </a>
         <a class="report-item" data-quarter="Q4'26" href="/reports/2026-11-08/">
           <div class="report-item-top">
             <span class="report-item-date">October 26 - November 8, 2026</span>

@@ -7,10 +7,22 @@
     <language>en-gb</language>
     <managingEditor>michal@mbojko.com (Michal Bojko)</managingEditor>
     <webMaster>michal@mbojko.com (Michal Bojko)</webMaster>
-    <lastBuildDate>Wed, 11 Nov 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 12:00:00 +0000</lastBuildDate>
     <ttl>336</ttl>
     <atom:link href="https://mbojko.com/reports/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+      <title>Observability Pipelines Get a Gartner Quadrant as Cribl Buys Tero (November 9 - November 22, 2026)</title>
+      <link>https://mbojko.com/reports/2026-11-22/</link>
+      <guid isPermaLink="false">mbojko-reports-2026-11-22</guid>
+      <pubDate>Wed, 25 Nov 2026 12:00:00 +0000</pubDate>
+      <category>Bi-weekly Update</category>
+      <description><![CDATA[
+        <p>Update #12 covers Gartner's first Magic Quadrant for Observability Pipelines, Cribl's acquisition of Tero and the KubeCon launches from Dash0 and New Relic.</p>
+        <p><strong>Covered:</strong> Cribl, Datadog and Dynatrace (Bindplane) named Leaders in the Gartner Magic Quadrant for Observability Pipelines, Cribl buys Tero, Dash0 continuous profiling GA, New Relic Autopilot Kubernetes Agent, Elastic Q2 FY27 results, Honeycomb growth milestones, Dynatrace and Google Cloud, Splunk SOAR and Enterprise advisories.</p>
+        <p><a href="https://mbojko.com/reports/2026-11-22/">Read the full update</a></p>
+      ]]></description>
+    </item>
     <item>
       <title>Earnings, a Forrester Wave and Agents Built Into the Developer Workflow (October 26 - November 8, 2026)</title>
       <link>https://mbojko.com/reports/2026-11-08/</link>
